@@ -1,0 +1,757 @@
+:root{
+    --Padding: 8px;
+    --BColor1: #fff;
+    --BColor2: rgb(250, 250, 250);
+    --MColor1: black;
+    --Color1: rgb(16, 202, 183);
+    --Color2: rgb(246, 246, 246);
+    --Color3: rgb(44, 71, 85);
+}
+
+@font-face {
+    font-family: "WorkSans";
+    src: url(../Image&Icon&everything/Work_Sans/WorkSans-VariableFont_wght.ttf);
+
+    
+}
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------Start
+-------------------------------------------------------------------------------------*/
+
+html{
+    font-size: 16px;
+    font-family: "WorkSans";
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    width: 98.8vw;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------NAV Section
+-------------------------------------------------------------------------------------*/
+
+
+nav{
+    height: 50px;
+    width: 100%;
+    background-color: var(--BColor1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav .Right{
+    height: 50px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    rotate: 180deg;
+    gap: 4px;
+
+}
+
+nav .Right span:nth-child(1){
+    height: 2px;
+    width: 30px;
+    background-color: var(--Color2);
+}
+nav .Right span:nth-child(2){
+    height: 2px;
+    width: 18px;
+    background-color: rgba(0, 0, 0, 0.384);
+}
+nav .Right span:nth-child(3){
+    height: 2px;
+    width: 30px;
+    background-color: black;
+}
+
+nav .Left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+}
+
+nav .Left span:nth-child(1){
+    height: 20px;
+    width: 3px;
+    margin-right: 5px;
+    background-color: var(--MColor1);
+    position: absolute;
+}
+nav .Left span:nth-child(2){
+    height: 15px;
+    width: 15px;
+    border: 3px solid var(--Color1);
+    border-radius: 50%;
+    margin-left: 10px;
+
+}
+
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------TheFirstSection
+-------------------------------------------------------------------------------------*/
+
+
+main{
+    height: 90vh;
+    width: 100%;
+    background-color: var(--BColor1);
+}
+
+main .FirstSection{
+    height: 50%;
+    width: 100%;
+    background-color: var(--BColor2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3%;
+    box-sizing: border-box;
+    background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 03-20-50\ تصاميم.png);
+    background-size:  cover;
+
+}
+
+ main .FirstSection h1{ 
+    margin-bottom: 25px;
+    font-weight: 900;
+    color: var(--Color1);
+    position: relative;
+    top: -10px;
+}
+
+
+ main .SecondSection{
+    height: 50%;
+    width: 100%;
+    background-color: var(--BColor1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1%;
+    box-sizing: border-box;
+}
+
+ main .SecondSection div{
+    height: 95%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2%;
+    box-sizing: border-box;
+    gap: 5px;
+
+}
+
+ main .SecondSection i{
+font-size: 5rem;
+color: var(--Color1);
+margin-bottom: 28px;
+}
+
+ main  .SecondSection h1{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------TheSecondSection
+-------------------------------------------------------------------------------------*/
+
+
+.SecondSection{
+    height: 90vh;
+    width: 100%;
+    background-color: var(--BColor1);
+    padding: 3%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+
+ .TopSection{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+  .TopSection h2{
+    font-size: 9rem;
+    font-weight: bold;
+    color: var(--Color2);
+    z-index: 1;
+}
+
+  .TopSection p{
+    position: relative;
+    top: -45px;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+  .BottomSection{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: end;
+    height: 70%;
+    width: 100%;
+}
+.SecondSection .BottomSection{
+    position: relative;
+    top: 15%;
+}
+ 
+
+.SecondSection .CenterSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 47vh;
+    width: 56%;
+}
+
+ .SecondSection .CenterSection .P{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+ .SecondSection .CenterSection i{
+    font-size: 3rem;
+    color: var(--Color1);
+    
+}
+
+
+ .SecondSection .CenterSection h1{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+ .SecondSection .CenterSection .Text{
+    padding: 3%;
+    box-sizing: border-box;
+    margin-left: 25px;
+}
+
+
+.SecondSection .RightSection{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 36%;
+    top: -50px;
+}
+
+ .SecondSection .Shape1{
+    height: 300px;
+    width: 67%;
+    background-color: var(--Color2);
+    position: relative;
+    left: 60px;
+    z-index: 2;
+    background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 05-00-42\ sara\ amer\ \(@saraamer785\)\ •\ Instagram\ photos\ and\ videos.png);
+    background-size: contain;
+}
+
+
+ .SecondSection .Shape2{
+    height: 400px;
+    width: 22%;
+    background-color: var(--Color3);
+    position: relative;
+
+
+}
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------TheThirdSection
+-------------------------------------------------------------------------------------*/
+
+.ThirdSection {
+    height: 120vh;
+    width: 100%;
+    background-color: var(--BColor2);
+    padding: 3%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.ThirdSection .TopSection{
+    margin-bottom: 20px;
+}
+
+
+.ThirdSection .BottomSection{
+    justify-content: space-around;
+}
+
+
+ .Container {
+    height: 95%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+ .Container .Image{
+    height: 350px;
+    width: 100%;
+    background-color: var(--Color2);
+}
+
+ .BottomSection .Container:nth-child(1)>.Image{
+    background-image: url(../Image&Icon&everything/SaraAlamer/IMG_20220414_033304.jpg);
+    background-size: contain;
+    background-repeat: round;
+
+
+  }
+ .BottomSection .Container:nth-child(2)>.Image{
+    background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 03-21-04\ تصاميم.png);
+    background-size: contain;
+    background-repeat: round;
+  }
+ .BottomSection .Container:nth-child(3)>.Image{
+    background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 03-23-28\ sara\ omar\ on\ Behance.png);
+    background-size: contain;
+    background-repeat: round;
+  }
+
+
+ .Container .aciklama{
+    height: 100px;
+    width: 100%;
+    padding: 3%;
+    box-sizing: border-box;
+    background-color: var(--BColor1);
+}
+
+/*------------------------------------------------------
+*--------------------------TheForthSection
+--------------------------------------------------------*/
+
+.ForthSection {
+    height: 90vh;
+    width: 100%;
+    background-color: var(--BColor1);
+
+    padding: 1.5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.ForthSection .TopSection{
+margin-bottom: 30px;
+}
+
+.ForthSection .LeftSection{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
+    
+}
+
+
+ .ForthSection .LeftSection>div:nth-child(1){
+    height: 340px;
+    width: 80px;
+    background-color: var(--BColor2);
+    position: relative;
+}
+
+ .ForthSection .LeftSection>div:nth-child(2){
+    height: 240px;
+    width: 240px;
+    background-color: var(--Color2);
+    position: relative;
+    left: -72px;
+    z-index: 2;
+    background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 03-29-30\ sara\ omar\ on\ Behance.png);
+    background-size: contain;
+    background-repeat: round;
+}
+
+ .ForthSection .LeftSection>div:nth-child(3){
+    height: 180px;
+    width: 65px;
+    background-color: var(--Color1);
+    position: relative;
+    left: -110px;
+    top: -50px;
+}
+
+ .ForthSection .LeftSection>div:nth-child(4){
+    height: 50px;
+    width: 90px;
+    background-color: var(--Color1);
+    position: relative;
+    left: -138px;
+    top: 60px;
+
+}
+
+.ForthSection  .RightSection{
+    height: 100%;
+    width: 50%;
+    padding: 10px 10% 10px 5%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+ .ForthSection .RightSection h4{
+   
+    font-size: 1.4rem;
+}
+
+ .ForthSection .RightSection .span{
+
+    height: 2px;
+    width: 240px;
+
+    margin-top: 40px;
+    margin-bottom: 15px;
+    background-color: var(--Color1);
+}
+
+ .ForthSection .RightSection p{
+    font-size: 1rem;
+}
+
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------TheFifthSection
+-------------------------------------------------------------------------------------*/
+
+.FifthSection {
+    height: 70vh;
+    width: 100%;
+    background-color: var(--BColor2);
+
+    padding: 1.5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.FifthSection .BottomSection{
+    height: 200px;
+    flex-direction: column;
+    margin-bottom: 40px;
+    gap: 25px;
+    align-items: center;
+    position: relative;
+    left: -90px;
+
+}
+
+ .FifthSection h6{
+   font-size: 3rem;
+   position: relative;
+   left: -60px;
+   color: var(--Color3);
+
+}
+
+ .FifthSection h5{
+    font-size: 2rem;
+    color: var(--Color1);
+    position: relative;
+    left: -25px;
+}
+
+
+ .FifthSection .Icons{
+    display: flex;
+    flex-direction: row;
+}
+
+
+ .FifthSection .Icons i{
+    margin-left: 25px;
+    color: var(--Color3);
+}
+
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------THeFooter
+-------------------------------------------------------------------------------------*/
+
+
+footer{
+    height: 10vh;
+    width: 100%;
+    background-color: var(--Color3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ footer p{
+    color: var(--BColor1);
+    text-align: center;
+    font-size: 0.9rem;
+   
+}
+
+ footer span{
+    color: var(--Color1);
+}
+
+
+
+/*-------------------------------------------------------------------------------------
+*-------------------------------Media Quria
+-------------------------------------------------------------------------------------*/
+
+
+@media screen and (max-width: 1225px) {
+
+    html{
+        font-size: 13px;
+    } 
+     
+ }
+
+@media screen and (max-width: 625px){
+
+    html{
+        font-size: 13px;
+    } 
+     
+ }
+ 
+ @media screen and (max-width: 520px){
+     
+     main {
+         height: 150vh;
+     }
+     main .FirstSection {
+         height: 30%;
+     }
+     main .SecondSection{
+         flex-wrap: wrap;
+         height: 70%;
+         
+     }
+     main .SecondSection div{
+         height: 35%;
+         width: 60%;
+ 
+     }
+     
+ }
+ 
+@media screen and (max-width: 500px) {
+    .TopSection h2{
+        font-size: 5rem;
+    }
+    .TopSection p{
+        top: -25px;
+    }
+}
+@media screen and (max-width: 1080px) and (min-width: 600px) {
+    .SecondSection .Shape1{
+        width: 75%;
+
+    }
+    .Services .CenterSection{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 880px) and (min-width: 200px) {
+    .SecondSection .RightSection{
+        display: none;
+
+    }
+    .Services .BottomSection{
+        top: 45px;
+        
+    }
+    .SecondSection .CenterSection{
+        height: 100%;
+        width: 100%;
+    }
+    .SecondSection .CenterSection h1{
+        font-size: 1.4rem;
+    }
+
+    .Services .CenterSection{
+        font-size: 15px;
+    }
+    .BottomSection{
+        top: 0px;
+    }
+    
+}
+@media screen and (max-width: 480px) and (min-width: 160px){
+    .Services .CenterSection{
+        font-size: 10px;
+    }
+    .SecondSection{
+        margin-bottom: 0px;
+    }
+    .ThirdSection{
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 470px) and (min-width: 150px){
+    .Services .BottomSection{
+        font-size: 9px;
+    }
+
+}
+
+@media screen and (max-width: 1225px){
+
+} 
+
+
+
+
+@media screen and (max-width: 820px) and (min-width: 670px) {
+    .ThirdSection{
+        height: 100vh;
+    }
+    .Container{
+        height: 50vw;
+    }
+}
+@media screen and (max-width: 670px) and (min-width: 200px) {
+    .BottomSection{
+        flex-wrap: wrap;
+    }
+    .Container{
+        height: 50%;
+        width: 40%;
+        margin-bottom: 2.5%;
+    }
+}
+
+@media screen and (min-width: 670px) {
+    .Container:nth-child(2) {
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.445);
+    }
+}
+
+@media screen and (max-width: 520px) and (min-width: 300px) {
+    .TopSection h2{
+        font-size: 7.5rem;
+    }
+    .TopSection p{
+        top: -30px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .TopSection{
+        height: 20%;
+    }
+    .BottomSection{
+        height: 80%;
+    }
+    .Container{
+        height: 45%;
+    }
+    .ThirdSection .BottomSection:nth-child(3){
+        position: relative;
+        top: 60px;
+    }
+    
+}
+
+
+@media screen and (max-width: 970px) and (min-width: 700px){
+    .ForthSection .LeftSection{
+        position: relative;
+        left: 8%
+    }
+}
+@media screen and (max-width: 830px) and (min-width: 200px){
+    .ForthSection .LeftSection{
+        display: none;
+    }
+    .ForthSection .RightSection{
+        width: 100%;
+    }
+    .ForthSection{
+        height: 70vh;
+    }
+    .FifthSection{
+        height: 50vh;
+    }
+    
+}
+
+
+@media screen and (max-width: 620px ) and (min-width: 200px) {
+    .FifthSection .BottomSection{
+        left: 0px
+    }
+    .FifthSection h6{
+        font-size: 1.5rem;
+        left: -20px;
+    }
+    .FifthSection h5{
+        font-size: 1.5rem;
+        left: 0px;
+    }
+}
+@media screen and (max-width: 850px) and (min-width: 620px) {
+    .FifthSection .BottomSection{
+        left: 0px
+    }
+}
+
+@media screen and (max-width: 840px) and (min-width:300px) {
+    main .FirstSection{
+        background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 03-20-28\ تصاميم.png);
+    }
+}
+
+
+
