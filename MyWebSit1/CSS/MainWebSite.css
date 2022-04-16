@@ -1,0 +1,854 @@
+:root{
+    --Fcolor: #f1f1f1;
+    --Scolor: red;
+    --Tcolor: black;
+    --FOcolor: #ebb6b6;
+    --FIcolor: #171a1c;
+}
+
+@font-face {
+    font-family: "SS";
+    src: url(../Font/SourceSerif4-Italic-VariableFont_opsz\,wght.ttf);
+}
+
+html{
+    font-size: 16px;
+    font-family: "SS";
+}
+
+
+
+*{
+margin: 0;
+padding: 0;
+}
+
+body{
+    background-color: var(--Tcolor);
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+
+/*----------------------------------------------
+*---------------------FirstSection
+------------------------------------------------*/
+
+
+.FirstSection{
+    height: 32rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/*----------------------------------------------
+*---------------------Nav Section/Header
+------------------------------------------------*/
+
+header{
+    position: relative;
+    height: 5rem;
+    width: 90%;
+    padding: 1rem 0px;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    
+}
+
+ a{
+    color: var(--Fcolor);
+    text-decoration: none;
+}
+
+.Logo{
+    margin: 5px 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.Logo h1 {
+    color: var(--Fcolor);
+    font-size: 2rem;
+    display: flex;
+    
+}
+
+.Logo .F{
+    color: var(--Fcolor);
+}
+
+.Logo .S{
+    color: var(--Scolor);
+
+}
+
+.Panl{
+    margin: 1rem 0.625rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.Panl  a{
+    font-size: 0.8rem;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.Menu{
+    display: none;
+    height: 30px;
+    width: 30px;
+
+}
+
+.Menu .span{
+    height: 3px;
+    width: 30px;
+    margin-top: 5px;
+    color: azure;
+    background-color: beige;
+    border-radius: 6px;
+}
+
+
+
+.Subscribe{
+    margin: 10px 0px;
+    height: 2.1875rem;
+    width: 6.5625rem;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 90px 90px 90px 90px / 75px 75px 75px 75px;
+    background-color: var(--Scolor);
+    display: flex;
+    justify-content: center;
+
+
+}
+.Subscribe a{
+   position: relative;
+   top: 0.3125rem;
+
+}
+
+
+
+
+/*----------------------------------------------
+*---------------------Section
+------------------------------------------------*/
+
+section{
+    position: relative;
+    height: 26.25rem;
+    width: 100%;
+    margin-top: 1.875rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+}
+
+
+/*----------------------------------------------
+*---------------------Photo/Right Section
+------------------------------------------------*/
+
+
+.photo img{
+    height: 25rem;
+    width: 22.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-content: flex-end;
+
+
+}
+
+.B-photo{
+    background-size: contain;
+    position: absolute;
+    height: 400px;
+    width: 360px;
+    z-index: 2;
+}
+
+
+
+
+/*----------------------------------------------
+*---------------------Short About/left Section
+------------------------------------------------*/
+
+
+.Short-about{
+    color: var(--Fcolor);
+    height: 88%;
+    position: relative;
+   
+    
+}
+
+
+.Short-about .Sc{
+    color: var(--Scolor);
+}
+.about1 p{
+    position: relative;
+    color: var(--FOcolor);
+}
+
+.about1{
+    position: relative;
+    color: var(--FOcolor);
+    font-size: 1.2rem;
+
+}
+
+
+.about2{
+    position: relative;
+    display: flex;
+    font-size: 3rem;
+    font-weight: bold;
+    
+}
+
+.about3{
+    position: relative;
+    display: flex;
+    width: 18.75rem;
+    font-size: 1.5rem;
+    
+}
+
+.about4{
+    height: 2.1875rem;
+    width: 6.5625rem;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 5rem 5rem 5rem 5rem  / 4.6875rem 4.6875rem 4.6875rem 4.6875rem;
+    background-color: var(--Scolor);
+}
+
+.about4 a{
+    position: relative;
+    left: 0.875rem;
+    top: 0.375rem;
+    font-size: 0.8rem;
+}
+
+.Social-Logo{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 12.5rem;
+    height: 2rem;
+    top: 0.9375rem;
+    align-items: center;
+   
+}
+
+.facebook {
+    position: static;
+    background-image: url(../Icons/Facebook.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+}
+
+.Instgram{
+    position: static;
+    background-image: url(../Icons/Instgram.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.Twitter{
+    position: static;
+    background-image: url(../Icons/Twitter.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.Whatsapp{
+    position: static;
+    background-image: url(../Icons/whatsapp2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.Youtube{
+    position: static;
+    background-image: url(../Icons/Youtube.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+
+
+
+
+/*----------------------------------------------------
+*---------------------AboutMesecction/Second Section
+----------------------------------------------------*/
+
+.AboutMeSection{
+   height: 350px;
+   width: 100%;
+   background-color: var(--FIcolor);
+   position: relative;
+   display: flex;
+   
+}
+
+.AboutMeSection .Left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.AboutMeSection img{
+height: 18.75rem;
+width: 21.875rem;
+background-size: contain;
+align-self: center;
+
+
+
+}
+
+.AboutMeSection .Right{
+    position: relative;
+    height: 350px;
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right1{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    font-size: 3rem;
+    
+}
+
+.Fc{
+    color: var(--Fcolor)
+}
+.Sc{
+    
+    color: var(--Scolor);
+}
+.Tc{
+    color: var(--FOcolor)
+}
+
+.right2{
+    display: flex;
+position: relative;
+width: 100%;
+height: 40px;
+font-size: 1.5rem;
+}
+.right3{
+    display: flex;
+    position: relative;
+    width: 85%;
+    height: 160px;
+    font-size: 1rem;
+}
+
+
+
+/*--------------------------------------------------
+*--------------------OurServisSection/Third Section
+----------------------------------------------------*/
+
+.OurServisSection{
+    height: 26.875rem;
+    width: 100%;
+    background-color: var(--Tcolor);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.OurServisSection .Title{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    font-size: 4rem;
+    position: relative;
+    font-weight: bold;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 10px;
+    
+
+}
+
+
+.OurServisSection .Table{
+    width: 98vw;
+    height: 85%;
+    padding: 0 50px;
+    height: 300px;
+    margin: 30px 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.OurServisSection .TableAll{
+height: 90%;
+width: 20%;
+background-color: var(--FIcolor);
+border-radius: 15px;
+position: relative;
+padding: 24px 16px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-items: center;
+
+
+
+}
+
+
+
+.Table h2{
+  color: var(--Fcolor);
+  margin: 0.625rem 0px;
+  font-size: 1.2rem;
+  align-self: center;
+  font-weight: bold;
+
+  
+}
+            
+.Table p{
+  color: var(--FOcolor);
+  font-size: 0.7rem;
+  text-align: center;
+
+}
+
+.Table i{
+    font-size: 3rem;
+    color: var(--Scolor);
+    align-self: center;
+}
+
+
+
+
+/*----------------------------------------------
+*---------------------MySkills/Forth Section
+------------------------------------------------*/
+
+.MySkills{
+    height: 21.875rem;
+    width: 100%;
+    background-color: var(--FIcolor);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.MySkills .Left{
+    height: 21.875rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5rem; 
+    
+   }
+
+.MySkills .Title{
+    width: 100%;
+    height: 19.35%;
+    display: flex;
+    font-size: 1.5rem;
+    margin: 0.625rem 1.875rem;
+    font-weight: bold;
+    justify-content: left;
+}
+
+.MySkills h1{
+    color: var(--Fcolor);
+}
+ .MySkills span{
+     color: var(--Scolor)
+ }
+
+
+/*------------------------------------
+*---------------------To Icons
+--------------------------------------*/
+
+.Icons{
+    flex-grow: 1;
+    height: 80%;
+    width: 100%;
+    margin: 0.625rem 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Icons .skill{
+    background-color: whitesmoke;
+    width: 4.0625rem;
+    height: 4.0625rem;
+    justify-self: center;
+    align-self: center;
+    border-radius: 50%;
+    display: flex;
+    margin-right: 10px;
+    box-shadow: 0px 0px 7px #d7d7d7;
+}
+
+.skill img{
+    position: relative;
+    align-self: center;
+    left: 0.375rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.3125rem;
+    
+}
+
+.Right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Right .Image img{
+    height: 18.75rem;
+    width: 18.75rem;
+    background-size: contain;
+
+
+
+
+}
+
+
+
+/*----------------------------------------------
+*---------------------Footer/fiveth/last Section
+------------------------------------------------*/
+
+footer{
+    width: 100%;
+    height: 10.625rem;
+    background-color: var(--Tcolor);
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;  
+    font-size: 0.8rem;   
+}    
+
+footer .Text{
+    margin-top: 0.3125rem;
+
+}
+
+footer span{
+ color: var(--Scolor)
+}
+
+footer h6{
+    position: relative;
+    top: 1.25rem;
+    margin-top: 0.625rem;
+    color: var(--Scolor)
+}
+
+
+
+
+/*----------------------------------------------
+*---------------------Media Queries
+------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------
+*---------------------For Phone 
+------------------------------------------------*/
+@media screen and (max-width:830px) and (min-width: 765.75px){
+    html{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 778px){
+    html{
+        font-size: 12px;
+    }
+    
+    .skill img{
+        left: 4px;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .Table h2{
+        
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 685px){
+    .Table h2{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 630px){
+    .Table h2{
+        font-size: 0.6rem;
+    }
+
+    .Table i{
+     font-size: 2.5rem;
+    }
+}    
+
+@media screen and (max-width: 615px){
+   .Table p{
+       font-size: 0.6rem;
+   }
+}
+
+
+@media screen and (max-width: 565px){
+    html{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 605px){
+    .Panl a{
+        font-size: 0.7rem;
+    }
+}
+
+
+
+@media screen and (max-width: 500px){
+    
+    html{
+        font-size: 15px;
+    }
+    
+    .FirstSection{
+        height: 90vh;
+    }
+
+    header{
+        width: 100vw;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        margin: 0px;
+        padding-left: 2%;
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        z-index: 2;
+        background-color: rgb(8, 8, 8);
+    }
+
+
+    
+
+    .Logo h1 {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+    }
+        
+  
+
+    .Panl{
+        display: none;
+        position: fixed;
+        background-color: var(--FIcolor);
+        height: 100vh;
+        width: 70vw;
+        left: 30%;
+        top: -15px;
+        z-index: 3;
+        flex-direction: column;
+        margin: 0px;
+    }
+
+
+
+    .Panl.is-active{
+        display: block;
+    }
+
+    .Panl a{
+    font-size: 2.5rem;
+    margin-top: 25px;
+    justify-content: center;
+
+    }
+
+    .Panl a.is-active{
+    display: none;
+    }
+
+    .Menu{
+    display: block;
+    position: fixed;
+    left: 85%;  
+    top: 4.5%; 
+    z-index: 3;
+    justify-self: flex-end;
+    }
+    
+    .Menu.is-active div:nth-child(1){
+     transform: translateY(7px) rotate(45deg);
+    }
+    .Menu.is-active div:nth-child(2){
+       transform:  rotate(-45deg) translateY(-1px);
+    }
+    .Menu.is-active div:nth-child(3){
+        opacity: 0;
+    }
+    .Menu.is-active div{
+        background-color: var(--Scolor);
+    }
+
+    .Subscribe{
+        display: none;
+    }
+
+    section .photo{
+        display: none;
+    }
+
+    .Short-about{
+        width: 85%;
+
+    }
+    .about2{
+        flex-direction: column;
+    }
+
+    .AboutMeSection{
+        height: 60vh;
+        padding-left: 3%;
+   
+    }
+    
+    .AboutMeSection .Left{
+        display: none;
+    }
+    
+    .AboutMeSection .Right{
+        width: 100%;
+        
+    }
+
+    .OurServisSection{
+        height: 80vh;
+    }
+
+    .OurServisSection .Title{
+        height: 10%;
+    }
+
+    .OurServisSection .Table{
+        height: 90%;
+        margin: 5px 0px;
+        flex-wrap: wrap;
+        padding: 0px;
+        flex-wrap: wrap;
+    }
+    .OurServisSection .TableAll{
+        height: 45%;
+        width: 45%;
+        margin-top: 3%;
+
+    }
+
+
+    .MySkills{
+        height: 60vh;
+
+    }
+
+
+    .MySkills .Right{
+        display: none;
+    }
+    
+    .MySkills .Left{
+        height: 100%;
+        width: 100%;
+        margin-left: 5%;
+    }
+    .MySkills .Left .Title{
+        height: 15%;
+        justify-content: center;
+        margin-left: 0px;
+        
+    }
+
+
+    footer{
+    width: 98%;
+    }
+
+
+}
