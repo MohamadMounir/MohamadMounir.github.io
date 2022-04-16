@@ -332,32 +332,32 @@ margin-bottom: 28px;
 }
 
  .Container .Image{
-    height: 350px;
+    height: 78%;
     width: 100%;
     background-color: var(--Color2);
 }
 
  .BottomSection .Container:nth-child(1)>.Image{
     background-image: url(../Image&Icon&everything/SaraAlamer/IMG_20220414_033304.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: round;
 
 
   }
  .BottomSection .Container:nth-child(2)>.Image{
     background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 03-21-04\ تصاميم.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: round;
   }
  .BottomSection .Container:nth-child(3)>.Image{
     background-image: url(../Image&Icon&everything/SaraAlamer/Screenshot\ 2022-04-14\ at\ 03-23-28\ sara\ omar\ on\ Behance.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: round;
   }
 
 
  .Container .aciklama{
-    height: 100px;
+    height: 22%;
     width: 100%;
     padding: 3%;
     box-sizing: border-box;
@@ -579,8 +579,8 @@ footer{
          
      }
      main .SecondSection div{
-         height: 35%;
-         width: 60%;
+        height: 30%;
+        width: 85%;
  
      }
      
@@ -638,6 +638,7 @@ footer{
     .ThirdSection{
         margin-top: 0px;
     }
+    
 }
 
 @media screen and (max-width: 470px) and (min-width: 150px){
@@ -671,6 +672,15 @@ footer{
         width: 40%;
         margin-bottom: 2.5%;
     }
+    .Container .aciklama{
+        height: 42%;
+    }
+    .ThirdSection .TopSection{
+        height: 20%;
+    }
+    .ThirdSection .BottomSection{
+        height: 80%;
+    }
 }
 
 @media screen and (min-width: 670px) {
@@ -701,7 +711,59 @@ footer{
         position: relative;
         top: 60px;
     }
+    .TopSection h2{
+        font-size: 6rem;
+    }
+    .SecondSection{
+        height: 120vh;
+    }
+    .SecondSection .TopSection{
+        height: 15%;
+    }
+    .SecondSection .BottomSection{
+        height: 85%;
+        top: 25px;
+    }
+    .SecondSection .CenterSection{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;                          
+    }
+    .SecondSection .CenterSection .P{
+        height: 35%;
+        width: 100%;
+        gap: 9px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
     
+    .SecondSection .CenterSection .P .Icon{
+        width: 50px;
+    }
+
+    .Services .BottomSection{
+        top: 25px;
+    }
+    .SecondSection .CenterSection .P .Text{
+        margin-left: 0px;
+    }
+
+    .ThirdSection {
+        height: 140vh;
+    }
+    .ThirdSection .TopSection{
+        height: 10%;
+    }
+    .ThirdSection .BottomSection{
+        height: 90%;
+    }
+    .Container{
+        height: 30%;
+        width: 95%;
+        margin-bottom: 5%;
+    }
 }
 
 
@@ -753,5 +815,10 @@ footer{
     }
 }
 
+@media screen and (max-width: 350px) {
+    .TopSection h2{
+        font-size: 5.5rem;
+    }
+}
 
 
