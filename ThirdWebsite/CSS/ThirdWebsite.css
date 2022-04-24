@@ -864,6 +864,13 @@ footer a{
     justify-content: space-around;
 }
 
+footer i{
+    font-size: 2.3rem;
+    margin: 0 25px;
+    color: var(--Secondry-color);
+
+}
+
 @media screen and (max-width: 780px) {
     .Links{
         flex-direction: column;
