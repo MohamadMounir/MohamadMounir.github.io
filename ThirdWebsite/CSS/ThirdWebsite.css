@@ -1,0 +1,885 @@
+:root{
+    --font_primary: 'Lato', sans-serif;
+    --font_secondary: 'Josefin Sans', sans-serif;
+    --font_third:  'Whisper', cursive;  
+    --Primary-color:  #00bdaa;  
+    --Secondry-color:  white;
+    --Third-color:   #161616;
+    --Padding1:       15px;
+}
+
+/*--------------------------------------------------
+*-------------------- < Direct&Wide Rules/Commands
+----------------------------------------------------*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: var(--font_secondary);
+}
+
+
+
+.Contianer{
+    margin: auto;
+    padding-left: var(--Padding1);
+    padding-right: var(--Padding1);
+     width: 92%;
+}
+
+@media screen and (min-width: 945px) {
+    .Contianer{
+        width: 870px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .Contianer{
+        width: 950px;
+    } 
+}
+
+
+hr{
+    color: rgba(0, 0, 0, 0.450);
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    font-weight: 700;
+    padding-top: 25px;
+    margin-bottom: 15px;
+}
+p{
+    font-family: var(--font_primary);
+    font-size: 1rem;
+    margin-top: 20px;  
+    margin-bottom: 10px; 
+    color: #b9b9b8;
+    line-height: 2;
+     
+}
+
+
+/*--------------------------------------------------
+*-------------------- End for World Command />
+----------------------------------------------------*/
+
+
+/*--------------------------------------------------
+*-------------------- <  NAV Section
+----------------------------------------------------*/
+
+/*--------Bar Elements-------------//Start//---------*/
+
+nav{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    position: fixed;
+    border: solid 1px transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.450);
+    background-color: var(--Secondry-color);
+    z-index: 100;
+}
+
+.Fake_nav{ 
+    height: 80px;
+    width: 100%;
+    
+}
+
+nav .Contianer{
+        display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+}
+
+
+nav .Contianer ul{ /**/
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 33px;
+    position: relative;
+    top: -5px;
+}
+
+.Menu{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+.Menu span{
+    width: 20px;
+    height: 2px;
+    background-color: var(--Third-color);
+}
+
+/*--------Bar Elements-------------//End//---------*/
+
+/*--------Bar Addition feature-----//Start//-------*/
+
+
+
+nav .Contianer .Nav li:nth-child(1) {
+    color: var(--Primary-color);
+}
+
+nav .Contianer .Nav li:nth-child(4){
+    position: relative;
+}
+
+nav .Contianer .Nav li:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    border: solid 1px ;
+    border-color: transparent var(--Third-color) var(--Third-color) transparent;
+    right: -15px;
+    top: 3px;
+    rotate: 45deg;
+}
+
+nav .Contianer .Nav li:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    border: solid 1px ;
+    border-color: transparent var(--Third-color) var(--Third-color) transparent;
+    right: -15px;
+    top: 3px;
+    rotate: 45deg;
+}
+
+nav .Logo h6::after{
+    content: "";
+    position: absolute;
+    border: var(--Primary-color)  solid 2px;
+    border-bottom-color: transparent;
+    height: 11px;
+    width: 55px;
+    right: 120px;
+    top: -18px;
+
+    
+}
+nav .Logo h6::before{
+    content: "";
+    position: absolute;
+    border: var(--Primary-color)  solid 2px;
+    border-top-color: transparent;
+    height: 11px;
+    width: 55px;
+    right: 120px;
+    top: 22px;
+
+    
+}
+
+
+nav .Logo h6 span{
+    color: var(--Secondry-color);
+    position: relative;
+    left: 3px;
+
+    
+}
+nav .Logo h6 span::before{
+    content: "";
+    position: absolute;
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    top: -12px;
+    right: -6px;
+    background-color: var(--Primary-color);
+    z-index: -1;
+}
+
+
+/*--------Bar Addition feature-----//end//-------*/
+
+/*--------About Fonts&Icons------//Start//-------*/
+
+nav .Logo h6 span{
+    font-family: var(--font_third);
+    font-weight: bold;
+}
+
+nav .Logo h6 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+
+}
+
+
+nav h5{
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 550;
+}
+
+.Social i{
+    color: var(--Third-color);
+    font-size: 1.7rem;
+    margin: 0 7px;
+    position: relative;
+}
+
+
+/*--------About Fonts&Icons------//End//-------*/
+
+/*--------Media Queries--------//Start//-------*/
+
+
+  /*---DON'T DELETED!!!---*/
+
+@media screen and (max-width: 945px) {
+
+
+/*--------Un/Display Elements------//Start//-------*/
+
+    nav .Nav{
+        display: none;
+    }
+    nav .Social{
+        display: none;
+    }
+
+    .Menu{
+        display: flex;
+    }
+
+/*--------Un/Display Elements------//End//-------*/
+
+/*--------Edit Elements------//Start//-------*/
+
+    nav{
+    height: 60px;
+    } 
+    nav .Contianer{
+    align-items: flex-start;
+    }
+    .Fake_nav{  
+        height: 60px;
+    }
+/*--------Edit Elements------//End//---------*/
+
+/*--------Fonts&RE-size------//Start//-------*/
+
+    nav .Logo h6 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        position: relative;
+    
+    }
+    
+    
+    nav .Logo h6::after{
+        border: var(--Primary-color)  solid 1px;
+        width: 40px;
+        right: 80px;
+        top: -17px;
+        border-bottom-color: transparent;
+
+    }
+    
+    nav .Logo h6::before{
+        border: var(--Primary-color)  solid 1px;
+        border-top-color: transparent;
+        width: 40px;
+        right: 80px;
+        top: 14px;
+        
+    }
+    
+
+    nav .Logo h6 span{
+        font-size: 0.8rem;   
+    }
+
+    nav .Logo h6 span::before{
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        top: -12px;
+        right: -6px;
+    }
+    
+/*--------Fonts&RE-size------//End//-------*/
+
+
+}
+
+/*--------Media Queries--------//End//---------*/
+
+/*--------------------------------------------------
+*-------------------- <  NAV Section    //End//
+----------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Second section  //Start//
+----------------------------------------------------*/
+
+
+/*--------TheLandingTitle--------//Start//---------*/
+
+.FristSection h3{
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    text-align: center;
+    padding:  4.2% 0;
+    line-height: 1.2; 
+}
+
+@media screen and (max-width: 600px) {
+    .FristSection h3{
+        font-size: 2rem;
+        padding: 3.6% 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .FristSection h3{
+        font-size: 2.3rem;
+    }
+}
+
+/*--------TheLandingTitle--------//End//---------*/
+
+
+/*--------TheLandingImage + MQ--------//Start//---------*/
+
+.SecondSection {
+    background-image: url(../Image&Font&Others/photo-001.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 578px;
+    background-position: center;
+}
+
+@media screen and (max-width: 1000px){
+    .SecondSection{
+        height: 521px;
+    }
+}
+
+@media screen  and (max-width:750px) {
+    .SecondSection{ 
+        height: 390px;
+    }
+}
+
+
+.SecondSection .Contianer {
+    color: var(--Secondry-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+    position: relative;
+    top: -20px;
+    font-size: 1.5rem;
+}
+
+
+.SecondSection .Contianer hr{
+    color: var(--Secondry-color);
+    width: 110px;
+    position: relative;
+    left: 3px;
+}
+
+.SecondSection .Contianer h4{
+    font-weight: 400;
+    margin-bottom: 15px;   
+
+
+}
+
+.SecondSection .Contianer a{
+    color: var(--Third-color);
+    text-decoration-line: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: white;
+    height: 48px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+@media screen and (max-width: 983px) {
+    .SecondSection .Contianer a::before{
+
+        left: 38.5%;
+
+    }
+}
+
+/*--------TheLandingTitle + MQ--------//End//---------*/
+
+
+
+/*--------------------------------------------------
+*-------------------- < The second section   //End//
+----------------------------------------------------*/
+
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Third section   //Start//
+----------------------------------------------------*/
+
+/*--------ImportantElement--------//Start//---------*/
+
+
+.ThirdSection{
+    background-color: var(--Third-color);
+    color: var(--Secondry-color);
+    Padding-top: 80px;
+}
+
+.GridSection{
+    display: grid;
+    grid-template-columns: 652px 226px;
+}
+.RightSection{
+    margin-left: 116px;
+}
+
+.ThirdSection img{
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+}
+
+/*--------MediaQuerieFirst--------//Start//---------*/
+
+
+@media screen and (max-width: 1000px) {
+
+    .GridSection{
+        grid-template-columns: 100%;
+    }
+    .RightSection{
+        margin-left: 0;
+    }
+
+    .ThirdSection img{
+        width: 78%;
+        display: block;
+        margin: 25px auto 0;
+
+    }
+
+
+}
+
+/*--------MediaQuerie--------//End//---------*/
+
+
+/*--------FontFeature--------//Start//---------*/
+
+
+
+.Detail{
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-bottom: 17px
+}
+.ThirdSection .RightSection a{
+    text-decoration: none;
+    color: var(--Primary-color);
+    margin-bottom: 17px;
+    font-weight: 600;
+
+}
+
+a+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+/*--------FontFeature--------//End//---------*/
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Third section   //End//
+----------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Forth section   //Start//
+----------------------------------------------------*/
+
+/*--------ImportantElement--------//Start//---------*/
+
+
+.ForthSection{
+    background-color: var(--Third-color);
+    color: var(--Secondry-color);
+    padding-top: 50px;
+}
+
+.ImageArea{
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 30px;
+    grid-auto-flow: row;
+}
+
+.ImageArea .small-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.ImageArea img{
+    height: 100%;
+    width: 100%;
+}
+
+
+.ImageArea .Small{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.ImageArea .Huge{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+
+/*------ImportantElement------//End//------*/
+
+
+ /*--------MediaQueries for ImportantElement--------//Start//---------*/
+
+ 
+
+@media screen and (max-width: 500px) {
+    .ImageArea{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+ /*--------MediaQueries for ImportantElement--------//End//---------*/
+
+
+/*--------------------------------------------------
+*-------------------- < The Forth section   //End//
+----------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Fifth section   //Start//
+----------------------------------------------------*/
+
+/*--------ImportantElement--------//Start//---------*/
+
+
+.FifthSection{
+    background-color: var(--Third-color);
+    color: var(--Secondry-color);
+    width: 100%;
+
+
+}
+
+.ImportantSection{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+.ImportantSection .Image > img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.ImportantSection .Detail{
+    margin-left: 45px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.SpecialHR{
+    margin: 35px 0;
+}
+
+.InformationSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 57px;
+}
+.InformationSection .Information:nth-child(2),
+ .InformationSection .Information:nth-child(3){
+     position: relative;
+     right: 25px;
+ }
+
+ .Detail p+hr{
+     margin: 25px 0;
+ }
+
+/*--------ImportantElement--------//End//---------*/
+
+/*--------MediaQuerie for ImportantElement--------//Start//---------*/
+
+
+ @media screen and (max-width: 1000px) {
+
+    .InformationSection{
+        gap: 120px;
+    }
+    
+    .ImportantSection{
+        grid-template-columns: 1fr;
+    }
+
+    .ImportantSection .Image > img{
+        display: block;
+        margin: auto;
+        width: 80%;
+    }
+    .ImportantSection .Detail{
+        margin-top: 45px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .InformationSection{
+        gap: 50px;
+    }
+}
+
+/*--------MediaQuerie for ImportantElement--------//End//---------*/
+
+
+/*--------FontsFeature--------//Start//---------*/
+
+
+ .FifthSection h3{
+    
+    font-weight: 600;
+     
+ }
+
+ .FifthSection h4{
+
+    color: #b9b9b8;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+ }
+
+ .ImportantSection a{
+    color: var(--Primary-color);
+    height: 45px;
+    width: 180px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: solid var(--Primary-color) 2px;
+    text-decoration: none;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ /*--------FontsFeature--------//End//---------*/
+
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Fifth section   //End//
+----------------------------------------------------*/
+
+
+/*--------------------------------------------------
+*-------------------- < The Sixth section   //Start//
+----------------------------------------------------*/
+.SixthSection{
+    background-color: var(--Third-color);
+    color: var(--Secondry-color);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    position: relative;
+}
+
+.SixthSection::before{
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 5px  solid;
+    rotate: 45deg;
+    top: 250px;
+    left: 25px;
+    border-color: transparent transparent var(--Secondry-color) var(--Secondry-color);
+
+}
+.SixthSection::after{
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 5px  solid;
+    rotate: 45deg;
+    top: 250px;
+    right: 25px;
+    border-color:  var(--Secondry-color) var(--Secondry-color) transparent transparent;
+
+}
+
+
+
+
+
+.Groupimg > img{
+    width: 100%;
+    height: 100%;
+}
+
+.FirstGroup, .SecondGroup{
+    display: grid;
+    grid-template-columns: repeat(4,23.5%);
+    gap: 20px;
+    justify-content: center;
+}
+.SecondGroup{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .FirstGroup, .SecondGroup{
+        grid-template-columns: repeat(2,47%);
+    }
+
+    .SixthSection::before{
+        left: 1.4%;
+    }
+    .SixthSection::before, .SixthSection::after{
+        top: 57%;
+        right: 1.4%;
+    }
+
+
+}
+
+
+
+/* .Circle{
+    height: 15px;
+    width: 15px;
+    border: solid var(--Secondry-color) 2px;
+    border-radius: 50%;
+} */
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Sixth section   //End//
+----------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+*-------------------- < The Footer section   //Start//
+----------------------------------------------------*/
+footer{
+    background-color: var(--Third-color);
+    color: var(--Secondry-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 80px;
+
+}
+
+footer h3{
+    margin: 25px 0;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    
+}
+
+footer hr{
+    margin: 30px 0;
+}
+
+footer a{
+    color: var(--Primary-color);
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.Links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 780px) {
+    .Links{
+        flex-direction: column;
+        gap: 10px
+    }
+}
+
+@media screen and (max-width: 390px) {
+    footer a{
+        font-size: 2rem;
+    }
+    footer h3{
+        font-size: 1.2rem;
+    }
+}
+
+/*--------------------------------------------------
+*-------------------- < The Footer section   //End//
+----------------------------------------------------*/
