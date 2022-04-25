@@ -54,6 +54,20 @@ h1{
     padding-top: 25px;
     margin-bottom: 15px;
 }
+
+@media screen and (max-width: 650px) {
+    
+    h1{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 450px) {
+    h1{
+        font-size: 1.3rem;
+    }
+}
+
+
 p{
     font-family: var(--font_primary);
     font-size: 1rem;
@@ -63,6 +77,50 @@ p{
     line-height: 2;
      
 }
+
+
+/*--------Animation-------------//Start//---------*/
+
+.Icons-ChangeColor a , .Icons-ChangeColor i{
+
+    transition: all 0.4s 0.1s;
+
+}
+.Icons-ChangeColor:hover{
+    color: var(--Primary-color);
+}
+
+.Icons-ChangeColor i:hover{
+    color: var(--Primary-color);
+}
+
+
+
+.Links-Decoration{
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.Links-Decoration:hover{
+    text-decoration: underline;
+    
+}
+
+
+.Opacity{
+    transition: all 0.3s;
+}
+.Opacity:hover{
+    opacity: 80%;
+}
+
+
+
+
+
+
+
+
+/*--------Animation-------------//End//---------*/
 
 
 /*--------------------------------------------------
@@ -117,6 +175,7 @@ nav .Contianer ul{ /**/
     flex-direction: column;
     gap: 5px;
     position: relative;
+    cursor: pointer;
 }
 .Menu span{
     width: 20px;
@@ -130,7 +189,7 @@ nav .Contianer ul{ /**/
 
 
 
-nav .Contianer .Nav li:nth-child(1) {
+nav .Contianer .Nav li:nth-child(1) a {
     color: var(--Primary-color);
 }
 
@@ -160,6 +219,10 @@ nav .Contianer .Nav li:nth-child(5)::before {
     right: -15px;
     top: 3px;
     rotate: 45deg;
+}
+
+nav .Logo h6{
+    cursor: pointer;
 }
 
 nav .Logo h6::after{
@@ -239,6 +302,10 @@ nav h5{
     position: relative;
 }
 
+nav a{
+    color: var(--Third-color);
+    text-decoration: none;
+}
 
 /*--------About Fonts&Icons------//End//-------*/
 
@@ -512,7 +579,6 @@ nav h5{
     margin-bottom: 17px
 }
 .ThirdSection .RightSection a{
-    text-decoration: none;
     color: var(--Primary-color);
     margin-bottom: 17px;
     font-weight: 600;
@@ -567,6 +633,7 @@ a+hr{
 .ImageArea img{
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 
 
@@ -744,33 +811,48 @@ a+hr{
     position: relative;
 }
 
-.SixthSection::before{
-    content: "";
-    position: absolute;
+.SixthSection-FlexDisplay{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.Triangle {
     height: 20px;
     width: 20px;
     border: 5px  solid;
     rotate: 45deg;
-    top: 250px;
-    left: 25px;
     border-color: transparent transparent var(--Secondry-color) var(--Secondry-color);
-
 }
-.SixthSection::after{
-    content: "";
+
+.Left{
+    cursor: pointer;
     position: absolute;
-    height: 20px;
-    width: 20px;
-    border: 5px  solid;
-    rotate: 45deg;
-    top: 250px;
-    right: 25px;
-    border-color:  var(--Secondry-color) var(--Secondry-color) transparent transparent;
-
+    height: 60%;
+    width: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    left: 0;
+  }
+.Right{
+    cursor: pointer;
+    position: absolute;
+    height: 60%;
+    width: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    right: 0;
 }
 
-
-
+.Right .Triangle{
+    border-color:  var(--Secondry-color) var(--Secondry-color) transparent transparent;
+    
+}
 
 
 .Groupimg > img{
@@ -780,7 +862,7 @@ a+hr{
 
 .FirstGroup, .SecondGroup{
     display: grid;
-    grid-template-columns: repeat(4,23.5%);
+    grid-template-columns: repeat(4,23%);
     gap: 20px;
     justify-content: center;
 }
@@ -788,9 +870,9 @@ a+hr{
     display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1020px) {
     .FirstGroup, .SecondGroup{
-        grid-template-columns: repeat(2,47%);
+        grid-template-columns: repeat(2,44%);
     }
 
     .SixthSection::before{
@@ -800,19 +882,52 @@ a+hr{
         top: 57%;
         right: 1.4%;
     }
+    
+    .Right,.Left{
+        height: 80%;
+    }
 
+}
 
+@media screen and (max-width: 650px) {
+    
+    .FirstGroup,.SecondGroup{
+        grid-template-columns: repeat(2, 40%);
+    }
+
+}
+@media screen and (max-width: 450px) {
+
+    .Left,.Right{
+        height: 70%;
+        width: 40px;
+    }
+
+    
 }
 
 
 
-/* .Circle{
-    height: 15px;
-    width: 15px;
+.Circle{
+    position: absolute;
+    height: 9px;
+    width: 9px;
     border: solid var(--Secondry-color) 2px;
     border-radius: 50%;
-} */
+    left: 50.5%;
+    top: 105%;
+    cursor: pointer;
+    opacity: 60%;
+    transition: all 0.2s ease-out;
+}
 
+.F-1{
+    left: 49%;
+}
+
+.Circle:hover{
+    opacity: 100%;
+}
 
 
 
@@ -851,9 +966,8 @@ footer hr{
     margin: 30px 0;
 }
 
-footer a{
+footer .Links a{
     color: var(--Primary-color);
-    text-decoration: none;
     font-size: 2.2rem;
     font-weight: 600;
 }
