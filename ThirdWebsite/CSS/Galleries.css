@@ -1,0 +1,105 @@
+
+
+
+
+nav .Contianer .Nav li:nth-child(2) a {
+    color: var(--Primary-color);
+}
+
+.GalleriesSection{
+    background-color: var(--Third-color);
+    color: var(--Secondry-color);
+    padding-top: 70px;
+}
+.GalleriesSection .Contianer{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, 165px);
+    gap: 35px;
+
+    
+}
+
+@media screen and (max-width: 750px) {
+    .GalleriesSection{
+        padding-top: 40px;
+    }
+    .GalleriesSection .Contianer{
+        grid-template-rows: repeat(6, 110px);
+    }
+
+}
+
+.FristSection h4{
+    text-align: center;
+    margin: 2% 0 5%;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.Image-Galleries{
+    position: relative;
+}
+
+.Image-Galleries img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.2s;
+
+}
+.Image-Galleries img:hover{
+    transform: scale(1.05);
+}
+
+
+
+
+.Image-Galleries h4{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.4rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.Image-Galleries h4:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 600;
+}
+
+.GalleriesSection .Image-Galleries:nth-child(1),.GalleriesSection .Image-Galleries:nth-child(6){
+
+    grid-column: span 4;
+    grid-row: span 1;
+}
+.GalleriesSection .Image-Galleries:nth-child(2),.GalleriesSection .Image-Galleries:nth-child(5){
+
+    grid-column: span 6;
+    grid-row: span 1;
+}
+.GalleriesSection .Image-Galleries:nth-child(3),.GalleriesSection .Image-Galleries:nth-child(4){
+
+    grid-column: span 5;
+    grid-row: span 1;
+}
+
+@media screen and (max-width: 750px) {
+    .GalleriesSection .Image-Galleries:nth-child(1),.GalleriesSection .Image-Galleries:nth-child(6){
+
+        grid-column: span 10;
+    }
+    .GalleriesSection .Image-Galleries:nth-child(2),.GalleriesSection .Image-Galleries:nth-child(5){
+    
+        grid-column: span 10;
+    }
+    .GalleriesSection .Image-Galleries:nth-child(3),.GalleriesSection .Image-Galleries:nth-child(4){
+    
+        grid-column: span 10;
+    }
+}

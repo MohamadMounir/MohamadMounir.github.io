@@ -1,0 +1,99 @@
+
+
+.ContactSection{
+    background-color: var(--Third-color);
+    color: var(--Secondry-color);
+
+}
+.ContactSection .Contianer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 60px;
+}
+.TextTitle{
+    width: fit-content;
+}
+
+.ContactArea{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.ContactSection h5{
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.ContactArea a {
+    margin-bottom: 7px;
+}
+.ContactSection h2{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.GridContianer{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px 130px;
+    column-gap: 30px;
+    row-gap: 15px;
+    margin: 10px 0;
+}
+.SpanHalf{
+    grid-column: span 4;
+}
+.SpanFull{
+    grid-column: span 8;
+}
+
+textarea{
+    resize: none;
+    white-space: nowrap;
+    font-family: var(--font_secondary);
+    padding: 13px 7px;
+
+    
+}
+textarea:focus{
+    outline: none;
+    border: 2px var(--Primary-color) solid;
+
+}
+
+button{
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    color: var(--Primary-color);
+    background-color: transparent;
+    border: 2px solid var(--Primary-color);
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--font_primary);
+}
+
+@media screen and (max-width: 1000px) {
+    .ContactSection .Contianer{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .GridContianer{
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+    }
+    .SpanHalf{
+        grid-column: span 1;
+    }
+    .SpanFull{
+        grid-column: span 2;
+    }
+}
