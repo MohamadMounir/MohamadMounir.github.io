@@ -267,6 +267,7 @@ button a{
 nav{
     display: none;
     z-index: 5;
+    border-bottom: solid var(--SecondrayColor) 3px;
 }
 nav ul{
     width: 100%;
@@ -317,6 +318,7 @@ footer{
     width: 100%;
     background-color: white;
     bottom: 0;
+    border-top: solid var(--SecondrayColor) 2px;
 
     text-align: center;
     font-size: 3rem;
