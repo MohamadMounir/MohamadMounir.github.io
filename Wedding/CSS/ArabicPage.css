@@ -17,8 +17,8 @@ h3{
     row-gap: 0px;
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     .Prayer1{
         transform: translate(-1%,88%);
     }
-}
+} */

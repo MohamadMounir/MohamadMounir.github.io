@@ -395,9 +395,14 @@ footer{
     }
 
     .Prayer1 {
+        display: none;
+    }
+    .Prayer2{
+        position: absolute;
+        display: block;
         width: 400px;
-        transform: translate(-1%,80%);
-        bottom: 0;
+        height: 100px;
+        bottom: -30%;
     }
 
     .TopPhoto{
@@ -460,6 +465,23 @@ footer{
         bottom: 0;
     } */
 
+}
+
+@media screen and (max-width: 380px){
+    h1{
+        font-size: 2.4rem;
+    }
+    h2{
+        font-size: 1.9rem;
+    }
+    h3{
+        font-size: 1.7rem;
+
+    }
+    a{
+        font-size: 2rem;
+        margin-top: 15px;
+    }
 }
 
 @media screen and (max-height: 1000px) and (min-height: 600px) {
