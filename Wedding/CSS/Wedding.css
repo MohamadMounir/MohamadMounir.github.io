@@ -400,9 +400,9 @@ footer{
     .Prayer2{
         position: absolute;
         display: block;
-        width: 400px;
-        height: 100px;
-        bottom: -35%;
+        width: 95%;
+        height: auto;
+        bottom: -30%;
     }
 
     .TopPhoto{
