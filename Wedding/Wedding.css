@@ -66,14 +66,14 @@ h1{
     font-weight: 700;
     text-transform: uppercase;
 
-    -webkit-text-stroke-width: 0.75px;
+    -webkit-text-stroke-width: 0.55px;
     -webkit-text-stroke-color: var(--SecondrayColor);
     text-shadow: 1px 1px 3px black;
 
 
 }
 h2{
-    -webkit-text-stroke-width: 0.60px;
+    -webkit-text-stroke-width: 0.40px;
     -webkit-text-stroke-color: var(--SecondrayColor);
     text-shadow: 1px 1px 3px black;
     font-size: 3rem;
@@ -83,7 +83,7 @@ h2{
 h3{
     font-size: 2.25rem;
     margin: 0 auto;
-    -webkit-text-stroke-width: 0.60px;
+    -webkit-text-stroke-width: 0.35px;
     -webkit-text-stroke-color: var(--SecondrayColor);
     text-shadow: 1px 1px 1px black;
     font-weight: 500;
@@ -96,7 +96,7 @@ a{
     font-size: 2rem;
     font-weight: 400;
     margin: 0 auto;
-    -webkit-text-stroke-width: 0.40px;
+    -webkit-text-stroke-width: 0.20px;
     -webkit-text-stroke-color: var(--SecondrayColor);
     text-shadow: 1px 1px 1px black;
 
@@ -270,6 +270,18 @@ nav li:first-child h3{
 
 }
 
+footer{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    bottom: 0;
+
+    text-align: center;
+    font-size: 3rem;
+    transform: translateY(7px);
+}
+
 @media screen and (max-width: 1000px) {
     html{
         font-size: 9px;
@@ -278,13 +290,17 @@ nav li:first-child h3{
         padding-top: 0;
         height: 150vh;
 
+
     }
     nav{
         position: fixed;
         display: flex;
-        width: 100%;
+        width: 99vw;
         height: 50px;
         background-color: white;
+    }
+    footer{
+        height: 25px;
     }
     h1{
         font-size: 2.8rem
@@ -334,12 +350,35 @@ nav li:first-child h3{
     .TopPhoto{
         display: none;
     }
+    .other{
+        height: 20vh;
+
+    }
+    .hiddenDiv{
+        width: 98%;
+    }
+    
+    .BottomPhoto{
+        position: relative;
+        height: 30vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: flex-end;
+        align-items: center;
+            
+    }
     .BottomPhoto .Left{
         display: none;
     }
     .BottomPhoto .Right{
+        position: absolute;
         width: 300px;
+        transform: translate(0%,0%);
+        bottom: 0;
+        
     }
+
 
     .FallingFlower{
         position: absolute;
