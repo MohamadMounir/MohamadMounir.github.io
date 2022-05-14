@@ -1,0 +1,370 @@
+:root{
+    --Padding1: 15px;
+    --MainColor: #C3240F;
+    --SecondrayColor: #F2D673;
+    --BackgroundColor: white;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Dancing Script', cursive;
+    font-size: 16px;
+}
+body{
+    height: 125vh;
+    width: 100vw;
+    padding-top: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--MainColor);
+    background-color: var(--BackgroundColor);
+    overflow-x: hidden;
+    user-select: none;
+
+    background-image: url(ActuallyImgs/Background.jpg);
+    background-size: cover;
+
+
+
+}
+
+
+
+.Contianer{
+    margin: 0 auto;
+    padding-left: var(--Padding1);
+    padding-right: var(--Padding1);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (min-width: 945px) {
+    .Contianer{
+        width: 870px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .Contianer{
+        width: 950px;
+    } 
+}
+
+
+
+
+h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    -webkit-text-stroke-width: 0.75px;
+    -webkit-text-stroke-color: var(--SecondrayColor);
+    text-shadow: 1px 1px 3px black;
+
+
+}
+h2{
+    -webkit-text-stroke-width: 0.60px;
+    -webkit-text-stroke-color: var(--SecondrayColor);
+    text-shadow: 1px 1px 3px black;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 2.25rem;
+    margin: 0 auto;
+    -webkit-text-stroke-width: 0.60px;
+    -webkit-text-stroke-color: var(--SecondrayColor);
+    text-shadow: 1px 1px 1px black;
+    font-weight: 500;
+
+}
+a{
+    color: var(--MainColor);
+    text-decoration: underline;
+    text-decoration-color: var(--SecondrayColor);
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 auto;
+    -webkit-text-stroke-width: 0.40px;
+    -webkit-text-stroke-color: var(--SecondrayColor);
+    text-shadow: 1px 1px 1px black;
+
+}
+
+hr{
+    width: 85%;
+    display: flex;
+    margin: 15px auto;
+    color: var(--SecondrayColor);
+}
+
+.Envelope{
+    width: 660px;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: var(--SecondrayColor) 2px solid;
+    padding: 15px;
+}
+
+.EnvelopeFront{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.EnvelopeBack{
+    display: none;
+    flex-direction: column;
+    height: 15vh;
+    animation-name: EnvelopeOpen;
+    animation-duration: 3s;
+
+}
+.EnvelopeBack.is-active{
+    display: flex;
+}
+
+
+/* @keyframes EnvelopeOpen {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 15vh;
+    }
+    
+} */
+
+.hiddenDiv{
+    height: 15vh;
+    width: 660px;
+    background-color: transparent;
+}
+.hiddenDiv.is-active{
+    height: 0;
+    width: 0;
+}
+
+.MainPhoto{
+    position: relative;
+}
+
+.MainPhoto img{
+    width: 68vw;
+    height: 78%;
+    margin-top: 175px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+    border: var(--SecondrayColor) 2px solid;
+
+}
+
+
+.MainPhoto::after{
+    content: "";
+    position: absolute;
+    width: 475px;
+    height: 450px;
+    background-image: url(ActuallyImgs/ConerFlower.png);
+    left: 0;
+    transform: translate(-38%,1%);
+}
+
+.MainPhoto::before{
+    content: "";
+    position: absolute;
+    width: 475px;
+    height: 450px;
+    background-image: url(ActuallyImgs/ConerFlower.png);
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg) translate(-35%,-45%);
+}
+
+
+.TopPhoto{
+    position: absolute;
+    left: 83%;
+    top: -10%;
+}
+.TopPhoto img{
+    height: 413px;
+    width: 301px;
+}
+
+.BottomPhoto{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.BottomPhoto img{
+    width: 855px;
+}
+.BottomPhoto .Left{
+    transform: translate(5%);
+}
+.BottomPhoto .Right{
+    transform: translateX(-5%);
+}
+
+nav{
+    display: none;
+    z-index: 5;
+}
+nav ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    list-style: none;
+
+}
+nav a{
+    text-decoration: none;
+}
+nav h3{
+    font-size: 2.75rem;
+
+}
+nav li:first-child h3{
+    padding: 3px;
+    border: solid var(--SecondrayColor) 1px;
+}
+
+.FallingFlower{
+    display: none;
+}
+.FallingFlowerPices{
+    display: block;
+    position: absolute;
+    width: 350px;
+    height: auto;
+    top: 15%;
+    left: 5%;
+    transform: rotate(15deg) translate(5%,-45%);
+    z-index: -1;
+}
+.MobileVersion{
+    display: none;
+
+}
+
+@media screen and (max-width: 1000px) {
+    html{
+        font-size: 9px;
+    }
+    body{
+        padding-top: 0;
+        height: 150vh;
+
+    }
+    nav{
+        position: fixed;
+        display: flex;
+        width: 100%;
+        height: 50px;
+        background-color: white;
+    }
+    h1{
+        font-size: 2.8rem
+    }
+    h2{
+        font-size: 2.3rem;
+    }
+    h3{
+        font-size: 2rem;
+
+    }
+    a{
+        font-size: 2.5rem;
+        margin-top: 15px;
+    }
+    .Contianer{
+        flex-direction: column-reverse;
+    }
+    .MainPhoto::after{
+        display: none;
+    }
+    .MainPhoto::before{
+        display: none;
+    }
+    .MainPhoto{
+        width: 100vw;
+        height: 50vh; 
+        margin-top: 50px;
+
+    }
+    .MainPhoto img{
+        width: 100%;
+        height: 100%;
+        box-shadow: unset;
+        margin-top: 0;
+    }
+    .Envelope{
+        width: 100%;
+        margin-top: 20vw;
+        z-index: 3;
+    }
+    .hiddenDiv.is-active{
+        height: 110px;
+        width: 100vw;
+    }
+
+    .TopPhoto{
+        display: none;
+    }
+    .BottomPhoto .Left{
+        display: none;
+    }
+    .BottomPhoto .Right{
+        width: 300px;
+    }
+
+    .FallingFlower{
+        position: absolute;
+        display: block;
+        height: auto;
+        width: 100vw;
+        top: 60%;
+        transform: translateY(-12%);
+    }
+
+    .FallingFlowerPices{
+        width: 150px;
+        height: auto;
+        transform: translate(-20%,35%);
+        bottom: 80%;
+        transform: translate(-20%,35%);
+        top: 60%;
+    }
+
+    /* .MobileVersion{
+        position: absolute;
+        display: block;
+        width: 98vw;
+        height: auto;
+        bottom: 0;
+    } */
+
+}
