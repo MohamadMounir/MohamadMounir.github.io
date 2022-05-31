@@ -1,13 +1,45 @@
 
+:root{
+/* 
+    --mainColor: #ff4b27;
+    --secondColor: #eeeeee;
+    --thirdColor: white;
+    --textColor: black;
+    --buttonTextColor: white; */
+    --borderRadius: 20px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--thirdColor);
+    color: var(--textColor);
+}
 
 
-.inputTask{
+.Container{
+    width: 80vw;
+    margin: 0 auto;
+}
+@media screen and (min-width: 1000px) {
+    .Container{
+        width: 65vw;
+    }
+}
+
+
+.inputTask{/****/
     display: flex;
-    justify-content: center; 
-    margin: 30px 10%; 
-    padding: 30px 0px; 
-    background-color: #eeeeee; 
-    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 100%;
+    margin: 90px 0 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: var(--secondColor); 
+    border-radius: var(--borderRadius);
+
 }
 
 .inputText{
@@ -15,29 +47,37 @@
     width: 85%; 
     border: none; 
     margin: 0px 15px;
-    border-radius: 20px;
+    border-radius: var(--borderRadius);
     font-size: 18px;
+    background-color: var(--thirdColor);
+    color: var(--textColor);
 }
 
 .submitText{
     width: 80px;
     height: 60px;
     font-weight: bold;
-    background-color: rgb(255, 75, 39);
+    background-color: var(--mainColor);
     border: none;
-    border-radius: 15%; 
-    color: white;
-    border-radius: 20px;
+    color: var(--buttonTextColor);
+    border-radius: var(--borderRadius);
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
-.taskShower{
+.submitText:hover{
+    opacity: 0.90;
+}
+
+.taskShower{/****/
     display: flex; 
     flex-direction: column; 
-    justify-content: center; 
-    margin: 30px 10%; 
-    padding: 30px 0px; 
-    background-color: #eeeeee;
-    border-radius: 20px;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 10px; 
+    box-sizing: border-box;
+    background-color: var(--secondColor);
+    border-radius: var(--borderRadius);
 }
 
 .taskContent{
@@ -45,11 +85,11 @@
     flex-direction: row; 
     justify-content: space-between; 
     width: 88%; 
-    background-color: white; 
+    background-color: var(--thirdColor); 
     padding: 10px 20px; 
     align-items: center; 
-    margin: 20px 30px 0;
-    border-radius: 20px;
+    margin: 20px auto 0;
+    border-radius: var(--borderRadius);
 }
 
 
@@ -60,8 +100,52 @@
     height: 50px; 
     width: 60px; 
     font-weight: bold; 
-    background-color: rgb(255, 75, 39);
+    background-color: var(--mainColor);
     border: none;border-radius: 15%; 
-    color: white;
-    border-radius: 15px;
+    color: var(--buttonTextColor);
+    border-radius: calc(var(--borderRadius) - 5px);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.taskContent button:hover{
+    opacity: 0.90;
+}
+
+
+
+.colorSwitch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 70px;
+    width: fit-content;
+    padding: 3px 25px;
+    background-color: var(--secondColor);
+    border-radius: calc(var(--borderRadius) - 10px);
+}
+
+.colorR{
+    height: 40px;
+    width: 40px;
+    margin: 0px 10px;
+    border-radius: calc(var(--borderRadius) - 15px);
+    cursor: pointer;
+}
+
+.MainTheme{
+    background-color: #ff4b27;
+}
+.SecondTheme{
+    background-color: #003B46;
+}
+.ThirdTheme{
+    background-color: #379683;
+}
+.ForthTheme{
+    background-color: #66fcf1;
+}
+.FivthTheme{
+    background-color: #86c232;
 }
