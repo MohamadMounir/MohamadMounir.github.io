@@ -69,6 +69,19 @@ window.onload = function (){
             createTextContent(localStorage.getItem(localStorage.key(index)), `${localStorage.key(index)}`);
         }
     }
+
+
+    // document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${mainColorTheme.mainColor}`);
+    // document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${mainColorTheme.secondColor}`);
+    // document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${mainColorTheme.thirdColor}`);
+    // document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${mainColorTheme.textColor}`);
+    // document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${mainColorTheme.buttonTextColor}`);
+
+    // localStorage.setItem("selectedMainColor", rootValues.getPropertyValue("--mainColor"));
+    // localStorage.setItem("selectedSecondColor", rootValues.getPropertyValue("--secondColor"));
+    // localStorage.setItem("selectedThirdColor", rootValues.getPropertyValue("--thirdColor"));
+    // localStorage.setItem("selectedTextColor", rootValues.getPropertyValue("--textColor"));
+    // localStorage.setItem("selectedButtonTextColor", rootValues.getPropertyValue("--buttonTextColor"));
 }
 
 
@@ -190,16 +203,20 @@ let fivthColorTheme = {
 
 window.addEventListener("load", function (){
 
+
+
+    if(localStorage.getItem("selectedMainColor") !== null){
         document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${localStorage.getItem("selectedMainColor")}`);
         document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${localStorage.getItem("selectedSecondColor")}`);
         document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${localStorage.getItem("selectedThirdColor")}`);
         document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${localStorage.getItem("selectedTextColor")}`);
         document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${localStorage.getItem("selectedButtonTextColor")}`);
-
+    }
     
 
     })
 
+    console.log(localStorage.getItem("selectedMainColor"));
 
 
 
