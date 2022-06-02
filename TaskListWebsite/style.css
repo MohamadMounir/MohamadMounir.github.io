@@ -132,6 +132,9 @@ body{
     margin: 0px 10px;
     border-radius: calc(var(--borderRadius) - 15px);
     cursor: pointer;
+    opacity: 0.6;
+    border: solid 2px transparent;
+
 }
 
 .MainTheme{
@@ -148,4 +151,29 @@ body{
 }
 .FivthTheme{
     background-color: #86c232;
+}
+
+
+.SelectedColorI{
+    border: solid 1px blue;
+    opacity: 1;
+}
+
+
+.clearDiv{
+    position: absolute;
+    top: 90px;
+    left: 0px;
+}
+
+.clearButton{
+    height: 45px;
+    width: 45px;
+    background-color: var(--mainColor);
+    border: solid 2px transparent;
+    border-bottom-right-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+    font-weight: 600;
+    color: var(--buttonTextColor);
+    cursor: pointer;
 }

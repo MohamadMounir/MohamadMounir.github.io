@@ -15,11 +15,12 @@ let myTaskShower = document.querySelector(".taskShower");
 
 
 
-
-
-
-
-
+myInputText.addEventListener("keyup", function (e){
+    e.preventDefault();
+    if(e.keyCode == "13"){
+        mySubmit.click();
+    }
+})
 
 
 //////----------------[2]Functions--------------------------------------
@@ -69,32 +70,7 @@ window.onload = function (){
             createTextContent(localStorage.getItem(localStorage.key(index)), `${localStorage.key(index)}`);
         }
     }
-
-
-    // document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${mainColorTheme.mainColor}`);
-    // document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${mainColorTheme.secondColor}`);
-    // document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${mainColorTheme.thirdColor}`);
-    // document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${mainColorTheme.textColor}`);
-    // document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${mainColorTheme.buttonTextColor}`);
-
-    // localStorage.setItem("selectedMainColor", rootValues.getPropertyValue("--mainColor"));
-    // localStorage.setItem("selectedSecondColor", rootValues.getPropertyValue("--secondColor"));
-    // localStorage.setItem("selectedThirdColor", rootValues.getPropertyValue("--thirdColor"));
-    // localStorage.setItem("selectedTextColor", rootValues.getPropertyValue("--textColor"));
-    // localStorage.setItem("selectedButtonTextColor", rootValues.getPropertyValue("--buttonTextColor"));
 }
-
-
-
-// for(i=0; i<localStorage.length;i++){
-
-//     console.log(myTaskRe.test(localStorage.key(i)));
-//     if(myTaskRe.test(localStorage.key(i))){
-//         console.log(localStorage.getItem(localStorage.key(i)));
-//     }
-// }
-
-
 
 ///------Add new Task - this for make button clickable, make value save inside the localStorage in the same time ^_^
 var IT = 0;
@@ -140,7 +116,6 @@ function deleteTool(){
         if(myButtonDelete[i] !== null){
             myButtonDelete[i].onclick = function (e){
                 localStorage.removeItem(`${e.target.parentElement.getAttribute("id")}`);
-                console.log(e.target.parentElement.getAttribute("id"))
                 e.target.parentElement.remove();
             }
         }
@@ -212,11 +187,15 @@ window.addEventListener("load", function (){
         document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${localStorage.getItem("selectedTextColor")}`);
         document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${localStorage.getItem("selectedButtonTextColor")}`);
     }
+
+
+    ////Re-write SelecetedColorI class to switch Color
+
+    document.getElementById(localStorage.getItem("SelcetedColorI")).classList.add("SelcetedColorI");
+console.log(document.getElementById(localStorage.getItem("SelcetedColorI")).classList.add("SelcetedColorI"));
     
 
     })
-
-    console.log(localStorage.getItem("selectedMainColor"));
 
 
 
@@ -275,6 +254,13 @@ function clickedFun(){
 
             }
 
+            for(i=0;i<myColorSwitch.length; i++){
+                myColorSwitch[i].classList.remove("SelectedColorI");
+                e.target.classList.add("SelectedColorI");
+                localStorage.setItem("SelcetedColorI", e.target.getAttribute("id"));
+
+            };
+
                 ////set in localStorage
             let rootValues = getComputedStyle(document.documentElement);
 
@@ -302,8 +288,8 @@ clickedFun();
 // document.styleSheets[0].cssRules[1].style.setProperty(`--buttonTextColor`, `white`);
 
 ///what I did?
-let rootValues = getComputedStyle(document.documentElement);
-console.log(rootValues.getPropertyValue("--mainColor"));
+// let rootValues = getComputedStyle(document.documentElement);
+// console.log(rootValues.getPropertyValue("--mainColor"));
 
 
 
@@ -320,3 +306,18 @@ console.log(rootValues.getPropertyValue("--mainColor"));
 //     }
 // }
 // console.log(localStorage.key(0));
+
+
+
+
+// let clearButton = document.getElementsByClassName("clearButton")[0];
+
+// console.log(clearButton);
+
+// clearButton.onclick = function(){
+//     localStorage.clear();
+// }
+
+
+// console.log(localStorage.getItem("SelcetedColorI"));
+
