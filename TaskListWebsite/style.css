@@ -7,6 +7,8 @@
     --textColor: black;
     --buttonTextColor: white;
     --borderRadius: 20px;
+
+    --arrowLeft: -32px;
 }
 
 body{
@@ -162,18 +164,86 @@ body{
 
 .clearDiv{
     position: absolute;
+    height: 46px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
     top: 90px;
     left: 0px;
 }
 
 .clearButton{
-    height: 45px;
+    display: none;
+    position: relative;
+    height: 46px;
     width: 45px;
     background-color: var(--mainColor);
     border: solid 2px transparent;
-    border-bottom-right-radius: var(--borderRadius);
-    border-top-right-radius: var(--borderRadius);
+    /* border-bottom-right-radius: calc(var(--borderRadius) - 15px);
+    border-top-right-radius: calc(var(--borderRadius) - 15px); */
     font-weight: 600;
     color: var(--buttonTextColor);
     cursor: pointer;
+    box-sizing: border-box;
+
+    /* animation-name: Appeare;
+    animation-duration: 3s; */
+    
 }
+
+.deleteArrow{
+    height: 0;
+    width: 0;
+    border-left: 35px solid var(--mainColor);
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+
+
+}
+
+
+.deleteArrow::after{
+    content: ">";
+    position: relative;
+    color: var(--buttonTextColor);
+    font-weight: 600;
+    font-size: 36px;
+    height: 60px;
+    width: 60px;
+    
+    top: -21px;
+    left: var(--arrowLeft);
+    animation-name: ShakingArrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes ShakingArrow {
+    0%{
+        left: var(--arrowLeft);
+    }
+    50%{
+        left: calc(var(--arrowLeft) + 2px);
+    }
+
+    100%{
+        left: var(--arrowLeft);
+    }
+
+}
+
+.opacityClear{
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+/* @keyframes Appeare {
+    0%{
+        display: none;
+    }
+    100%{
+        display: block;
+    }
+} */

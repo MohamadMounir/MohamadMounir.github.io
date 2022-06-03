@@ -104,7 +104,7 @@ for(i=0;i<localStorage.length;i++){
 }
 
 /////End to Add new Task (I think iI need some improvment for it (-_-),
-/// like make all this codes inside one function and add createTextContent inside it, too.)
+/// like make all this codes inside one function and add createTextContent inside it, too.).....Later
 
 
 
@@ -133,15 +133,13 @@ function deleteTool(){
 /////Color set
 
 let mainColorTheme = {
+    ///Default Theme 
     mainColor: `#ff4b27`,
     secondColor: `#eeeeee`,
     thirdColor: `white`,
     textColor: `black`,
     buttonTextColor: `white`,
 };
-
-///Default Theme 
-//////Not Yet...........................................
 
 let secondColorTheme = {
     mainColor: `#003B46`,
@@ -178,8 +176,6 @@ let fivthColorTheme = {
 
 window.addEventListener("load", function (){
 
-
-
     if(localStorage.getItem("selectedMainColor") !== null){
         document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${localStorage.getItem("selectedMainColor")}`);
         document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${localStorage.getItem("selectedSecondColor")}`);
@@ -187,32 +183,24 @@ window.addEventListener("load", function (){
         document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${localStorage.getItem("selectedTextColor")}`);
         document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${localStorage.getItem("selectedButtonTextColor")}`);
     }
-
-
     ////Re-write SelecetedColorI class to switch Color
-
-    document.getElementById(localStorage.getItem("SelcetedColorI")).classList.add("SelcetedColorI");
-console.log(document.getElementById(localStorage.getItem("SelcetedColorI")).classList.add("SelcetedColorI"));
-    
-
+    //////in clickedFun() inside the loop
+    document.getElementById(localStorage.getItem("SelcetedColorI")).classList.add("SelectedColorI");
     })
 
 
 
 
-
-
-
-
-////Switch Function
+//////////////Switch Theme Function//////////////
 
 function clickedFun(){
-    ////get elements
+
     let myColorSwitch = document.getElementsByClassName("colorR");
 
-    /////Changing color Fun
+    /////loop for apply all Fun in every ColorBlockSwitch
     for(i=0; i<myColorSwitch.length; i++){
         myColorSwitch.item(i).onclick = function (e){
+            ////this code will check the ID of target and get the suited "theme" -by change all root color
             switch(e.target.getAttribute("id")){
                 
                 case "mainColorTheme":
@@ -254,14 +242,16 @@ function clickedFun(){
 
             }
 
+            /////Make selection theme block diffrent from others.
+            //////delete"selectedColorI" class from all elements, then add it for targeted element and save it inside localStorage. 
             for(i=0;i<myColorSwitch.length; i++){
                 myColorSwitch[i].classList.remove("SelectedColorI");
                 e.target.classList.add("SelectedColorI");
                 localStorage.setItem("SelcetedColorI", e.target.getAttribute("id"));
-
             };
 
                 ////set in localStorage
+                //////in the end, the browser will save all this information in localStorage.
             let rootValues = getComputedStyle(document.documentElement);
 
             localStorage.setItem("selectedMainColor", rootValues.getPropertyValue("--mainColor"));
@@ -271,6 +261,16 @@ function clickedFun(){
             localStorage.setItem("selectedButtonTextColor", rootValues.getPropertyValue("--buttonTextColor"));
         
         }
+
+        ////Add hover effect
+
+        myColorSwitch.item(i).onmouseenter = function (e){
+            e.target.classList.add("opacityClear");
+        }
+        myColorSwitch.item(i).onmouseleave = function (e){
+            e.target.classList.remove("opacityClear")
+        }
+
     } 
 }
 
@@ -293,31 +293,46 @@ clickedFun();
 
 
 
+///////-------------------------[4]Clear-----------------------------------------
+//////////This for Delete Button function/////////////
 
-
-/////RegulareExpression
-
-// let myTaskRe = /Task\d+/;
-// for(i=0; i<localStorage.length;i++){
-
-//     console.log(myTaskRe.test(localStorage.key(i)));
-//     if(myTaskRe.test(localStorage.key(i))){
-//         console.log(localStorage.getItem(localStorage.key(i)));
-//     }
-// }
-// console.log(localStorage.key(0));
+let clearDiv = document.getElementsByClassName("clearDiv")[0];
+let clearButton = document.getElementsByClassName("clearButton")[0];
+let clearArrow = document.getElementsByClassName("deleteArrow")[0];
 
 
 
+////delete all Tasks and Themes form localStorage 
 
-// let clearButton = document.getElementsByClassName("clearButton")[0];
+clearButton.onclick = function(){
+    localStorage.clear();
+    location.reload();
+}
 
-// console.log(clearButton);
-
-// clearButton.onclick = function(){
-//     localStorage.clear();
-// }
+/////Make arrow functionable by move mouse in/out it or by click it
 
 
-// console.log(localStorage.getItem("SelcetedColorI"));
+/////By control in perporty of CSS
+clearDiv.addEventListener("mouseenter",function (){
+    clearButton.style.display = "block";
+} )
+clearDiv.addEventListener("mouseleave",function (){
+    clearButton.style.display = "none";
+} )
+
+////By declare a variable and if was odd the code will work and will hide if was even, in the end of code the number will increase a one to keep code work
+var Clr = 1;
+clearDiv.addEventListener("click",function (){
+    if(Clr%2 !== 0){
+        clearButton.style.display = "block";
+
+        
+    }else if (Clr%2 === 0){
+        clearButton.style.display = "none";
+    }
+    Clr++
+} )
+
+
+
 
