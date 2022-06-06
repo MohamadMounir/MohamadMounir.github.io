@@ -470,7 +470,6 @@ nav a{
     }
 
     nav .Social{
-        display: flex;
         position: absolute;
         right: 32vw;
         height: 93vh;

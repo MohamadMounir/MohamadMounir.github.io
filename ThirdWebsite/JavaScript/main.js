@@ -37,14 +37,20 @@ let menuNavIcon = document.getElementById("mainMenu");
 
 let myMainMenu = document.getElementById("mainMenu");
 
+let mySoicalIcons = document.getElementsByClassName("Social")[0];
+console.log(mySoicalIcons);
+
 function makeItClickable(Ele){
     Ele.addEventListener("click", function(){
         menuNav.classList.toggle("is-Show");
+        mySoicalIcons.classList.toggle("is-Show");
 
     })
 }
 
 makeItClickable(menuNavIcon);
+
+
 
 
 function makeItClickableParent(parentEle,Ele){
