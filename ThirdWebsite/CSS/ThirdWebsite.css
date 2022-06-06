@@ -363,12 +363,10 @@ a+hr{
 
 }
 @media screen and (max-width: 450px) {
-
     .Left,.Right{
         height: 70%;
         width: 40px;
     }
-
     
 }
 

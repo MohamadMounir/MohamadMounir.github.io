@@ -31,10 +31,10 @@ html{
 
 
 .Contianer{
-    margin: auto;
+    margin: 0 auto;
     padding-left: var(--Padding1);
     padding-right: var(--Padding1);
-     width: 92%;
+    width: 92%;
 }
 
 @media screen and (min-width: 945px) {
@@ -82,7 +82,6 @@ p{
     margin-bottom: 10px; 
     color: #b9b9b8;
     line-height: 2;
-     
 }
 
 
@@ -170,11 +169,18 @@ nav{
 }
 
 nav .Contianer{
-        display: flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
 
+}
+
+.Logo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -184,8 +190,31 @@ nav .Contianer ul{ /**/
     flex-direction: row;
     gap: 33px;
     position: relative;
-    top: -5px;
+    height: 100%;
+    align-items: center;
 }
+
+.Nav{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.is-Show{
+    display: flex;
+}
+
+.is-Showing{
+    display: block !important;
+}
+.Nav li{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .Menu{
     display: none;
@@ -193,11 +222,23 @@ nav .Contianer ul{ /**/
     gap: 5px;
     position: relative;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40px;
 }
 .Menu span{
     width: 20px;
     height: 2px;
     background-color: var(--Third-color);
+}
+
+
+.Social{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -213,6 +254,13 @@ nav .Contianer .Nav li:nth-child(4){
     position: relative;
 }
 
+
+nav .Contianer .Nav li:nth-child(5){
+    position: relative;
+    margin-bottom: 4px; 
+    margin-top: 80px;
+}
+
 nav .Contianer .Nav li:nth-child(4)::before {
     content: "";
     position: absolute;
@@ -221,7 +269,6 @@ nav .Contianer .Nav li:nth-child(4)::before {
     border: solid 1px ;
     border-color: transparent var(--Third-color) var(--Third-color) transparent;
     right: -15px;
-    top: 3px;
     rotate: 45deg;
 }
 
@@ -244,7 +291,7 @@ nav .Contianer .Nav li:nth-child(5)::before {
     border: solid 1px ;
     border-color: transparent var(--Third-color) var(--Third-color) transparent;
     right: -15px;
-    top: 3px;
+
     rotate: 45deg;
 }
 
@@ -306,15 +353,13 @@ nav .Logo h6 span::before{
 .SubMenu{
     display: none;
     position: absolute;
-    height: 400%;
-    width: 170%;
-    top: 241%;
-    left: -30%;
+    height: 89px;
+    width: 92px;
+    top: 100%;
+    left: -19px;
     background-color: var(--Secondry-color);
     z-index: 6;
-    padding: 15%;
-    box-sizing: border-box;         
-
+    padding: 10px;     
 }
 .SubMenu:before{
     content: "";
@@ -328,11 +373,6 @@ nav .Logo h6 span::before{
 }
 
 
-nav .Contianer .Nav li:nth-child(5) .SubMenu{
-    width: 21%;
-    left: 83%;
-    padding: 1%;
-}
  
 nav .Contianer .SubMenu ul{
     flex-direction: column;
@@ -404,29 +444,38 @@ nav a{
 /*--------Un/Display Elements------//Start//-------*/
 
     nav .Nav{
-    display: none;
     position: absolute;
     flex-direction: column;
-    height: 100vh;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 50vh;
     width: 45vw;
+    background-color: white;
     right: -1px;
     top: 0;
-    background-color: white;
+    padding-bottom: 40vh;
+    padding-top: 10vh;
     }
+    
+.is-Show{
+    display: none;
+}
     nav .Contianer ul{
         top: 10%;
         flex-direction: column;
-        height: 90vh;
+        justify-content: baseline;
+        align-items: baseline;
+        height: 50px;
         right: -8%;
     }
 
     nav .Social{
-        display: none;
+        display: flex;
         position: absolute;
         right: 32vw;
-        height: 100vh;
-        width: 10vw;
-        top: 0;
+        height: 93vh;
+        width: 60px;
+        /* bottom: 0; */
         flex-direction: row;
         align-items: end;    
         justify-content: space-between;
@@ -442,6 +491,18 @@ nav a{
 
     .Menu{
         display: flex;
+    }
+
+
+
+    .SubMenu{
+        left: -3px;
+    }
+
+    nav .Contianer .Nav li:nth-child(5) .SubMenu{
+    left: 0px;
+    padding: 8%;
+    width: 100%;
     }
 
 /*--------Un/Display Elements------//End//-------*/
@@ -505,8 +566,28 @@ nav a{
 
 
 }
-
 /*--------Media Queries--------//End//---------*/
+
+
+/*--------Make Menu fullScreen------//Start//-------*/
+
+
+@media screen and (max-width: 760px) {
+    
+    nav .Nav{
+        width: 100vw;
+    }
+    
+    nav .Social{
+        right: unset;
+    }
+    
+    nav .Contianer ul{
+        right: -5%;
+    }
+}
+/*--------Make Menu fullScreen------//End//---------*/
+
 
 /*--------------------------------------------------
 *-------------------- <  NAV Section    //End//
