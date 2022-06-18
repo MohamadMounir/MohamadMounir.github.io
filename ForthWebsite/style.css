@@ -36,11 +36,42 @@ ul{
 }
 
 h1{
-    font-size: 20px;
+    font-size: 26px;
     text-transform: uppercase;
 }
+h2{
+    font-size: 22px;
+    text-transform: uppercase;
+}
+h3{
+    font-size: 18px;
+    text-transform: uppercase;
+}
+h4{
+    font-size: 14px;
+    text-transform: capitalize;
+}
+h5{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
 p{
     font-size: 12px;
+    text-align: center;
+
+}
+
+/* MediaQureiy */
+@media screen and (max-width: 726px) {
+
+    h2{
+        font-size: 18px;
+    }
+    p{
+        font-size: 10px;
+    }
+
 }
 
 
@@ -100,6 +131,12 @@ p{
 /* -----------------Styling object<Start>------------------- */
 
 /* Under Title Style */
+.StylingDash{
+    position: relative;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
 .StylingDash:before{
     content: "";
     position: absolute;
@@ -108,8 +145,9 @@ p{
     width: 100px;
     border: solid 1px var(--backgroundColor1);
     border-radius: 20%;
-    left: 8px;
-    top: 45px;
+    left: 50%;
+    top: 130%;
+    transform: translate(-50%,-50%);
 }
 .StylingDash:after{
     content: "";
@@ -143,7 +181,7 @@ p{
     width: 15px;
     border: solid 2px transparent;
     transform: rotate(45deg);
-    top: 60%;
+    top: 45%;
     cursor: pointer;
 }
 .Arrow .left{
@@ -165,16 +203,22 @@ p{
     width: 13px;
     border: solid 2px var(--objectColor);
     border-radius: 50%;
-    right: 50%;
-    top: 97%;
+    right: 49%;
+    top: 90%;
     cursor: pointer;
 }
 .Cycle span:first-child{
-    right: calc(50% + 20px);
+    right: calc(49% + 20px);
 }
 .Cycle span:last-child{
-    right: calc(50% - 20px);
+    right: calc(49% - 20px);
 }
+
+/* @media screen and (max-width: 726px) {
+    .Cycle span{
+        top: 90%;
+    }
+} */
 
 /* Hover */
 .HoverColor{
@@ -214,7 +258,7 @@ p{
 
 .Lines{
     position: absolute;
-    display: block;
+    display: none;
     width: 100%;
     pointer-events: none;
 }
@@ -310,6 +354,7 @@ nav i{
 main{
     height: 95vh;
     width: 100%;
+    position: relative;
 }
 
 
@@ -333,9 +378,14 @@ main{
     z-index: -2;
 }
 
-.introduce h1{
+/* Font */
+
+.introduce h2{
     font-weight: 400;
     margin-bottom: 8px;
+}
+.introduce p{
+    text-align: start;
 }
 
 /* MediaQureiy */
@@ -345,17 +395,24 @@ main{
     }
 
     .introduce{
-        top: 27%;
-        padding: 30px 20%;
+        width: 100vw;
+        top: 22%;
+        padding: 30px 18%;
         right: 0;
         text-align: center;
-        overflow: scroll;
     }
     .introduce:before{
         display: none;
     }
+    .introduce p{
+        text-align: center;
+    }
 }
-
+@media screen and (max-width: 400px) {
+    .introduce{
+        height: 250px;
+    }
+}
 
 /* -----------------------------------------------------------------------------------
 ---------------------------------Main/FirstSection <End>
@@ -369,6 +426,7 @@ main{
 
 .Services{
     min-height: 80vh;
+    padding-bottom: 8%;
 }
 
 .Services .Container{
@@ -380,12 +438,7 @@ main{
     justify-content: space-between;
     margin-bottom: 50px;
 }
-.Services .text h1{
-    position: relative;
-    font-weight: 500;
-    font-size: 28px;
-    margin-bottom: 25px;
-}
+
 .Services .fields{
     display: grid;
     width: 100%;
@@ -395,6 +448,13 @@ main{
 
 .Services .fields .slid{
     column-gap: 80px;
+}
+
+/* Font */
+.Services .text h1{
+    position: relative;
+    font-weight: 500;
+    margin-bottom: 25px;
 }
 
 .Services .fields .slid .slidText h2{
@@ -413,6 +473,9 @@ main{
 @media screen and (max-width: 768px) {
     .Services .fields{
         grid-template-columns: 1fr;
+    }
+    .Services .fields i{
+        height: unset;
     }
 }
 
@@ -459,9 +522,6 @@ main{
     background-color: var(--mainColorLessOpcity);
     z-index: 1;
 }
-.textAD h1{
-    margin-bottom: 25px;
-}
 
 .ThirdSection .textAD ul li{
     display: flex;
@@ -469,6 +529,11 @@ main{
     column-gap: 25px;
 }
 
+/* Font */
+
+.textAD h2{
+    margin-bottom: 25px;
+}
 
 /* MediaQureiy */
 
@@ -506,22 +571,13 @@ main{
 }
 
 
-.Portfolio .TextSection h1{
-    position: relative;
-    font-weight: 500;
-    font-size: 28px;
-    margin-bottom: 35px;
-}
-.Portfolio .StylingDash:before{
+
+/* .Portfolio .StylingDash:before{
     left: 25px;
     top: 46px;
 }
+ */
 
-.Portfolio .TextSection p{
-    height: 50px;
-    text-align: center;
-    margin-bottom: 75px;
-}
 
 .Portfolio .TextSection ul{
     display: flex;
@@ -535,6 +591,12 @@ main{
     justify-content: center;
     align-items: center;
 }
+@media screen and (max-width: 450px) {
+    .Portfolio .TextSection ul li{
+        font-size: 11px;
+        font-weight: 600;
+    }
+}
 .Portfolio .TextSection ul li:first-child{
     height: 40px;
     width: 60px;
@@ -542,7 +604,12 @@ main{
     color: var(--textColor1);
 }
 
+/* Font */
 
+.Portfolio .TextSection p{
+    height: 50px;
+    margin-bottom: 75px;
+}
 
 /* -------------Fisrt/TextPart<End>------------ */
 
@@ -587,10 +654,18 @@ main{
     background-color: var(--backgroundColor2);
     z-index: 2;
 }
+
+@media screen and (max-width: 400px) {
+    .ImageSection .addedImage .imageTitle{
+        padding: 10px 20px;
+    }
+}
+
+/* Font */
 .imageTitle h3{
     text-transform: capitalize;
     font-weight: 600;
-    font-size: 16px;
+
 }
 .imageTitle p{
     text-transform: capitalize;
@@ -634,6 +709,10 @@ main{
     left: 50%;
     transform: translate(-54%,-50%);
     z-index: 3;
+}
+
+.imageTitle p{
+    text-align: start;
 }
 
 /* -------------Image/SecondPart<End>------------ */
@@ -701,14 +780,14 @@ main{
     transform: translate(-50%,-50%);
     background-color: var(--mainColor);
 }
-.VideoSection .textArea h1{
+
+/* Font */
+.VideoSection .textArea h2{
     text-transform: uppercase;
     font-weight: 600;
 
 }
-.VideoSection .textArea p{
-    font-size: 14px;
-}
+
 .VideoSection .textArea button{
     height: 40px;
     width: 150px;
@@ -747,24 +826,18 @@ main{
     height: 50%;
     width: 100%;
 }
-.AboutSection .textArea h1{
-    position: relative;
-    margin-bottom: 35px;
-    font-size: 28px;
-    font-weight: 400;
-}
 
-.AboutSection .textArea p{
-    text-align: center;
-}
-.AboutSection .StylingDash:before{
+
+/* .AboutSection .StylingDash:before{
     left: 18px;
-}
+} */
 
 .AboutSection .imageSection{
     height: 50%;
     width: 100%;
 }
+
+/* Font */
 
 /* MediaQureiy */
 
@@ -799,6 +872,12 @@ main{
 
 .SeventhSection .Counter h1{
     font-size: 36px;
+}
+
+@media screen and (max-width: 400px) {
+    .SeventhSection .Counter h1{
+        font-size: 33px;
+    }
 }
 
 .SeventhSection .hexIcon{
@@ -890,6 +969,7 @@ main{
     position: relative;
     height: 70%;
     width: 100%;
+    justify-content: space-around;
 }
 .person{
     height: 40%;
@@ -905,12 +985,12 @@ main{
     border: solid 2px transparent;
     border-bottom: var(--backgroundColor1);
 }
+/* Font */
 .personText p{
-    font-size: 13px;
     font-weight: 600;
+    text-align: start;
 }
 .personText h5{
-    font-size:13px;
     font-weight: 400;
 }
 
@@ -935,7 +1015,8 @@ main{
     margin-bottom: 15px;
 }
 .statesSection .state h3{
-    text-transform: uppercase;
+    text-transform: uppercase; 
+    /*  */
 }
 .statesSection .state .loadBar{
     width: 100%;
@@ -991,14 +1072,14 @@ main{
     width: 100%;
     column-rule: var(--textColor1);
 }
+/* Font */
 .NinthSection h1{
-    font-size: 24px;
     font-weight: 600;
     width: 60%;
     margin-bottom: 20px;
     text-align: center;
 }
-.NinthSection h3{
+.NinthSection h4{
     font-size: 13px;
     text-transform: capitalize;
 }
@@ -1037,17 +1118,9 @@ main{
     margin-bottom: 70px;
     padding-top: 40px;
 }
-.PriceSection .textArea h1{
-    position: relative;
-    margin-bottom: 35px;
-    font-weight: 400;
-}
-.PriceSection .textArea p{
-    text-align: center;
-}
-.PriceSection .StylingDash:before{
+/* .PriceSection .StylingDash:before{
     left: -8px;
-}
+} */
 
 /* -------------Subscribe/FirstPart<Start>------------ */
 .subscribeSection{
@@ -1064,8 +1137,12 @@ main{
     border-bottom-color: var(--mainColor);
     margin-bottom: 30px;
 }
+@media screen and (max-width: 400px) {
+    .subscribeDetail{
+        margin-bottom: 20px;
+    }
+}
 .subscribeDetail h2{
-    font-size: 22px;
     font-weight: 400;
 }
 
@@ -1076,6 +1153,9 @@ main{
     border-bottom-color: var(--mainColor);
     margin-bottom: 7px;
 }
+.price h2{
+    text-transform: capitalize;
+}
 .price h2:first-child{
     margin-bottom: 7px;
 }
@@ -1084,7 +1164,11 @@ main{
     font-size: 36px;
     font-weight: 600;
 }
-
+@media screen and (max-width: 400px) {
+    .price span{
+        font-size: 33px;
+    }
+}
 .features{
     height: 60%;
     width: 100%;
@@ -1094,9 +1178,8 @@ main{
     align-items: center;
     
 }
-.features h2{
+.features h3{
     text-transform: capitalize;
-    font-size: 16px;
     font-weight: 400;
     width: 130px;
     border: solid 2px transparent;
@@ -1105,18 +1188,22 @@ main{
     box-sizing: content-box;
     padding-bottom: 15px;
 }
-.features h2:last-child{
+
+
+.features h3:last-child{
     border-bottom-color: transparent;
 }
 
 .subscribe button{
     height: 60px;
-    width: 180px;
+    width: 70%;
     background-color: transparent;
     border: solid 2px var(--mainColor);
     text-transform: capitalize;
     text-align: center;
 }
+
+
 /* -------------Subscribe/FirstPart<End>------------ */
 
 /* -------------BottomText/SecondPart<Start>------------ */
@@ -1128,6 +1215,7 @@ main{
 .PriceSection .bottomText h2{
     font-weight: 400;
     margin-bottom: 20px;
+    text-transform: none;
 }
 /* -------------BottomText/SecondPart<End>------------ */
 
@@ -1143,6 +1231,8 @@ main{
     .subscribeSection{
         height: 80%;
         grid-template-columns: 1fr;
+        align-items: unset;
+        gap: 30px;
     }
     .PriceSection .bottomText{
         height: 10%;
@@ -1168,20 +1258,20 @@ main{
     grid-template-columns: 7fr 5fr;
 }
 .ElventhSection .BlueButton{
-    height: 60px;
+    height: 100%;
 }
 
 
 .emailBox{
     border: solid 1px var(--textColor1);
     justify-content: space-between;
+    height: 60px;
 }
 .emailBox .leftSide{
     margin-left: 15px;
 }
 .emailBox h4{
     text-transform: uppercase;
-    
 }
 
 .ElventhSection .Container p{
@@ -1223,10 +1313,7 @@ main{
     position: relative;
     width: 100%;
 }
-.ContactSection .textArea h1{
-    position: relative;
-    margin-bottom: 40px;
-}
+
 
 .formSection{
     width: 100%;
@@ -1273,10 +1360,10 @@ main{
     justify-content: flex-start;
 }
 
-.contactInformation h2 {
+.contactInformation h3 {
     margin-bottom: 25px;
-    font-size: 16px;
     font-weight: 700;
+    text-transform: lowercase;
 }
 
 .information{
@@ -1337,7 +1424,7 @@ footer .icons{
     width: 40%;
     margin-top: 15px;
 }
-footer h1{
+footer h2{
     padding: 18px 25px;
     border: solid 2px transparent;
     border-bottom-color: var(--textColor1);
@@ -1347,9 +1434,15 @@ footer h1{
     font-weight: 400;
 }
 
+@media screen and (max-width: 400px) {
+    footer h2{
+        padding: 0px 25px 13px;
+    }
+}
+
 .copyRight{
     margin-top: 50px;
-    font-size: 14px;
+    text-transform: lowercase;
 }
 
 .changeColor{
