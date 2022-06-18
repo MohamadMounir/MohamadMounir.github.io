@@ -258,7 +258,7 @@ p{
 
 .Lines{
     position: absolute;
-    display: block;
+    display: none;
     width: 100%;
     pointer-events: none;
 }
