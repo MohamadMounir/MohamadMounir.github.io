@@ -183,6 +183,7 @@ p{
     transform: rotate(45deg);
     top: 45%;
     cursor: pointer;
+    z-index: 1;
 }
 .Arrow .left{
     border-bottom-color: var(--objectColor);
@@ -445,6 +446,18 @@ main{
     position: relative;
 }
 
+.Page1{
+    display: block;
+
+}
+.Page2{
+    display: none;
+
+}
+
+.Page3{
+    display: none;
+}
 
 .introduce{
     position: absolute;
@@ -466,6 +479,13 @@ main{
     z-index: -2;
 }
 
+
+.Page2 {
+    background-color: blueviolet;
+}
+.Page3{
+    background-color: rgb(14, 109, 109);
+}
 /* Font */
 
 .introduce h2{
