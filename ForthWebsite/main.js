@@ -19,36 +19,72 @@ MyMenuButton.onclick = function (){
 
 
 
+////Help Functions
+function checkDisplayBlock(arr){
+    for(i=0; i<arr.length; i++){
+        if(getComputedStyle(arr[i]).display === "block"){
+            return arr[i];
+        }else if(arr[i].style.display === "block"){
+            return arr[i];
+        }
+    }
+}
+
+function getNumber(string){
+    return string.split("").map(function (e){
+        if(isNaN(e)){
+            return "";
+        } else if(!isNaN(e)){
+            return e;
+        }
+    }).join("");
 
 
+}
 
+function getNumberCycle(number){
+    switch(number){
+        case "1":
+            return 2;
+        case "2":
+            return 0;
+        case "3":
+            return 1;
+    }
+}
+
+function displayNone(arr){
+    arr.style.display = "none";
+}
 
 
 /////Make the Arrow im main div work
 let myPages = document.querySelectorAll("main .Container > div");
 let myArrows = document.querySelectorAll(".Arrow > span");
-myArrows[0].addEventListener("click", arrowButton);
-myArrows[1].addEventListener("click", arrowButton);
+let myCycles = document.querySelectorAll("main .Cycle > span");
+
+myArrows.forEach(function (e){
+    e.addEventListener("click", arrowButton);
+});
+
+myCycles.forEach(function (e){
+    e.addEventListener("click", cycleButton );
+});
+
 
 function arrowButton(){
 
+    let currnetPage = checkDisplayBlock(myPages);
     /////Nested Function
-    function checkDisplayBlock(arr){
-        for(i=0; i<arr.length; i++){
-            if(getComputedStyle(arr[i]).display === "block"){
-                return arr[i];
-            }else if(arr[i].style.display === "block"){
-                return arr[i];
-            }
-        }
+    function markNewCycle(){
+        myCycles.forEach(function (e){
+            e.style = "";
+        });
+        let curCycle = getNumberCycle(getNumber(currnetPage.getAttribute("id")));
+        myCycles[curCycle].style.backgroundColor = "var(--mainColor)";
     }
-    function displayNone(arr){
-        arr.style.display = "none";
-    }
-
     /////Main Function
 
-    let currnetPage = checkDisplayBlock(myPages);
     if(this.classList.item(0) === "right"){
         if(currnetPage.nextElementSibling === null){
             
@@ -69,8 +105,31 @@ function arrowButton(){
         }
     }
 
+    markNewCycle();
+}
+
+function cycleButton(event){
+    console.log(event.target);
+    myCycles.forEach(function (e){
+        e.style = "";
+    });
+    event.target.style.backgroundColor = "var(--mainColor)";
+
+    myPages.forEach(displayNone);
+
+    
+    myPages[getNumberCycle(getNumber(event.target.getAttribute("id")))].style.display = "block";
 
 }
+
+////Mark the page inside the cycles
+
+////Default
+
+window.addEventListener("load", function(){
+    myCycles[1].style.backgroundColor = "var(--mainColor)";
+    
+} )
 
 
 
