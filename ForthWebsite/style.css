@@ -250,6 +250,8 @@ a{
     opacity: 0.8;
 }
 
+
+
 /* -----------------Styling object<End>------------------- */
 
 /* -----------------------------------------------------------------------------------
@@ -288,14 +290,14 @@ a{
 /* ArrowUp Button */
 .ArrowUpButton{
     position: fixed;
-    bottom: 5%;
+    bottom: 7%;
     right: 5%;
     height: 60px;
     width: 60px;
     border-radius: 50%;
     background-color: var(--mainColor);
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     box-shadow: 1px 1px 6px black;
 }
 .ArrowUpButton i{
@@ -320,14 +322,21 @@ nav{
     position: fixed;
     background-color: var(--backgroundColor1);
     z-index: 3;
-    
+    transition: transform .4s;
 }
+
+.NavHidden{
+    transform: translateY(-80px);
+}
+
+
 nav .Container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: solid 2px rgba(255, 255, 255, 0.282);
 }
+
 
 nav ul{
     display: flex;
@@ -366,6 +375,10 @@ nav .Menu .MenuBar{
     background-color: white;
     margin: 6px 0px;
     border-radius: 25%;
+    transition: background 1s;
+}
+nav .Menu  .HoverColorToMenu{
+    background-color: var(--mainColor);
 }
 
 
@@ -603,6 +616,9 @@ main{
     height: 100%;
     font-size: 45px;
     color: var(--mainColor);
+}
+.Services .slidText p{
+    text-align: start;
 }
 
 /* MediaQureiy */
@@ -1468,6 +1484,7 @@ main{
     height: 100%;
     width: 58%;
     justify-content: flex-start;
+    margin-right: 40px;
 }
 .inputInformation textarea{
     width: 100%;
@@ -1493,7 +1510,7 @@ main{
 
 .contactInformation{
     height: 100%;
-    width: 15%;
+    width: 20%;
     justify-content: flex-start;
 }
 
@@ -1506,6 +1523,9 @@ main{
 .information{
     height: 50%;
 }
+.information p{
+    text-align: start;
+}
 
 .ContactSection .BlueButton{
     height: 60px;
@@ -1515,17 +1535,28 @@ main{
 
 @media screen and (max-width: 768px) {
 
+    .ContactSection{
+        height: 110vh;
+    }
+
     .ContactSection .textArea{
         text-align: center;
     }
     .form{
         width: 90%;
+        flex-direction: column;
     }
     .inputInformation{
         width: 100%;
+        margin-right: 0;
+        height: 60%;
+        margin-bottom: 20px;
     }
     .contactInformation{
-        display: none;
+        display: flex;
+        width: 100%;
+        height: 50%;
+        align-items: start;
     }
 }
 

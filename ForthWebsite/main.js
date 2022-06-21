@@ -141,25 +141,16 @@ window.addEventListener("load", function(){
 
 //////////////////Hide NAV by scrolling down
 let myNav = document.querySelector("nav");
-
-
-let currnetScroll = window.pageYOffset;
-
-
+let currnetScroll = window.scrollY;
 window.addEventListener("scroll", function (){
-    let movedScorll = this.window.pageYOffset;
-    let mechVar = ((currnetScroll + 400)-movedScorll);
-    
-    if(movedScorll > (currnetScroll + 200) ){
-        if(mechVar < 0 && mechVar/4 >= -80){
-            myNav.style.top = `${mechVar/4}px`;
-        }
+    let movedScorll = this.window.scrollY;
+    if(movedScorll > currnetScroll){
+        myNav.classList.add("NavHidden");
+    }else{
+        myNav.classList.remove("NavHidden");
     }
-    if(this.window.pageYOffset === 0){
-        myNav.style.top = `0px`;
-    }
+    currnetScroll = this.window.scrollY;
 })
-
 
 
 
@@ -172,10 +163,28 @@ myArrowup.addEventListener("click", function (){
 });
 
 window.addEventListener("scroll",function (){
-    if(window.pageYOffset > 400){
+    if(window.scrollY > 400){
         myArrowup.style.display = "block";
-    }else if(window.pageYOffset < 400){
+    }else if(window.scrollY < 300){
         myArrowup.style.display = "none";
     }
 })
 
+
+///////////Hover for Menu
+
+let myMenuSpans = document.querySelectorAll("nav .Menu .MenuBar");
+
+
+
+MyMenuButton.addEventListener("mouseenter", function (){
+    myMenuSpans.forEach(function (e){
+        e.classList.add("HoverColorToMenu");
+    })
+})
+
+MyMenuButton.addEventListener("mouseleave", function (){
+    myMenuSpans.forEach(function (e){
+        e.classList.remove("HoverColorToMenu");
+    })
+})
