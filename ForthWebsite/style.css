@@ -59,7 +59,11 @@ h5{
 p{
     font-size: 12px;
     text-align: center;
+}
 
+a{
+    color: inherit;
+    text-decoration-line: none;
 }
 
 /* MediaQureiy */
@@ -281,6 +285,27 @@ p{
     }
 }
 
+/* ArrowUp Button */
+.ArrowUpButton{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 1px 1px 6px black;
+}
+.ArrowUpButton i{
+    font-size: 36px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+}
+
 /* -----------------------------------------------------------------------------------
 ---------------------------------Background Lines <End>
 -------------------------------------------------------------------------------------- */
@@ -295,6 +320,7 @@ nav{
     position: fixed;
     background-color: var(--backgroundColor1);
     z-index: 3;
+    
 }
 nav .Container{
     display: flex;
@@ -387,6 +413,9 @@ nav i{
         flex-direction: column;
         gap: 40px;
         font-size: 18px;
+    }
+    .Navigation ul li a{
+        color: var(--textColor1);
     }
     nav .Search i{ /**/
         display: none;
