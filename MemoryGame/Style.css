@@ -1,0 +1,354 @@
+:root{
+    --mainColor: #19C7FA;
+    --backgroundColor2: #ffffff;
+    --backgroundColor1: #1F2022;
+    --textColor2: black;
+    --textColor1: white;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    background-color: var(--backgroundColor1);
+    color: var(--textColor1);
+}
+
+h1{
+    font-size: 28px;
+}
+h2{
+    font-size: 24px;
+}
+
+p{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+a{
+    color: inherit;
+    text-decoration-line: none;
+}
+
+
+
+
+
+
+.Container{
+    display: block;
+    margin: 0 auto;
+    width: 80vw;
+    height: 100%;
+}
+@media screen and (min-width: 650px) {
+    .Container{
+        width: 75vw;
+    }
+}
+
+@media screen and (min-width: 868px) {
+    .Container{
+        width: 650px;
+    }
+}
+@media screen and (min-width: 1092px) {
+    .Container{
+        width: 770px;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .Container{
+        width: 870px;
+    }
+}
+
+
+body > .ShowBlock{
+    display: block;
+}
+.ShowFlex{
+    display: flex;
+}
+
+.DisplayFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.DisplayGrid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+
+@media screen and (max-width: 550px) {
+    .DisplayGrid{
+        grid-template-columns: repeat(4, 16vw);
+        grid-template-rows: repeat(5, 1fr);
+    }
+}
+
+nav{
+    height: 7vh;
+    margin: 30px 0px;
+}
+
+nav .Container{
+    background-color: var(--backgroundColor2);
+    color: var(--textColor2);
+    border: solid 2px var(--mainColor);
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+
+main{
+    height: 75vh;
+}
+
+
+
+main .Container .Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+
+    border: solid 4px var(--mainColor);
+    font-size: 90px;
+    cursor: pointer;
+
+    perspective: 1000px;
+    transition: transform 0.2s;
+    transform-style: preserve-3d;
+}
+@media screen and (max-width: 460px) {
+    main .Container .Card{
+        font-size: 65px;
+    }
+}
+@media screen and (max-width: 330px) {
+    main .Container .Card{
+        font-size: 50px;
+    }
+}
+
+
+.FlipAnimationByClick{
+    transform: rotateY(90deg);
+}
+
+main .Container .Card i:first-child{
+    pointer-events: none;
+}
+main .Container .Card i:last-child{
+    font-size: 70px;
+    pointer-events: none;
+}
+
+/* Defualt Setting for Card  */
+/* Contening the colors and displays */
+.NormalClass{
+    background-color: var(--backgroundColor1);
+    color: var(--textColor1); 
+}
+.NormalClass i:first-child{
+    display: block;
+}
+.NormalClass i:last-child{
+    display: none;
+
+}
+/* Changes when the card click it  */
+.AppearClass{
+    background-color: var(--backgroundColor2);
+    color: var(--textColor2);
+}
+.AppearClass i:first-child{
+    display: none;
+}
+.AppearClass i:last-child{
+    display: block;
+}
+
+
+@media screen and (max-width: 1000px) {
+    main .Container .Card i:last-child{
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    main .Container .Card i:last-child{
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    main .Container .Card i:last-child{
+        font-size: 35px;
+    }
+}
+
+
+
+
+
+/* MenuButton */
+
+.menuButton{
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    top: 5%;
+    right: 10%;
+    z-index: 4;
+}
+@media screen and (max-width: 920px) {
+    .menuButton{
+        right: 7%;
+    }
+}
+@media screen and (max-width: 660px) {
+    .menuButton{
+        right: 4%;
+    }
+}
+@media screen and (max-width: 470px) {
+    .menuButton{
+        right: 2%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .menuButton{
+        right: 0;
+    }
+}
+
+body > .MenuEnable{
+    height: 40px;
+    padding: 18px 0px;
+    width: 30px;
+}
+.menuButton .MenuBar{
+    display: block;
+    width: 25px;
+    height: 2.5px;
+    background-color: white;
+    margin: 6px 0px;
+    border-radius: 25%;
+    transition: background 1s;
+}
+
+.menuButton > .MenuEnable{
+    margin: 0px;
+}
+
+.menuButton .MenuEnable:first-child{
+    transform: rotate(45deg) translate(2px,-1px);
+}
+.menuButton .MenuEnable:nth-child(2){
+    display: none;
+}
+.menuButton .MenuEnable:last-child{
+    transform: rotate(-45deg) translate(2px, 0px);
+}
+
+
+/* Menu */
+
+.Menu{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.insideMenu{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    z-index: 3;
+    background-color: var(--backgroundColor1);
+    color: var(--textColor1);
+    padding: 10% 20px;
+}
+
+.Title{
+    font-size: 36px;
+    margin-bottom: 12px
+}
+
+.Title +h1{
+    margin-bottom: 80px;
+}
+.myName{
+    color: var(--mainColor);
+}
+
+h2{
+    
+    margin: 12px 0px;
+    text-transform: capitalize;
+}
+
+.boxButton{
+    height: fit-content;
+    width: fit-content;
+    padding: 10px 9px;
+    border: solid 2px var(--mainColor);
+    text-align: center;
+    cursor: pointer;
+}
+
+.inputUserName{
+    border-color: transparent;
+    margin-bottom: 30px;
+    flex-direction: column;
+    cursor: initial;
+}
+.textArea{
+    margin-bottom: 20px;
+
+}
+.textArea > *{
+    margin: 0px 8px;
+}
+.inputUserName textarea{
+    font-size: 24px;
+    font-weight: 600;
+    height: 40px;
+    width: 55%;
+    resize: none;
+    border-radius: 10px;
+    text-indent: 10px;
+    padding-top: 4px;   
+}
+
+
