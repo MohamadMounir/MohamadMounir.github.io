@@ -1,12 +1,24 @@
 
 
-
 let userScore = document.querySelector(".userScore");
 let userName = document.querySelector(".userName");
 
 
-writingUserName("");
+
+//////User Information
+let UserInfo = {
+    Name : "",
+}
+
+
+
+
+writingUserName(localStorage.getItem("UserName"));
 writingLosingScore(0);
+
+
+
+
 
 
 
@@ -77,7 +89,7 @@ myCards.forEach(function (e){
                 myCounter = 0;
                 ClearAllObject()
                 ++UserCounter.Win;
-                console.log(`win : ${UserCounter.Win}`);
+                console.log(`win : ${UserCounter.Win}`); /////Gelecekte sileceğim
             }else
             if(userFirstCard.Name !== userSecondCard.Name){/////Lost
                 ++UserCounter.Loss;
@@ -147,7 +159,14 @@ function writingLosingScore(num){
     userScore.textContent = `${num}`;
 }
 function writingUserName(name){
-    userName.textContent = `${name}`;
+    if(typeof name === "string"){
+        userName.textContent = `${name}`;
+        UserInfo.Name = `${name}`;
+    }else{
+        userName.textContent = ``;
+        UserInfo.Name = ``;
+    }
+
 }
 
 
@@ -179,6 +198,7 @@ restartButton.addEventListener("click", function (){
     myCards.forEach(function (e){
         carDirect(e)
     });
+    localStorage.clear();
 });
 
 
@@ -189,14 +209,21 @@ let textArea = document.getElementById("enterTextArea");
 
 function enterName(){
     writingUserName(textArea.value);
+    localStorage.setItem("UserName", UserInfo.Name);
     textArea.value = "";
 }
+
+
+/////Functions for entering name by click or enter button
 myEnterButton.addEventListener("click", function (){
     enterName();
 });
-myEnterButton.addEventListener("keyup", function (e){
-    e.preventDefault();
-    if(e.keycode === "13"){
+textArea.addEventListener("keyup", function (e){
+
+    if(e.code === "Enter"){
         enterName();
+    }else{
+        e.preventDefault();
     }
 });
+

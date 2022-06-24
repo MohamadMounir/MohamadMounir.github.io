@@ -299,6 +299,11 @@ body > .MenuEnable{
     color: var(--textColor1);
     padding: 10% 20px;
 }
+@media screen and (max-width: 700px) {
+    .insideMenu{
+        width: 80vw;
+    }
+}
 
 .Title{
     font-size: 36px;
@@ -344,7 +349,7 @@ h2{
     font-size: 24px;
     font-weight: 600;
     height: 40px;
-    width: 55%;
+    min-width: 170px;
     resize: none;
     border-radius: 10px;
     text-indent: 10px;
