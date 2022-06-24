@@ -357,3 +357,50 @@ h2{
 }
 
 
+
+
+
+
+
+/* Win Screen */
+
+.WinScreen{
+    display: none;
+    height: 40vh;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--backgroundColor1);
+    color: var(--textColor1);
+}
+
+.WinScreen .Container{
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+    justify-content: space-evenly;
+}
+
+.WinScreen-BackGround{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translate(-50%,-40%);
+}
+.WinScreen .userName{
+    color: var(--mainColor);
+}
+
+.cencelButton{
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    cursor: pointer;
+    font-size: 18px;
+}

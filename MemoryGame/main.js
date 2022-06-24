@@ -1,8 +1,12 @@
 
+//////-----------------------------------------------------------------------------------------
+//////-------------All Declare
 
-let userScore = document.querySelector(".userScore");
-let userName = document.querySelector(".userName");
 
+
+/////Nav information
+let userScore = document.querySelectorAll(".userScore");
+let userName = document.querySelectorAll(".userName");
 
 
 //////User Information
@@ -12,18 +16,8 @@ let UserInfo = {
 
 
 
-
-writingUserName(localStorage.getItem("UserName"));
-writingLosingScore(0);
-
-
-
-
-
-
-
-
 //////Change background for card when second side appear
+////helping mycard() function
 let myCards = document.querySelectorAll("main .Container .Card");
 
 let cardsFirstSide = document.querySelectorAll("main .Container .Card i:first-child");
@@ -31,7 +25,7 @@ let cardsSecondSide = document.querySelectorAll("main .Container .Card i:last-ch
 
 let myCounter = 0;
 
-/////
+/////User scores
 let UserCounter = {
     Win: 0,
     Loss: 0,
@@ -54,16 +48,63 @@ let userCards = {
 let userFirstCard = userCards.FirstCard;
 let userSecondCard = userCards.SecondCard;
 
+/////End mycard()--------
 
+/////MenuButton
+
+let myMenuButton = document.getElementById("myMenu");
+let menuBars = document.querySelectorAll(".menuButton .MenuBar");
+let myMenu = document.getElementById("menuInterface");
+
+/////Restart Button
+let restartButton = document.getElementById("restartButton");
+
+/////Again Button 
+let againButton = document.getElementById("againButton");
+
+////Entering Name 
+let myEnterButton = document.getElementById("enterButton");
+let textArea = document.getElementById("enterTextArea");
+
+
+/////Cencel Button
+let cencelButton = document.querySelector(".cencelButton");
+
+
+/////Win Screen
+let winScreen = document.getElementById("winScreen");
+
+
+////Load Sound
+let clickSound = new Audio("Sound/Click1.mp3");
+let winSound = new Audio("Sound/BioShockHakingSucces.mp3");
+
+/////Set default Value 
+
+writingUserName(localStorage.getItem("UserName"));
+writingLosingScore(0);
+
+
+/////-----End
+
+myCards[0].classList.contains
+
+//////Change background for card when second side appear
 
 /////Main Function || Clicking Function
 myCards.forEach(function (e){
 
+
     e.addEventListener("click", function (e){
+
+        if(e.target.classList.contains("AppearClass")){
+            e.preventDefault();
+        }else{
         /////First two Click 
         if(myCounter === 0){////First one 
             cardClick(e) //// To add classes
             ////Save important information from card 
+            clickSound.play();
             userFirstCard.Name = e.target.children[1].classList[1];
             userFirstCard.Div = e;
             userFirstCard.Target = e.target;
@@ -82,16 +123,20 @@ myCards.forEach(function (e){
                 ++myCounter;
             }
         }
+        }
+
+
 
         /////condition if win or lost
         if(myCounter === 2){
             if(userFirstCard.Name === userSecondCard.Name){////Win
                 myCounter = 0;
                 ClearAllObject()
+                winSound.play()
                 ++UserCounter.Win;
-                console.log(`win : ${UserCounter.Win}`); /////Gelecekte sileceğim
             }else
             if(userFirstCard.Name !== userSecondCard.Name){/////Lost
+                clickSound.play();
                 ++UserCounter.Loss;
                 writingLosingScore(UserCounter.Loss);
                 myCounter = 3;
@@ -106,15 +151,19 @@ myCards.forEach(function (e){
 
                 }, 1000);
             }
-
         }
+        //////If all card reviewed
+        if(UserCounter.Win === 10){
+            winScreen.style.display = "block";
+        }
+
     });////End for Event.
 }); ///End for forEach.
 
 
 
 
-/////Helping Function
+/////Helping Functions
 
 function cardClick(e){///// Add/Remove classes form target
     //////animation flip
@@ -126,7 +175,7 @@ function cardClick(e){///// Add/Remove classes form target
         e.target.classList.toggle("FlipAnimationByClick");
     },200);//// 0.2s in card css too
 }
-function carDirect(e){
+function carDirect(e){///// Same Card Click, Para e = e.target.
         //////animation flip
         e.classList.remove("FlipAnimationByClick");
         /////timeout for be perfect with animation
@@ -138,7 +187,7 @@ function carDirect(e){
         },200);//// 0.2s in card css too
 }
 
-function ClearAllObject(){
+function ClearAllObject(){/////for clear object that use in Main Function || Clicking Function
     userFirstCard.Name = "";
     userFirstCard.Div = "";
     userFirstCard.Target = {};
@@ -147,83 +196,102 @@ function ClearAllObject(){
     userSecondCard.Target = {};
 }
 
-function CleaCounters(){
+function ClearSocres(){
+    ClearAllObject();
+    CleaCounters();
+    writingLosingScore(0);
+    myCards.forEach(function (e){
+        carDirect(e)
+    });
+}
+
+function CleaCounters(){////be alone because I'll use it multiable times 
     UserCounter.Loss = 0;
     UserCounter.Win = 0;
 }
 
-
-
-
 function writingLosingScore(num){
-    userScore.textContent = `${num}`;
+    userScore.forEach(function (e){
+        e.textContent = `${num}`;
+    })
+
 }
+
 function writingUserName(name){
     if(typeof name === "string"){
-        userName.textContent = `${name}`;
+        userName.forEach(function(e){
+            e.textContent = `${name}`;
+        })
+
         UserInfo.Name = `${name}`;
-    }else{
-        userName.textContent = ``;
+    }else{////if wasn't, be empty
+        userName.forEach(function(e){
+            e.textContent = ``;
+        })
         UserInfo.Name = ``;
     }
 
 }
 
-
-
-
-/////MenuButton
-
-let myMenuButton = document.getElementById("myMenu");
-let menuBars = document.querySelectorAll(".menuButton .MenuBar");
-let myMenu = document.getElementById("menuInterface");
-
-myMenuButton.addEventListener("click", function (){
-    menuBars.forEach(function (e){
-        e.classList.toggle("MenuEnable");
-    })
-    myMenuButton.classList.toggle("MenuEnable");
-    myMenu.classList.toggle("ShowBlock");
-});
-
-
-/////Restart Button
-let restartButton = document.getElementById("restartButton");
-
-restartButton.addEventListener("click", function (){
-    ClearAllObject();
-    CleaCounters();
-    writingLosingScore(0);
+function clearInfo(){/////Clear All data 
+    ClearSocres()
     writingUserName("");
-    myCards.forEach(function (e){
-        carDirect(e)
-    });
     localStorage.clear();
-});
-
-
-
-////Entering Name 
-let myEnterButton = document.getElementById("enterButton");
-let textArea = document.getElementById("enterTextArea");
+}
 
 function enterName(){
     writingUserName(textArea.value);
     localStorage.setItem("UserName", UserInfo.Name);
     textArea.value = "";
+    clickMenuButton();
 }
+function hideWinScreen(){
+    winScreen.style.display = "none";
+}
+function clickMenuButton(){
+    menuBars.forEach(function (e){
+        e.classList.toggle("MenuEnable");
+    })
+    myMenuButton.classList.toggle("MenuEnable");
+    myMenu.classList.toggle("ShowBlock");
+}
+
+/////Helping Functions-----End
+
+
+
+///////////////////UI function and Anonymos** Fun
+
+
+
+/////MenuButton, Show the menu by it
+myMenuButton.addEventListener("click",clickMenuButton);
+
+
+/////Restart Button, apply the function
+restartButton.addEventListener("click",function (){
+    clickMenuButton();
+    clearInfo();
+});
+
+/////Again Button 
+againButton.addEventListener("click",function (){
+    ClearSocres();
+    hideWinScreen();
+});
 
 
 /////Functions for entering name by click or enter button
-myEnterButton.addEventListener("click", function (){
-    enterName();
-});
-textArea.addEventListener("keyup", function (e){
-
+myEnterButton.addEventListener("click", enterName); ////By Click
+textArea.addEventListener("keyup", function (e){////By keyboard
+    e.preventDefault();
     if(e.code === "Enter"){
         enterName();
-    }else{
-        e.preventDefault();
     }
 });
+
+/////cencel button of the Win Screen
+cencelButton.addEventListener("click", hideWinScreen);
+
+
 
