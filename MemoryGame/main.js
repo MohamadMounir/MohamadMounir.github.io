@@ -76,8 +76,8 @@ let winScreen = document.getElementById("winScreen");
 
 
 ////Load Sound
-let clickSound = new Audio("Sound/Click1.mp3");
-let winSound = new Audio("Sound/BioShockHakingSucces.mp3");
+let clickSound = document.getElementById("clickSound");
+let winSound = document.getElementById("succesSound");
 
 /////Set default Value 
 
@@ -85,6 +85,7 @@ writingUserName(localStorage.getItem("UserName"));
 writingLosingScore(0);
 
 clickMenuButton();
+
 /////-----End
 
 
@@ -133,7 +134,6 @@ myCards.forEach(function (e){
                 ClearAllObject()
                 winSound.play()
                 ++UserCounter.Win;
-                console.log(UserCounter.Win);
             }else
             if(userFirstCard.Name !== userSecondCard.Name){/////Lost
                 clickSound.play();
