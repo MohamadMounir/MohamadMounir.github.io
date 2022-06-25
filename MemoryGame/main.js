@@ -84,10 +84,9 @@ let winSound = new Audio("Sound/BioShockHakingSucces.mp3");
 writingUserName(localStorage.getItem("UserName"));
 writingLosingScore(0);
 
-
+clickMenuButton();
 /////-----End
 
-myCards[0].classList.contains
 
 //////Change background for card when second side appear
 
@@ -134,6 +133,7 @@ myCards.forEach(function (e){
                 ClearAllObject()
                 winSound.play()
                 ++UserCounter.Win;
+                console.log(UserCounter.Win);
             }else
             if(userFirstCard.Name !== userSecondCard.Name){/////Lost
                 clickSound.play();
@@ -154,7 +154,9 @@ myCards.forEach(function (e){
         }
         //////If all card reviewed
         if(UserCounter.Win === 10){
-            winScreen.style.display = "block";
+            setTimeout(function (){
+                winScreen.style.display = "block";
+            },800);
         }
 
     });////End for Event.
@@ -175,9 +177,9 @@ function cardClick(e){///// Add/Remove classes form target
         e.target.classList.toggle("FlipAnimationByClick");
     },200);//// 0.2s in card css too
 }
-function carDirect(e){///// Same Card Click, Para e = e.target.
+function cardDirect(e){///// Same Card Click, Para e = e.target.
         //////animation flip
-        e.classList.remove("FlipAnimationByClick");
+        e.classList.add("FlipAnimationByClick");
         /////timeout for be perfect with animation
         setTimeout(function (){
             e.classList.remove("NormalClass");
@@ -186,7 +188,28 @@ function carDirect(e){///// Same Card Click, Para e = e.target.
             e.classList.remove("FlipAnimationByClick");
         },200);//// 0.2s in card css too
 }
+function showCard(e){
+        //////animation flip
+        e.classList.add("FlipAnimationByClick");
+        /////timeout for be perfect with animation
+        setTimeout(function (){
+            e.classList.remove("NormalClass");
+            e.classList.remove("AppearClass");
+            e.classList.add("AppearClass");
+            e.classList.remove("FlipAnimationByClick");
+        },200);//// 0.2s in card css too
+}
+function showCardsforS(){
+    myCards.forEach(function (e){
+        showCard(e);
+    });
+    myCards.forEach(function (e){
+        setTimeout(function (){
+            cardDirect(e); 
+        },2000);
+    });
 
+}
 function ClearAllObject(){/////for clear object that use in Main Function || Clicking Function
     userFirstCard.Name = "";
     userFirstCard.Div = "";
@@ -198,14 +221,14 @@ function ClearAllObject(){/////for clear object that use in Main Function || Cli
 
 function ClearSocres(){
     ClearAllObject();
-    CleaCounters();
+    CleaeCounters();
     writingLosingScore(0);
     myCards.forEach(function (e){
-        carDirect(e)
+        cardDirect(e)
     });
 }
 
-function CleaCounters(){////be alone because I'll use it multiable times 
+function CleaeCounters(){////be alone because I'll use it multiable times 
     UserCounter.Loss = 0;
     UserCounter.Win = 0;
 }
@@ -240,10 +263,16 @@ function clearInfo(){/////Clear All data
 }
 
 function enterName(){
-    writingUserName(textArea.value);
-    localStorage.setItem("UserName", UserInfo.Name);
-    textArea.value = "";
+    if(textArea.value !== ""){
+        writingUserName(textArea.value);
+        localStorage.setItem("UserName", UserInfo.Name);
+        textArea.value = "";
+    }else if(textArea.value === ""){
+        localStorage.getItem("UserName");
+    }
+    randomSort();
     clickMenuButton();
+    showCardsforS();
 }
 function hideWinScreen(){
     winScreen.style.display = "none";
@@ -256,6 +285,25 @@ function clickMenuButton(){
     myMenu.classList.toggle("ShowBlock");
 }
 
+function randomSort(){
+    let myRandomArr = [];
+    for(i=0; i<myCards.length; i++){
+        let myRandom = Math.floor((Math.random() * 20));
+        if(!myRandomArr.includes(myRandom)){
+            myCards[i].classList.add(`gridOrderCard${myRandom}`);
+            myRandomArr.unshift(myRandom);
+        }else{////If number not new, it will enter another loop to make a new number
+            for(I=0; I<myCards.length; I++){
+                let myRandom = Math.floor((Math.random() * 20));
+                if(!myRandomArr.includes(myRandom)){
+                    myCards[i].classList.add(`gridOrderCard${myRandom}`);
+                    myRandomArr.unshift(myRandom);
+                    break;
+                }    
+            }
+        }
+    }
+}
 /////Helping Functions-----End
 
 
@@ -272,12 +320,16 @@ myMenuButton.addEventListener("click",clickMenuButton);
 restartButton.addEventListener("click",function (){
     clickMenuButton();
     clearInfo();
+    randomSort();
+    showCardsforS();
 });
 
 /////Again Button 
 againButton.addEventListener("click",function (){
     ClearSocres();
     hideWinScreen();
+    randomSort();
+    showCardsforS();
 });
 
 
@@ -295,3 +347,11 @@ cencelButton.addEventListener("click", hideWinScreen);
 
 
 
+
+/////Random Order System
+// window.addEventListener("load",function(){
+//     randomSort();
+//     showCardsforS();
+// });
+
+////Show card for a few seconds

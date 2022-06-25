@@ -404,3 +404,72 @@ h2{
     cursor: pointer;
     font-size: 18px;
 }
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------------
+------------------------------------Grid Order System for cards 
+------------------------------------------------------------------------------------------------*/
+
+.gridOrderCard1{
+    order: 1;
+} 
+.gridOrderCard2{
+    order: 2;
+} 
+.gridOrderCard3{
+    order: 3;
+} 
+.gridOrderCard4{
+    order: 4;
+} 
+.gridOrderCard5{
+    order: 5;
+} 
+.gridOrderCard6{
+    order: 6;
+} 
+.gridOrderCard7{
+    order: 7;
+} 
+.gridOrderCard8{
+    order: 8;
+} 
+.gridOrderCard9{
+    order: 9;
+} 
+.gridOrderCard10{
+    order: 10;
+} 
+.gridOrderCard11{
+    order: 11;
+} 
+.gridOrderCard12{
+    order: 12;
+} 
+.gridOrderCard13{
+    order: 13;
+} 
+.gridOrderCard14{
+    order: 14;
+} 
+.gridOrderCard15{
+    order: 15;
+} 
+.gridOrderCard16{
+    order: 16;
+} 
+.gridOrderCard17{
+    order: 17;
+} 
+.gridOrderCard18{
+    order: 18;
+} 
+.gridOrderCard19{
+    order: 19;
+} 
+.gridOrderCard20{
+    order: 20;
+} 
