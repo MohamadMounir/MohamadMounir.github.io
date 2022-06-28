@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;   
+}
+
+html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #867ffe;
+    color: black;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0px auto;
+    text-align: center;
+}
+textarea{
+    margin-top: 20px;
+    height: 40px;
+    resize: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 7px 4px;
+    white-space: nowrap;
+}
+textarea + h2{
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Box-Container{
+    display: flex;
+    flex-direction: column;
+    width: 22vw;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+
+}
+
+.EnteringText{
+    width: 38vw;
+    margin: 70px auto 0px;
+}
+
+.Text-container{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0px 7px;
+    background-color: #867ffe;
+    color: white;
+    text-transform: capitalize;
+    user-select: none;
+}
+.texts > .Text-container{
+    cursor: move;    
+}
+
+.DragingArea{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin-top: 70px;
+}
+
+.Draging{
+    opacity: 0.6;
+}
+
+.DragingOver{
+    background-color: rgb(37, 215, 37);
+    color: white;
+}
