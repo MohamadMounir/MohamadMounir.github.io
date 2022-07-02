@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.DisplayFlexColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #2c2c2c;
+    color: white;
+    justify-content: flex-start;
+}
+input[type="range"]{
+    width: 90%;
+}
+.button{
+    text-transform: capitalize;
+    padding: 7px 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.photoSide > .button{
+    border: dashed white;
+    margin-top: 30px;
+}
+.buttons > button{
+    background-color: #005900;
+}
+h3{
+    text-transform: capitalize;
+}
+
+.Container{
+    height: 95%;
+    width: 90%;
+    margin-top: 15px;
+    background-color: #1d1d1d;
+    display: flex;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.photoSide{
+    height: 100%;
+    width: 55%;
+    padding: 25px;
+    justify-content: space-around;
+}
+.photoContainer{
+    height: 70%;
+    width: 100%;
+    background-color: #2c2c2c;
+    background-size: cover;
+    background-position: center;    
+    
+    
+}
+@media screen and (max-width: 1160px) {
+    .photoContainer{
+        height: 50%;
+    }
+}
+@media screen and (max-width: 930px) {
+    .photoContainer{
+        height: 40%;
+    }
+}
+.optionsSide{
+    height: 100%;
+    width: 45%;
+    justify-content: flex-start;
+    
+
+}
+.option{
+    margin-top: 10px;
+    width: 100%;
+    text-align: end;
+}
+.photoOptions{
+    height: 80%;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+}
+
+.buttons{
+    width: 100%;
+    margin-top: 50px;    
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Column display */
+@media screen and (max-width: 710px) { 
+    body{
+        height: 170vh;
+    }
+    .Container{
+        display: flex;
+        flex-direction: column;
+    }
+    .photoSide{
+        height: 30%;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .photoContainer{
+        height: 30vh;
+        width: 60vw;
+    }
+    .optionsSide {
+        height: 50%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 470px) { 
+    .photoContainer{
+        width: 60vw;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body class="DisplayFlexColumn">
+    
+    <div class="Container">
+        <main class="photoSide DisplayFlexColumn">
+            <div id="photoContainer" class="photoContainer"></div>
+            <!-- <img id="inputImage" src="" alt=""> -->
+            <label for="uploadButton" class="button">Upload</label>
+            <input type="file" name="img" id="uploadButton" class="button" accept="image/png,image/jpg,image/jpeg" hidden>
+            <!-- <button>Upload</button> -->
+        </main>
+
+        <div class="optionsSide DisplayFlexColumn">
+            <div class="photoOptions DisplayFlexColumn">
+                <div class="option">
+                    <h3>Saturate</h3>
+                    <input type="range" name="saturate" id="saturate" min="0" max="100" step="1" list="tickmarks">
+                </div>
+                <div class="option">
+                    <h3>contrast</h3>
+                    <input type="range" name="contrast" id="contrast" min="0" max="100" step="1">
+                </div>
+                <div class="option">
+                    <h3>brightness</h3>
+                    <input type="range" name="brightness" id="brightness" min="0" max="100" step="1">
+                </div>
+                <div class="option">
+                    <h3>sepia</h3>
+                    <input type="range" name="sepia" id="sepia" min="0" max="100" step="1">
+                </div>
+                <div class="option">
+                    <h3>grayscale</h3>
+                    <input type="range" name="grayscale" id="grayscale" min="0" max="100" step="1">
+                </div>
+                <div class="option">
+                    <h3>blur</h3>
+                    <input type="range" name="blur" id="blur" min="0" max="100" step="1">
+                </div>
+                <div class="option">
+                    <h3>hue rotate</h3>
+                    <input type="range" name="hueRotate" id="hueRotate" min="0" max="100" step="1">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="restButton" class="button">reset</button>
+                <button id="downloadButton" class="button">download</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
