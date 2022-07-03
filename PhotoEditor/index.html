@@ -15,8 +15,11 @@
     
     <div class="Container">
         <main class="photoSide DisplayFlexColumn">
-            <div id="photoContainer" class="photoContainer"></div>
-            <!-- <img id="inputImage" src="" alt=""> -->
+            <div id="photoContainer" class="photoContainer">
+                <img id="inputImage" >
+                <canvas id="inputCanvas"></canvas>
+            </div>
+
             <label for="uploadButton" class="button">Upload</label>
             <input type="file" name="img" id="uploadButton" class="button" accept="image/png,image/jpg,image/jpeg" hidden>
             <!-- <button>Upload</button> -->
@@ -26,7 +29,7 @@
             <div class="photoOptions DisplayFlexColumn">
                 <div class="option">
                     <h3>Saturate</h3>
-                    <input type="range" name="saturate" id="saturate" min="0" max="100" step="1" list="tickmarks">
+                    <input type="range" name="saturate" id="saturate" min="0" max="100" value="50" step="1" list="tickmarks">
                 </div>
                 <div class="option">
                     <h3>contrast</h3>
@@ -55,7 +58,8 @@
             </div>
             <div class="buttons">
                 <button id="restButton" class="button">reset</button>
-                <button id="downloadButton" class="button">download</button>
+                <a download="image" id="downloadButton" class="button" dow>download</a>
+                <!-- <button id="downloadButton" class="button">download</button> -->
             </div>
         </div>
     </div>

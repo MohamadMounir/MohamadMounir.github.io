@@ -3,10 +3,12 @@ let myRangs = document.querySelectorAll(`input[type="range"]`);
 
 let restButton = document.getElementById("restButton");
 let uploadButton = document.getElementById("uploadButton");
+let downloadButton = document.getElementById("downloadButton");
 
 let inputImage = document.getElementById("inputImage");
-let photoContainer = document.getElementById("photoContainer");
 
+let canvas = document.getElementById("inputCanvas");
+let ctx = canvas.getContext("2d");
 
 let defaultRangeValue = {
     Sat: 50,
@@ -33,7 +35,9 @@ let userNewValue = {
 
 /////SetValues
 setValueRanges();
-applyChange(100);
+
+
+
 
 /////Helping Functions
 
@@ -47,34 +51,15 @@ function setValueRanges(){
     myRangs[6].value = defaultRangeValue.HueRo;
 }
 function applyChange(sat, cont, bri, sepia, grScl,blur,hue){
-    photoContainer.style.filter = `saturate(${sat}%) contrast(${cont}%) brightness(${bri}%) sepia(${sepia}%) grayscale(${grScl}%) blur(${blur}px) hue-rotate(${hue}deg)`;
+    ctx.filter = `saturate(${sat}%) contrast(${cont}%) brightness(${bri}%) sepia(${sepia}%) grayscale(${grScl}%) blur(${(blur)/20}px) hue-rotate(${(hue)*3.6}deg)`;
+    ctx.drawImage(inputImage,0,0,canvas.width,canvas.height);
+
 }
-
-
-////Button Function
-
-restButton.onclick = function (){
-    setValueRanges()
-    applyChange(100, 100,100,0,0,0,0)
-}
-
-uploadButton.addEventListener("change", function (){
-    let reader = new FileReader();
-    reader.addEventListener("load", function (){
-        photoContainer.style.backgroundImage = `url(${reader.result})`;
-
-    })
-    reader.readAsDataURL(this.files[0]);
-})
-
-
-myRangs.forEach(function (ele){
+function changeFun(ele){
     let myValue = ele.value;
     let currentValue = 100;
     let currentValueZ = 0;
-
-    
-    ele.addEventListener("change", function (){
+    ele.addEventListener("input", function (){
         if(ele.id === "saturate" || ele.id === "contrast" || ele.id === "brightness"){
             switch (ele.id){
                 case "saturate":
@@ -100,10 +85,10 @@ myRangs.forEach(function (ele){
             }
             currentValueZ = currentValueZ+(ele.value - myValue);
         }else if(ele.id === "blur"){
-            userNewValue.blur = (currentValueZ+(ele.value - myValue))/20;
+            userNewValue.blur = currentValueZ+(ele.value - myValue);
             currentValueZ = currentValueZ+(ele.value - myValue);
         }else if(ele.id === "hueRotate"){
-            userNewValue.hueRotate = (currentValueZ+(ele.value - myValue))*3.6;
+            userNewValue.hueRotate = currentValueZ+(ele.value - myValue);
             currentValueZ = currentValueZ+(ele.value - myValue);
         }
         myValue = ele.value;
@@ -112,7 +97,44 @@ myRangs.forEach(function (ele){
 
     
     })
-    
+}
+
+function restart(){
+    setValueRanges()
+    userNewValue.saturate = 100;
+    userNewValue.contrast = 100;
+    userNewValue.brightness = 100;
+    userNewValue.speia = 0;
+    userNewValue.grayScale = 0;
+    userNewValue.blur =0;
+    userNewValue.hueRotate = 0;
+    applyChange(100, 100,100,0,0,0,0);
+}
+////Button Function
+
+restButton.onclick = function (){
+    restart()
+}
+
+uploadButton.addEventListener("change", function (){
+    restart();
+    let reader = new FileReader();
+    reader.addEventListener("load", function (){
+        inputImage.setAttribute(`src`,`${reader.result}`);
+    })
+    reader.readAsDataURL(this.files[0]);
+    inputImage.addEventListener("load",function (){
+        canvas.width = inputImage.width;
+        canvas.height = inputImage.height;
+        ctx.drawImage(inputImage,0,0,canvas.width,canvas.height);
+        inputImage.style.display = "none";
+    })
+
 })
 
+downloadButton.onclick = function (){
+    downloadButton.href = canvas.toDataURL();
+
+}
+myRangs.forEach((ele)=> changeFun(ele));
 

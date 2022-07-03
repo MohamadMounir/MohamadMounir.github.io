@@ -26,6 +26,11 @@ body{
 }
 input[type="range"]{
     width: 90%;
+    direction: rtl;
+}
+a{
+    text-decoration: none;
+
 }
 .button{
     text-transform: capitalize;
@@ -40,7 +45,7 @@ input[type="range"]{
     border: dashed white;
     margin-top: 30px;
 }
-.buttons > button{
+.buttons > .button{
     background-color: #005900;
 }
 h3{
@@ -63,24 +68,9 @@ h3{
     padding: 25px;
     justify-content: space-around;
 }
-.photoContainer{
-    height: 70%;
-    width: 100%;
-    background-color: #2c2c2c;
-    background-size: cover;
-    background-position: center;    
-    
-    
-}
-@media screen and (max-width: 1160px) {
-    .photoContainer{
-        height: 50%;
-    }
-}
-@media screen and (max-width: 930px) {
-    .photoContainer{
-        height: 40%;
-    }
+.photoContainer img, canvas{
+    max-height: 60vh; 
+    max-width: 45vw;
 }
 .optionsSide{
     height: 100%;
@@ -119,22 +109,16 @@ h3{
         flex-direction: column;
     }
     .photoSide{
-        height: 30%;
+        height: unset;
         width: 100%;
         justify-content: flex-start;
     }
-    .photoContainer{
-        height: 30vh;
-        width: 60vw;
+    .photoContainer img{
+        max-height: none;
+        max-width: 80vw;
     }
     .optionsSide {
-        height: 50%;
+        height: unset;
         width: 100%;
-    }
-}
-
-@media screen and (max-width: 470px) { 
-    .photoContainer{
-        width: 60vw;
     }
 }
