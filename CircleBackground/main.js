@@ -66,15 +66,18 @@ function animtion(){
     }
 }
 
+
 function iniat(){
     cycleArray = [];
+    circleNumber();
+}
+function circleNumber(){
     CreateCircle(150,5);
     CreateCircle(90,7);
     CreateCircle(60,15);
     CreateCircle(24,22);
     CreateCircle(6,40);
 }
-
 
 window.addEventListener("resize", function (){
     if(canvas.width > window.innerWidth || canvas.height > window.innerHeight){
@@ -90,16 +93,7 @@ window.addEventListener("resize", function (){
 ///Function happen
 
 
-CreateCircle(150,5);
-CreateCircle(90,7);
-CreateCircle(60,15);
-CreateCircle(24,22);
-CreateCircle(6,40);
-// CreateCircle(24,10);
-// CreateCircle(12,15);
-// CreateCircle(3,22);
-// CreateCircle(210,12);
-
+circleNumber()
 
 
 animtion();
