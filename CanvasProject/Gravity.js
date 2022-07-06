@@ -3,15 +3,15 @@ let canvas = document.querySelector("canvas");
 let c = canvas.getContext("2d");
 let maxCircle = 70;
 let minCircle = 20;
-let circleNum = 200;
+let circleNum;
 
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-if(window.innerWidth < 450){
-    circleNum = 50;
-    console.log("Happen")
-}
+
+circleNumAdj();
+
+
 
 ////End for sets
 
@@ -27,7 +27,7 @@ window.addEventListener("resize", function (){
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
-
+    circleNumAdj();
 
     
 })
@@ -37,6 +37,15 @@ window.addEventListener("resize", function (){
 function iniat(){
     circleArray = [];
     CreateCircle(circleNum,maxCircle,minCircle);
+}
+
+function circleNumAdj(){
+    if(window.innerWidth < 450){
+        circleNum = 50;
+        console.log("Happen")
+    }else{
+        circleNum = 200
+    }
 }
 
 
@@ -137,3 +146,8 @@ function Animtion(){
 CreateCircle(circleNum,maxCircle,minCircle);
 
 Animtion();
+
+
+
+/////Event Functions
+canvas.addEventListener("click",iniat);
