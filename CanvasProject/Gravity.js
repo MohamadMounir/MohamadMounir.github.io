@@ -1,8 +1,8 @@
 ////Sets for canvas + Declare
 let canvas = document.querySelector("canvas");
 let c = canvas.getContext("2d");
-let maxCircle = 70;
-let minCircle = 20;
+let maxCircle;
+let minCircle;
 let circleNum;
 
 
@@ -42,10 +42,15 @@ function iniat(){
 function circleNumAdj(){
     if(window.innerWidth < 450){
         circleNum = 50;
-        console.log("Happen")
+        maxCircle = 40;
+        minCircle = 15;
     }else{
         circleNum = 200
+        maxCircle = 70;
+        minCircle = 20;
     }
+
+    
 }
 
 
