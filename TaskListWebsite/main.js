@@ -44,9 +44,23 @@ function createTextContent(Str , ID){
     /////button
     let Btn = document.createElement("button");
     Btn.textContent = "Delete";
+    Btn.className = "delete box"
     myTaskContentLastChild.appendChild(Btn);    
+
+    let buttonDiv = document.createElement("div");
+    buttonDiv.className = "editDiv"
+    myTaskContentLastChild.appendChild(buttonDiv);    
+    
+
+    let BtnEdit= document.createElement("button");
+    BtnEdit.textContent = "edit";
+    BtnEdit.className = "edit box"
+    buttonDiv.appendChild(BtnEdit);    
+
+    /////button
     
     deleteTool();
+    editTool();
 }
 
 
@@ -111,7 +125,7 @@ for(i=0;i<localStorage.length;i++){
 /////Function that remove Task from localStorage and remove its parent
 ////it's used inside createTextContent(), without it; the programme couldn't update the news values.
 function deleteTool(){
-    var myButtonDelete = document.querySelectorAll(".taskContent button");
+    var myButtonDelete = document.querySelectorAll(".taskContent .delete");
     for(i=0;i<myButtonDelete.length; i++){
         if(myButtonDelete[i] !== null){
             myButtonDelete[i].onclick = function (e){
@@ -121,8 +135,55 @@ function deleteTool(){
         }
     }  
 }
+function editTool(){
+    let myButtonEdit = document.querySelectorAll(".taskContent .edit");
 
+    for( i=0; i<myButtonEdit.length; i++){
+        if(myButtonEdit[i] !== null){
+            myButtonEdit[i].onclick = function (e){
+                let oldText = e.target.parentElement.parentElement.children[0].textContent;
+                e.target.parentElement.parentElement.children[0].setAttribute("contenteditable","true");
+                // console.log(e.target.parentElement.parentElement)
+                // console.log(e.target.parentElement.parentElement.children[0])
+                e.target.style.display = "none";
 
+                let applyButton = document.createElement("button");
+                applyButton.textContent = "apply";
+                applyButton.className = "apply box";
+                e.target.parentElement.appendChild(applyButton);
+
+                let cencelButton = document.createElement("button");
+                cencelButton.textContent = "cencel";
+                cencelButton.className = "cencel box";
+                e.target.parentElement.appendChild(cencelButton);
+
+                applyButton.onclick = function (){
+                    localStorage.setItem(`${e.target.parentElement.parentElement.getAttribute("id")}`,`${e.target.parentElement.parentElement.children[0].textContent}`);
+                    e.target.parentElement.parentElement.children[0].setAttribute("contenteditable","false");
+                    // console.log(e.target.parentElement.parentElement.children[0])
+                    applyButton.style.display = "none"
+                    cencelButton.style.display = "none"
+                    e.target.style.display = "block"
+                }
+                cencelButton.onclick = function (){
+                    e.target.parentElement.parentElement.children[0].setAttribute("contenteditable","false");
+                    e.target.parentElement.parentElement.children[0].textContent = `${oldText}`;
+
+                    applyButton.style.display = "none"
+                    cencelButton.style.display = "none"
+                    e.target.style.display = "block"
+                }
+                    ///////For make edit
+                    // if(f>0){
+                    //     localStorage.setItem(`${e.target.parentElement.getAttribute("id")}`,`${e.target.parentElement.children[0].textContent}`)
+                    // }
+                    // f++;
+                // localStorage.setItem()
+                // e.target.parentElement.getAttribute("id")
+            }
+        }
+    }
+}
 
 
 
@@ -132,45 +193,44 @@ function deleteTool(){
 
 /////Color set
 
-let mainColorTheme = {
+let colorArray = [
+mainColorTheme = {
     ///Default Theme 
     mainColor: `#ff4b27`,
     secondColor: `#eeeeee`,
     thirdColor: `white`,
     textColor: `black`,
     buttonTextColor: `white`,
-};
-
-let secondColorTheme = {
+},
+secondColorTheme = {
     mainColor: `#003B46`,
     secondColor: `#66A5AD`,
     thirdColor: `#C4DFE6`,
     textColor: `black`,
     buttonTextColor: `white`,
-};
-let thirdColorTheme = {
+},
+thirdColorTheme = {
     mainColor: `#379683`,
     secondColor: `#8ee4af`,
     thirdColor: `#edf5e1`,
     textColor: `black`,
     buttonTextColor: `white`,
-};
-let forthColorTheme = {
+},
+forthColorTheme = {
     mainColor: `#66fcf1`,
     secondColor: `#45a29e`,
     thirdColor: `#1f2833`,
     textColor: `#c5c6c7`,
     buttonTextColor: `white`,
-};
-let fivthColorTheme = {
+},
+fivthColorTheme = {
     mainColor: `#86c232`,
     secondColor: `#61892f`,
     thirdColor: `#222629`,
     textColor: `white`,
     buttonTextColor: `white`,
-
-};
-
+},
+];
 
 ///////Re-set colors from localStorage
 
@@ -200,47 +260,32 @@ function clickedFun(){
     /////loop for apply all Fun in every ColorBlockSwitch
     for(i=0; i<myColorSwitch.length; i++){
         myColorSwitch.item(i).onclick = function (e){
+
+            let clickedTheme = `mainColorTheme`;
+
             ////this code will check the ID of target and get the suited "theme" -by change all root color
             switch(e.target.getAttribute("id")){
-                
                 case "mainColorTheme":
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${mainColorTheme.mainColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${mainColorTheme.secondColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${mainColorTheme.thirdColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${mainColorTheme.textColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${mainColorTheme.buttonTextColor}`);
+                clickedTheme = colorArray[0];
                     break;
                 case "secondColorTheme": 
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${secondColorTheme.mainColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${secondColorTheme.secondColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${secondColorTheme.thirdColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${secondColorTheme.textColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${secondColorTheme.buttonTextColor}`);
+                clickedTheme = colorArray[1];
                     break;
                 case "thirdColorTheme": 
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${thirdColorTheme.mainColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${thirdColorTheme.secondColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${thirdColorTheme.thirdColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${thirdColorTheme.textColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${thirdColorTheme.buttonTextColor}`);
+                clickedTheme = colorArray[2];
                     break;
                 case "forthColorTheme": 
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${forthColorTheme.mainColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${forthColorTheme.secondColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${forthColorTheme.thirdColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${forthColorTheme.textColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${forthColorTheme.buttonTextColor}`);
+                clickedTheme = colorArray[3];
                     break;
                 case "fivthColorTheme": 
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${fivthColorTheme.mainColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${fivthColorTheme.secondColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${fivthColorTheme.thirdColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${fivthColorTheme.textColor}`);
-                    document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${fivthColorTheme.buttonTextColor}`);
+                clickedTheme = colorArray[4];
                     break;
-
-
             }
+            document.styleSheets[0].cssRules[0].style.setProperty(`--mainColor`, `${clickedTheme.mainColor}`);
+            document.styleSheets[0].cssRules[0].style.setProperty(`--secondColor`, `${clickedTheme.secondColor}`);
+            document.styleSheets[0].cssRules[0].style.setProperty(`--thirdColor`, `${clickedTheme.thirdColor}`);
+            document.styleSheets[0].cssRules[0].style.setProperty(`--textColor`, `${clickedTheme.textColor}`);
+            document.styleSheets[0].cssRules[0].style.setProperty(`--buttonTextColor`, `${clickedTheme.buttonTextColor}`);
 
             /////Make selection theme block diffrent from others.
             //////delete"selectedColorI" class from all elements, then add it for targeted element and save it inside localStorage. 
@@ -332,6 +377,10 @@ clearDiv.addEventListener("click",function (){
     }
     Clr++
 } )
+
+
+
+
 
 
 

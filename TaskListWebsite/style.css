@@ -51,6 +51,8 @@ body{
     margin: 0px 15px;
     border-radius: var(--borderRadius);
     font-size: 18px;
+    font-weight: 600;
+    padding-left: 20px;
     background-color: var(--thirdColor);
     color: var(--textColor);
 }
@@ -98,7 +100,7 @@ body{
 
 
 
-.taskContent button{
+.box{
     height: 50px; 
     width: 60px; 
     font-weight: bold; 
@@ -109,23 +111,39 @@ body{
     transition: all 0.2s;
     cursor: pointer;
 }
+.editDiv{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 85%
+}
 
 .taskContent button:hover{
     opacity: 0.90;
 }
 
-
-
+.colorSwitchContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-weight: 600;
+    margin: 0px auto;
+    height: 76px;
+    width: fit-content;
+    padding: 15px 25px;
+    background-color: var(--secondColor);
+    border-radius: calc(var(--borderRadius) - 10px);
+    box-sizing: border-box;
+}
 .colorSwitch{
+    display: flex;
+    width: fit-content;
+}
+#settings{
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    height: 70px;
-    width: fit-content;
-    padding: 3px 25px;
-    background-color: var(--secondColor);
-    border-radius: calc(var(--borderRadius) - 10px);
 }
 
 .colorR{
@@ -139,19 +157,19 @@ body{
 
 }
 
-.MainTheme{
+#mainColorTheme{
     background-color: #ff4b27;
 }
-.SecondTheme{
+#secondColorTheme{
     background-color: #003B46;
 }
-.ThirdTheme{
+#thirdColorTheme{
     background-color: #379683;
 }
-.ForthTheme{
+#forthColorTheme{
     background-color: #66fcf1;
 }
-.FivthTheme{
+#fivthColorTheme{
     background-color: #86c232;
 }
 
@@ -165,7 +183,7 @@ body{
 .clearDiv{
     position: absolute;
     height: 46px;
-    width: 100px;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     top: 90px;
