@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(#111, #222);
+    color: white;
+    user-select: none;
+}
+h1{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+li{
+    text-transform: capitalize;
+    cursor: pointer;
+}
+h2{
+    font-size: 3.0625rem;
+    text-transform: uppercase;
+    line-height: 110%;
+    margin-bottom: 7px;
+    letter-spacing: 2px;
+}
+
+p{
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+
+
+.Container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90vw;
+    height: 80%;
+    padding: 15px 7%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    z-index: 1;
+}
+@media screen and (min-width: 750px) {
+    .Container{
+        width: 700px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .Container{
+        width: 900px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .Container{
+        width: 1150px;
+    }
+}
+
+nav{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0px;
+    z-index: 2;
+}
+.logo h1{
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.leftSide{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    width: 38%;
+    height: 100%;
+    z-index: 2;
+}
+.rightSide{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 62%;
+    height: 100%;
+    z-index: 2;
+}
+.rightSide img{
+    height: 215px;
+    width: auto;
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    clip-path: circle(40% at right 80%);
+    background-color: red;
+}
+
+@media screen and (max-width: 810px) {
+    html{
+        font-size: 14px;
+    }
+    nav{
+        flex-direction: column;
+    }
+    main{
+        flex-direction: column;
+        padding: 25px;
+    }
+    .leftSide{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 630px) {
+    body::after{
+        clip-path: circle(40% at bottom);
+    }
+
+    .rightSide{
+        justify-content: center;
+        width: 100%;
+    }
+    .rightSide img{
+        height: 180px;
+    }
+}
+@media screen and (max-width: 500px) {
+        .rightSide img{
+            height: 140px;
+        }
+}
