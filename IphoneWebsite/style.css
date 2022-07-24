@@ -89,6 +89,9 @@ ul > li{
     left: 0;
     opacity: 0.2;
 }
+.menuIcon{
+    display: none;
+}
 
 .Container{
     margin: 0 auto;
