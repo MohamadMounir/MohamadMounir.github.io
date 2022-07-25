@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+
+}
+body{
+    /* background-color: #000; */
+    background: linear-gradient(#1a0718, #653c7c);
+    color: white;
+    width: 100vw;
+    height: 200vh;
+    overflow-x: hidden;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 25px 45px;
+    z-index: 8;
+}
+.logo h1{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    cursor: pointer;
+}
+h1{
+    font-size: 1.6875rem;
+    font-weight: 600;
+    
+}
+h1::first-letter{
+    text-transform: capitalize;
+}
+
+p{
+    margin-top: 2.8125rem;
+}
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+li{
+    text-transform: capitalize;
+    font-size: 1.3125rem;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 8px;
+    background-color: transparent;
+    margin: 0 4px;
+    border-radius: 21px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: white;
+    color: black;
+}
+li:first-child{
+    background-color: white;
+    color: black;
+}
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.topSide{
+    pointer-events: none;
+    position: relative;
+    /* height: 100vh; */
+    height: 50%;
+    width: 100%;
+}
+.topSide h1{
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%,50%) scale(0);
+    font-size: 2.5rem;
+}
+.bottomSide{
+    position: relative;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 150px 30px 25px;
+    /* background-color: #1a0718; */
+    background-color: #240521;;
+    z-index: 5;
+}
+.bottomSide::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background: linear-gradient(#1a0718,#240521);
+}
+img{
+    position: absolute;
+    height: auto;
+    width: 100%;
+    bottom: 0;
+}
+#stars{
+    z-index: -1;
+    left: -10%;
+    width: 170%;
+
+}
+#mountains{
+    z-index: 0;
+    bottom: 5%;
+} 
+#mountains2{
+    z-index: 0;
+}
+
+#boat{
+    z-index: 2;
+}
+
+#mountains3{
+    z-index: 3;
+}
+#moon{
+    mix-blend-mode: screen;
+}
+
+
+@media screen and (max-width: 600px) {
+    html{
+        font-size: 14px;
+    }
+    body{
+        height: 150vh;
+    }
+    nav{
+        justify-content: center;
+    }
+    ul{
+        display: none;
+    }
+    /* main{
+        overflow: hidden;
+    } */
+    #stars{
+        height: 100%;
+    }
+    #moon{
+        top: 30%;
+    }
+    .bottomSide p{
+        overflow: scroll;
+        height: 200px;
+    }
+    .bottomSide p:last-child{
+        display: none;
+    }
+    
+}
+
+
+@media screen and (min-width: 1000px) {
+    body{
+        height: 210vh;
+    }
+    .topSide{
+        height: 60%;
+    }
+    .bottomSide{
+        height: 40%;
+    }
+}
