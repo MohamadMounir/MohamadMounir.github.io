@@ -566,7 +566,8 @@ main img{
 }
 
 
-#gallery::before{
+/* #gallery::before{ */
+.secondBackground::before{
     content: "";
     position: absolute;
     width: 100vw;
@@ -576,7 +577,7 @@ main img{
     top: 0;
 }
 @media screen and (max-width: 610px) {
-    #gallery::before{
+    .secondBackground::before{
         height: 102%;
     }
 }
@@ -804,3 +805,165 @@ mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 100%, black 100%); */
 
 
 
+/* testimonials */
+
+
+.comments{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px 40px;
+}
+
+.comment{
+    position: relative;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 25px;
+    text-align: left;
+    padding: 22px;
+    gap: 9px;
+    background-color: white;
+    border-radius: 9px;
+}
+.comment > img{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: -21%;
+    right: -3%;
+    border: solid 10px #ececec;
+    box-sizing: content-box;
+}
+.comment > h3{
+    text-transform: capitalize;
+
+}
+.comment > h4{
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #888080;
+}
+
+.stars > i{
+    color: gold;
+    font-size: 22px;
+}
+.stars > .fa-regular{
+    color: black ;
+}
+
+@media screen and (max-width: 1200px) {
+    .comments{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 35px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .comments{
+    grid-template-columns: 1fr;
+    gap: 20px 35px;
+    }
+}
+
+
+/* team members */
+
+#teamMembers{
+    flex-direction: column;
+}
+
+.accounts{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px 45px;
+}
+.account{
+    position: relative;
+    background-color: #ececec;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    left: 14%;
+}
+.account::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+.account > img{
+    position: relative;
+    height: 70%;
+    width: 110%;
+    object-fit: cover;
+    border-radius: 7px;
+    left: -26%;
+    top: 11%;
+    z-index: 1;
+    transition: 0.4s 0.1s;
+}
+
+.account:hover::after{
+    filter: grayscale(100%);
+    width: 100%;
+}
+.account:hover > img{
+    filter: grayscale(100%);
+}
+.account:hover > h1{
+    color: #333;
+}
+
+
+.account > ul{
+    position: absolute;
+    flex-direction: column;
+    width: fit-content;
+    right: 5%;
+    top: 45%;
+    height: 40%;
+    transform: translate(-50%,-50%);
+    justify-content: space-between;
+    z-index: 1;
+}
+.account > ul i{
+    color: #3339;
+    font-size: 19px;
+}
+.account > ul i:hover{
+    color: #2196f3;
+}
+.account > h1{
+    margin-top: 20%;
+    color: #2196f3;
+    font-size: 26px;
+    text-transform: capitalize;
+    transition: 0.1s 0.1s;
+}
+.account > h3{
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) {
+    .accounts{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+@media screen and (max-width: 660px) {
+    .accounts{
+        grid-template-columns: 1fr;
+    }
+}
