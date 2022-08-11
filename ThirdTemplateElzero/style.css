@@ -1171,3 +1171,79 @@ mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 100%, black 100%); */
         width: 100%;
     }
 }
+
+
+/* how it work */
+
+#how{
+    padding-bottom: 3%;
+}
+
+#how > .informations{
+    width: 100%;
+    justify-content: space-between;
+}
+#how > .informations > img{
+    width: 40%;
+    height: auto;
+}
+#how .rightSection{
+    width: 48%;
+    flex-direction: column;
+    gap: 25px;
+}
+#how .info{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    padding: 30px 25px;
+    border: 1px solid white;
+    background-color: #f6f5f5;
+    gap: 30px;
+}
+#how .info::before{
+    content: "";
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #cdcdcd;
+    opacity: 0.3;
+    transition: 0.3s;
+}
+#how .info:hover::before{
+    height: 100%;
+    width: 100%;
+}
+#how .info img{
+    width: 75px;
+    height: auto;
+}
+#how .info .textArea{
+    flex-direction: column;
+    align-items: baseline;
+}
+#how h3{
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+#how p{
+    font-size: 16px;
+
+}
+
+@media screen and (max-width: 1000px) {
+    #how > .informations{
+        flex-direction: column;
+        gap: 30px;
+    }
+    #how > .informations > img{
+        width: 60%;
+    }
+    #how .rightSection{
+        width: 100%;
+    }
+}
