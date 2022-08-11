@@ -23,7 +23,27 @@ html{
 body{
     background-color: white;
     color: black;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+}
+
+#upArrow{
+    display: none;
+    position: fixed;
+    right: 5%;
+    /* bottom: 8%; */
+    bottom: -10%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    color: white;
+    z-index: 100;
+    cursor: pointer;
+    transition: 0.8s;
+}
+#upArrow > i{
+    color: white;
+    font-size: 26px;
 }
 
 .Container{
@@ -1084,4 +1104,70 @@ mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 100%, black 100%); */
         rotate: 26deg;
     }
 
+}
+
+
+
+/* skills */
+.skills{
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.skills > img {
+    max-width: 50%;
+    height: auto;
+}
+.skills ul {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skills > ul li {
+    display: grid;
+    grid-auto-rows: 1fr 29px;
+    position: relative;
+}
+
+.skills span {
+    position: absolute;
+    right: 0;
+    top: -5%;
+    padding: 0px 8px;
+    border: solid 1px #d8cccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: var(--mainColor);
+  }
+.progressBar::before {
+    content: "";
+    position: absolute;
+    height: 44%;
+    background-color: #eeee;
+    width: 100%;
+    z-index: -1;
+}
+.progressBar {
+    width: 70%;
+    background-color: var(--mainColor);
+    height: 100%;
+}
+
+.skills h4 {
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    top: -20%;
+}
+
+@media screen and (max-width: 990px) {
+    .skills > img{
+        display: none;
+    }
+
+    .skills ul {
+        width: 100%;
+    }
 }

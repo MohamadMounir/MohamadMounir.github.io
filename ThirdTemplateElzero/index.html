@@ -19,7 +19,7 @@
 <body>
     <div class="Container">
 
-        <nav class="DisplayFlex">
+        <nav id="nav" class="DisplayFlex">
             <div class="logo">Mohamad K/A</div>
             
             <ul class="DisplayFlex">
@@ -33,21 +33,21 @@
                         <ul class="">
                             <li> <i class="fa-regular fa-comments"></i>  <a href="#testimonials">Testimonials</a></li>
                             <li> <i class="fa-regular fa-user"></i> <a href="#teamMembers">team members</a></li>
-                            <li> <i class="fa-regular fa-building"></i> <a href="">services</a></li>
-                            <li> <i class="fa-regular fa-circle-check"></i> <a href="">our skills</a></li>
-                            <li> <i class="fa-regular fa-clipboard"></i> <a href="">how it works</a></li>
-                            <li> <i class="fa-regular fa-calendar-days"></i> <a href="">events</a></li>
-                            <li> <i class="fa-solid fa-bullseye"></i> <a href="">pricing plans</a></li>
-                            <li> <i class="fa-regular fa-circle-play"></i> <a href="">top videos</a></li>
-                            <li> <i class="fa-solid fa-chart-line"></i> <a href="">stats</a></li>
-                            <li> <i class="fa-solid fa-percent"></i> <a href="">request a discount</a></li>
+                            <li> <i class="fa-regular fa-building"></i> <a href="#services">services</a></li>
+                            <li> <i class="fa-regular fa-circle-check"></i> <a href="#skills">our skills</a></li>
+                            <li> <i class="fa-regular fa-clipboard"></i> <a href="#how">how it works</a></li>
+                            <li> <i class="fa-regular fa-calendar-days"></i> <a href="#events">events</a></li>
+                            <li> <i class="fa-solid fa-bullseye"></i> <a href="#plans">pricing plans</a></li>
+                            <li> <i class="fa-regular fa-circle-play"></i> <a href="#topVideos">top videos</a></li>
+                            <li> <i class="fa-solid fa-chart-line"></i> <a href="#stats">stats</a></li>
+                            <li> <i class="fa-solid fa-percent"></i> <a href="#discount">request a discount</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
             
         </nav>
-        <main class="DisplayFlex">
+        <main id="home" class="DisplayFlex">
             <div class="textArea DisplayFlexCentering">
 
                 <h1>Welcome, to elzero world</h1>
@@ -460,8 +460,38 @@
             </div>
         </div>
 
+        <div id="skills" class="DisplayFlex section">
+            <h2 class="sectionTitle">our skills</h2>
+            <div class="skills DisplayFlex ">
+                <img src="Source/skills.png" alt="">
+                <ul>
+                    <li>
+                        <h4>HTML</h4>
+                        <span>80%</span>
+                        <div class="progressBar"></div>
+                    </li>
+                    <li>
+                        <h4>CSS</h4>
+                        <span>75%</span>
+                        <div class="progressBar"></div>
+                    </li>
+                    <li>
+                        <h4>javaScript</h4>
+                        <span>65%</span>
+                        <div class="progressBar"></div>
+                    </li>
+                    <li>
+                        <h4>Python</h4>
+                        <span>10%</span>
+                        <div class="progressBar"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
         
+    <div id="upArrow" class="DisplayFlexCentering"><i class="fa-solid fa-arrow-up"></i></div>
 
         <script src="main.js"></script>
 </body>
