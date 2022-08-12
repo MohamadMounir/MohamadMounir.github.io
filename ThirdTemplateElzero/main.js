@@ -30,17 +30,12 @@ upArrow.addEventListener("click", function (){
 
 let oldScroll = window.scrollY;
 window.addEventListener("scroll", function (){
-    console.log(window.scrollY)
     let newScroll = this.window.scrollY;
     if(newScroll > 330){
         upArrow.style.display = "flex"
-
-
         if(oldScroll > newScroll){
-            console.log("Up")
             upArrow.style.bottom = "8%"
         }else{
-            console.log("Down")
             upArrow.style.bottom = "-10%"
         }
         oldScroll = newScroll;
@@ -48,3 +43,34 @@ window.addEventListener("scroll", function (){
         upArrow.style.display = "none"
     }
 })
+
+let timeSpans = document.querySelectorAll(".eventTimer span");
+
+let fetureDate = new Date("8/18/2022");
+
+function Timer(){
+    let dateNow = new Date();
+    let timerArr = calcTime(dateNow,fetureDate);
+    for(let i=0; i< timeSpans.length; i++){
+        timeSpans[i].textContent = `${timerArr[i]}`;
+    }
+}
+
+Timer()
+setInterval(Timer, 1000);
+
+function calcTime(now, feture){
+    let duration = (feture - now)/1000/60/60/24;
+    let byDays = Math.floor(duration);
+    duration = (duration - byDays) * 24;
+    let byHours = Math.floor(duration);
+    duration = (duration - byHours) * 60;
+    let byMins = Math.floor(duration);
+    duration = (duration - byMins) * 60;
+    let bySeconds = Math.floor(duration);
+
+    if(bySeconds == 0 && byMins == 0 && byHours ==0 && byDays ==0){
+        return null;
+    }
+    return [byDays,byHours,byMins,bySeconds];
+}

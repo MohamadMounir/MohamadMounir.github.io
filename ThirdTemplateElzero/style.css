@@ -1247,3 +1247,127 @@ mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 100%, black 100%); */
         width: 100%;
     }
 }
+
+/* Event */
+.event{
+    width: 100%;
+    flex-direction: column;
+}
+.eventDetails{
+    justify-content: space-between;
+    margin-bottom: 3%;
+    
+}
+.eventDetails > img{
+    width: 48%;
+    height: auto;
+    transform: scale(0.8);
+}
+.eventDetails >  .textArea{
+    width: 50%;
+    flex-direction: column;
+}
+.eventTimer {
+    width: 65%;
+    /* justify-content: space-between; */
+    justify-content: center;
+    column-gap: 20px;
+    margin-bottom: 5%;
+}
+.eventTimer > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px #d9d9d9;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+.eventTimer > div:hover{
+    border-color: #2196f3;
+}
+.eventTimer > div > span{
+    color: #2196f3;
+    font-weight: 700;
+    font-size: 32px;
+    padding: 6px 16px;
+}
+.eventTimer > div > h5{
+    text-transform: capitalize;
+    width: 100%;
+    border-top: solid 1px #959494;
+    padding: 7px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#events h3{
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+}
+#events p{
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+}
+
+#events .form{
+    width: 60%;
+    background-color: #f6f5f5;
+    padding: 20px 30px;
+    border-radius: 80px;
+    justify-content: space-between;
+}
+#events .form input{
+    border: none;
+    border-radius: 80px;
+    width: 70%;
+    padding: 22px 12px;
+}
+#events .form input::placeholder {
+    text-transform: capitalize;
+    font-size: 16px
+}
+
+#events .form button{
+    border: none;
+    text-transform: capitalize;
+    background-color: #2196f3;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 25px 17px;
+    border-radius: 80px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 990px) {
+    .eventDetails > img{
+        display: none;
+    }
+    .eventDetails >  .textArea{
+        width: 100%;
+        margin-bottom: 7%;
+    }
+    #events .form{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 780px) {
+    #events .form{
+        flex-direction: column;
+        gap: 25px;
+        border-radius: 10px;
+    }
+    #events .form input{
+        width: 100%;
+        border-radius: 7px;
+    }
+    #events .form button{
+        width: 100%;
+        border-radius: 7px;
+
+    }
+}
