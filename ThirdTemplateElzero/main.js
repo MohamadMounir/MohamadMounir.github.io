@@ -34,7 +34,7 @@ window.addEventListener("scroll", function (){
     if(newScroll > 330){
         upArrow.style.display = "flex"
         if(oldScroll > newScroll){
-            upArrow.style.bottom = "8%"
+            upArrow.style.bottom = "15vh"
         }else{
             upArrow.style.bottom = "-10%"
         }
