@@ -4,9 +4,9 @@
     --featureBlue: blue;
     --featureGreen: green;
     /* main */
-    /* --mainColor: #2196f3; */
+    --mainColor: #2196f3;
     /* --mainColor: #5c21a6;  good color */
-    --mainColor: #54dc1b;
+    /* --mainColor: #54dc1b; good one too */
     /* main */
     --backgroundColor: white;
     --secondBackgroundColor: #ececec;
@@ -1526,3 +1526,4 @@ footer .photos img{
 /* 1761 with add some Comments and delete empty rows */
 /* 1486 with shorted some rules to one row*/
 /* 1481 with auto-fill grid classes */
+/* 1520 with adding some feature and fix things */
