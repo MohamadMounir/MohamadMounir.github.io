@@ -1135,7 +1135,10 @@ h2.hugeNumber{
 /* ------------------------------------------------------------------------
 --------------------------Top Videos                      [Start]
 --------------------------------------------------------------------------- */
-#player{grid-template-columns: 25% 75%;}
+#player{
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
 .videoSuggections{background-color: var(--secondBackgroundColor);}
 .videoSuggections > div{
     justify-content: space-between;
@@ -1484,4 +1487,4 @@ footer .photos img{
 /* 1486 with shorted some rules to one row*/
 /* 1481 with auto-fill grid classes */
 /* 1520 with adding some feature and fix things */
-/* 1477 End */
+/* 1480 End */
