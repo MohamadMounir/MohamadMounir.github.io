@@ -530,12 +530,25 @@ main img{
 .feature::after {
     content: "";
     position: absolute;
-    width: 127%;
-    height: 48%;
-    top: 24%;
+    width: 100%;
+    height: 0;
+    top: 31%;
+    border-bottom: solid 185px var(--backgroundColor);
+    border-left: solid 710px transparent;
     transition: 0.25s;
-    background-color: white;
-    transform: skew(110deg);
+}
+.feature:hover::after{
+    border-left: none;
+    border-right: solid 710px  transparent;
+}
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+    .feature::after {
+        border-left: solid 1010px transparent;
+    }
+    .feature:hover::after{
+        border-right: solid 1010px transparent;
+    }
+
 }
 .feature::before{
     content: "";
@@ -545,7 +558,6 @@ main img{
     top: 0;
     opacity: 0.3;
 }
-.feature:hover::after{transform: skew(250deg);}
 .feature > img{
     height: 50%;
     width: 100%;
@@ -1487,4 +1499,5 @@ footer .photos img{
 /* 1486 with shorted some rules to one row*/
 /* 1481 with auto-fill grid classes */
 /* 1520 with adding some feature and fix things */
-/* 1480 End */
+/* 1477 End */
+/* 1491 End with fix bugs */
