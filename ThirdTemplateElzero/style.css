@@ -3,10 +3,16 @@
     --featureRed: red;
     --featureBlue: blue;
     --featureGreen: green;
-    --mainColor: #2196f3;
+    /* main */
+    /* --mainColor: #2196f3; */
+    /* --mainColor: #5c21a6;  good color */
+    --mainColor: #54dc1b;
+    /* main */
     --backgroundColor: white;
-    --secondBackgroundColor: black;
+    --secondBackgroundColor: #ececec;
+    --thirdBackgroundColor: black;
 }
+
 /* ------------------------------------------------------------------------
 --------------------------Direct World Rules                     [Start]
 --------------------------------------------------------------------------- */
@@ -23,7 +29,7 @@ html{
 @media screen and (max-width: 990px) {html{font-size: 14px;}}
 body{ 
     background-color: var(--backgroundColor);
-    color: var(--secondBackgroundColor);
+    color: var(--thirdBackgroundColor);
     overflow-x: hidden;
 }
 ul{list-style: none;}
@@ -31,7 +37,7 @@ a{
     text-decoration: none;
     text-transform: capitalize;
     font-weight: 400;
-    color: var(--secondBackgroundColor);
+    color: var(--thirdBackgroundColor);
 }
 h1,h2,h3,h4,h5,h6{text-transform: capitalize;}
 input::placeholder{text-transform: capitalize;}
@@ -105,13 +111,11 @@ i{
     font-weight: 700;
     width: fit-content;
     padding: 0px 18px;
-    border: 2px solid var(--secondBackgroundColor);
-    color: var(--secondBackgroundColor);
+    border: 2px solid var(--thirdBackgroundColor);
+    color: var(--thirdBackgroundColor);
     text-transform: uppercase;
     position: relative;
     margin-bottom: 70px;
-    transition: 0.2s;
-    transition-delay: 0.7s;
 }
 .sectionTitle::after {
     content: "";
@@ -122,8 +126,6 @@ i{
     border-radius: 50%;
     right: -35px;
     top: 44%;
-    transition: 0.5s;
-    transition-delay: 0.2S;
 }
 .sectionTitle::before {
     content: "";
@@ -134,36 +136,87 @@ i{
     border-radius: 50%;
     left: -35px;
     top: 44%;
-    transition: 0.5s;
-    transition-delay: 0.2S;
 }
-.sectionTitle:hover{color: var(--backgroundColor);}
+.sectionTitle:hover{
+    color: var(--backgroundColor);
+    border-color: transparent;
+    transition-delay: 0.5s;
+}
+@keyframes left-circle {
+    50%{
+        z-index: -1;
+        left: 0px;
+    }
+    100%{
+        left: 0px;
+        top: 0;
+        border-radius: 0px;
+        height: 100%;
+        width: 50%;
+        z-index: -1;
+    }
+}
+@keyframes right-circle {
+    50%{
+        z-index: -1;
+        right: 0px;
+    }
+    100%{
+        right: 0px;
+        top: 0;
+        border-radius: 0px;
+        height: 100%;
+        width: 50%;
+        z-index: -1;
+    }
+}
 .sectionTitle:hover::after{
-    right: 0px;
-    top: 0;
-    border-radius: 0px;
-    height: 100%;
-    width: 50%;
-    z-index: -1;
+    animation: right-circle 0.5s linear forwards;
+
 }
 .sectionTitle:hover::before{
-    left: 0px;
-    top: 0;
-    border-radius: 0px;
-    height: 100%;
-    width: 50%;
-    z-index: -1;
+    animation: left-circle 0.5s linear forwards;
 }
 .secondBackground::before{
     content: "";
     position: absolute;
     width: 100vw;
     height: 105%;
-    background-color: #ececec;
+    background-color: var(--secondBackgroundColor);
     z-index: -5;
     top: 0;
 }
 @media screen and (max-width: 610px) {.secondBackground::before{height: 102%;}}
+
+.DisplayGrid-3{
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(300px,1fr));
+}
+.DisplayGrid-4{
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(250px,1fr));
+}
+
+.spikes{
+    margin-top: 80px;
+    height: 60px;
+    width: 100vw;
+    position: relative;
+    /* display: block; */
+    /* z-index: 10; */
+}
+.spikes::before{
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    background-color: var(--secondBackgroundColor);
+    background-image: linear-gradient(135deg, var(--backgroundColor) 25%, transparent 25%), linear-gradient(225deg, var(--backgroundColor) 25%,transparent 25%);;
+    background-size: 44px;
+}
+.spikeContain{
+    margin-bottom: 0;
+}
 /* ------------------------------------------------------------------------
 --------------------------Repeated Classes                        [End]
 --------------------------------------------------------------------------- */
@@ -302,7 +355,7 @@ main::before{
     position: absolute;
     width: 100vw;
     height: 92vh;
-    background-color: #ececec;
+    background-color: var(--secondBackgroundColor);
     left: 0;
     top: 0;
     z-index: -3;
@@ -312,7 +365,7 @@ main::after{
     position: absolute;
     width: 110vw;
     height: 200px;
-    background-color: #fff;
+    background-color: var(--backgroundColor);
     left: 50%;
     transform: translate(-50%,25%) rotate(-5deg);
     bottom: 0;
@@ -372,11 +425,9 @@ main img{
 --------------------------Articles Section/ Second Section        [Start]
 --------------------------------------------------------------------------- */
 .cards{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
     gap: 40px;
 }
-.card{
+.card{ 
     display: grid;
     grid-template-rows: 3fr 3fr 1fr;
     align-items: center;
@@ -384,6 +435,7 @@ main img{
     box-shadow: 0px 0px 25px -18px;
     border-radius: var(--borderRadius) var(--borderRadius) 0px 0px;
     transition: 0.25s;
+    background-color: var(--backgroundColor);
 }
 .card:hover{
     transform: translateY(-15px);
@@ -409,37 +461,33 @@ main img{
 .card > a{
     position: relative;
     display: flex;
-    padding: 15px 20px;
     justify-content: baseline;
     align-items: center;
-    border-top: 2px solid rgba(0, 0, 0, 0.097);
     color: var(--mainColor);
     font-weight: 700;
 }
-.card > a:after{
-    content: "-->";
-    position: absolute;
-    height: 5px;
-    width: 5px;
-    z-index: 12;
-    right: 30px;
-    top: 25%;
-    letter-spacing: -2px;
-    animation: readMore 0.7s infinite ease-out;
+.card-readMore{
+    justify-content: space-between;
+    padding: 7px 15px;
+    border-top: 2px solid rgba(0, 0, 0, 0.097);
+}
+.card-readMore a{color: var(--mainColor);}
+.card-readMore i{
+    cursor: pointer;
+    font-size: 16px;
+    animation: readMore 0.8s infinite;
     animation-play-state: paused;
 }
-.card:hover  a::after{animation-play-state: running;}
+
+.card:hover .card-readMore i {animation-play-state: running;}
 @keyframes readMore {
     from{transform: translateX(0px);}
     to{transform: translateX(7px);}
 }
-@media screen and (max-width: 1200px) {.cards{grid-template-columns: repeat(3,1fr);}}
 @media screen and (max-width: 990px) {
-    .cards{grid-template-columns: repeat(2,1fr);}
     .card{height: 413px;}
     .card img{height: 217px;}
 }
-@media screen and (max-width: 570px) {.cards{grid-template-columns: 1fr;}}
 #articles::after {
     content: "";
     position: absolute;
@@ -452,12 +500,10 @@ main img{
 --------------------------Main/HomePage                        [Start]
 --------------------------------------------------------------------------- */
 .galleryPhotos{
-    display: grid;
-    grid-template-columns: repeat(3 ,1fr);
     gap: 40px;
 }
 .photo {
-    border: solid 20px var(--backgroundColor);
+    border: solid 20px white;
     display: flex;
     overflow: hidden;
     box-shadow: 0px 0px 20px -13px;
@@ -477,8 +523,7 @@ main img{
     height: auto;
     transition: 0.4s;
 }
-@media screen and (max-width: 1200px) {.galleryPhotos{grid-template-columns: repeat(2 ,1fr);}}
-@media screen and (max-width: 670px) {.galleryPhotos{grid-template-columns: 1fr;}}
+
 .galleryPhotos img:hover{transform: rotate(3deg) scale(1.05);}
 .galleryPhotos .photo:hover::before{animation: galleryAnime 0.6s;}
 @keyframes galleryAnime {
@@ -499,8 +544,6 @@ main img{
 }
 .allFeature{
     gap: 40px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
 }
 .feature{
     height: 100vh;
@@ -528,6 +571,7 @@ main img{
 .feature:hover::after{
     border-left: none;
     border-right: solid 710px  transparent;
+
 }
 .feature > img{
     height: 50%;
@@ -537,7 +581,7 @@ main img{
 .feature > .textArea{
     gap: 12px;
     background-color: var(--backgroundColor);
-    color: var(--secondBackgroundColor);
+    color: var(--thirdBackgroundColor);
     height: 50%;
     width: 100%;
     padding: 30px 20px;
@@ -616,11 +660,7 @@ main img{
 [data-color="green"] .textArea > button::before{background-color: var(--featureGreen);}
 [data-color="green"]::before{background-color: var(--featureGreen);}
 
-@media screen and (max-width: 990px) {.allFeature{grid-template-columns: repeat(2,1fr);}}
 @media screen and (max-width: 670px) {
-    .allFeature{
-        grid-template-columns: 1fr;
-    }
     .feature::after{
         border-left: solid 1200px transparent;
     }
@@ -632,8 +672,6 @@ main img{
 --------------------------Testimonials                       [Start]
 --------------------------------------------------------------------------- */
 .comments{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 25px 40px;
 }
 .comment{
@@ -652,7 +690,7 @@ main img{
     border-radius: 50%;
     top: -21%;
     right: -3%;
-    border: solid 10px #ececec;
+    border: solid 10px var(--secondBackgroundColor);
     box-sizing: content-box;
 }
 .comment > h4{
@@ -666,22 +704,17 @@ main img{
 .stars > .fa-regular{color: black ;}
 @media screen and (max-width: 1200px) {
     .comments{
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px 35px;
     }
 }
-@media screen and (max-width: 670px) {.comments{grid-template-columns: 1fr;}}
-
-/* ------------------------------------------------------------------------
+/* -----------------------------------------------------------------------
 --------------------------Team Members                       [Start]
 --------------------------------------------------------------------------- */
 .accounts{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
     gap: 30px 45px;
 }
 .account{
-    background-color: #ececec;
+    background-color: var(--secondBackgroundColor);
     border-radius: 20px;
     padding: 20px;
     width: 90%;
@@ -739,14 +772,10 @@ main img{
     transition: 0.1s 0.1s;
 }
 .account > h3{font-weight: 500;}
-@media screen and (max-width: 1200px) {.accounts{grid-template-columns: repeat(2,1fr);}}
-@media screen and (max-width: 660px) {.accounts{grid-template-columns: 1fr;}}
 /* ------------------------------------------------------------------------
 --------------------------Services                       [Start]
 --------------------------------------------------------------------------- */
 .services{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
     gap: 40px;
 }
 .service {
@@ -781,7 +810,7 @@ main img{
 }
 .upper > i {
     font-size: 4.375rem;
-    color: #c3c3c3;
+    color: var(--secondBackgroundColor);
 }
 .upper > h3 {
     font-size: 1.625rem;
@@ -814,8 +843,8 @@ main img{
     position: absolute;
     right: -60px;
     top: -15px;
-    border-top: solid 32px #d5d5d5;
-    border-left: solid 42px #d5d5d5;
+    border-top: solid 32px var(--secondBackgroundColor);
+    border-left: solid 42px var(--secondBackgroundColor);
     rotate: 29deg;
     z-index: -1;
     height: 100%;
@@ -824,9 +853,7 @@ main img{
     margin-right: 15px;
     color: var(--mainColor);
 }
-@media screen and (max-width: 1200px) {.services{grid-template-columns: repeat(2, 1fr);}}
 @media screen and (max-width: 670px) {
-    .services{grid-template-columns: 1fr;}
     .lower > span::before {rotate: 26deg;}
 }
 
@@ -862,7 +889,7 @@ main img{
     content: "";
     position: absolute;
     height: 44%;
-    background-color: #eeee;
+    background-color: var(--secondBackgroundColor);
     width: 100%;
     z-index: -1;
 }
@@ -900,7 +927,7 @@ main img{
     height: fit-content;
     padding: 30px 25px;
     border: 1px solid var(--backgroundColor);
-    background-color: #f6f5f5;
+    background-color: var(--backgroundColor);
     gap: 30px;
 }
 #how .info::before{
@@ -956,7 +983,6 @@ main img{
     margin-bottom: 5%;
 }
 .eventTimer > div{
-    justify-content: space-between;
     border: solid 1px #d9d9d9;
     border-radius: 7px;
     transition: 0.3s;
@@ -1038,8 +1064,6 @@ main img{
 --------------------------pricing Plans                       [Start]
 --------------------------------------------------------------------------- */
 #plans >  .plans{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 35px;
 }
 .plan{
@@ -1152,26 +1176,24 @@ h2.hugeNumber{
     border-color: var(--mainColor) transparent var(--mainColor) transparent;
 }
 @media screen and (max-width: 1200px) {
-    #plans >  .plans{grid-template-columns: repeat(2,1fr);}
     .plan:nth-child(2){transform: translateY(0px);}
 }
-@media screen and (max-width: 650px) {#plans >  .plans{grid-template-columns: 1fr;}}
 
 /* ------------------------------------------------------------------------
 --------------------------Top Videos                      [Start]
 --------------------------------------------------------------------------- */
 #player{
-    display: grid;
     grid-template-columns: 25% 75%;
 }
-.videoSuggections{background-color: #f4f4f4;}
+.videoSuggections{background-color: var(--secondBackgroundColor);}
 .videoSuggections > div{
     justify-content: space-between;
     padding: 15px;
     width: 100%;
+    background-color: var(--secondBackgroundColor);
 }
 .videoSuggections > div i{
-    color: var(--secondBackgroundColor);
+    color: var(--thirdBackgroundColor);
     font-size: 1.125rem;
 }
 .videoSuggections > div i:hover{
@@ -1205,7 +1227,7 @@ h2.hugeNumber{
 .videoPlayerSection{
     justify-content: space-between;
     padding: 10px;
-    background-color: #e2e2e2;
+    background-color: var(--secondBackgroundColor);
 }
 .videoPlayerSection img{width: 100%;}
 .videoPlayerSection p{
@@ -1263,7 +1285,7 @@ h2.hugeNumber{
 .stats > div:hover::before, .stats > div:hover::after{height: 100%;} 
 .stats > div i{
     font-size: 2rem;
-    color: var(--secondBackgroundColor);
+    color: var(--thirdBackgroundColor);
 }
 .stats > div h1{
     font-size: 3.44rem;
@@ -1285,6 +1307,7 @@ h2.hugeNumber{
     padding-top: 7%;
     align-items: baseline;
     z-index: 0;
+    background-color: var(--backgroundColor);
 }
 #discount .rightSection, #discount .leftSection{width: 50%;}
 #discount h1{
@@ -1348,7 +1371,10 @@ h2.hugeNumber{
     left: -50%;
     top: 0;
 }
-#discount .rightSection{transform: translateX(16%);}
+#discount .rightSection{
+    transform: translateX(16%);
+    background-color: var(--backgroundColor);
+}
 @media screen and (max-width: 990px) {
     #discount{flex-direction: column;}
     #discount::before{
@@ -1356,7 +1382,9 @@ h2.hugeNumber{
         width: 110vw;
         left: -21%;
     }
-    #discount .rightSection, #discount .leftSection {width: 100%;}
+    #discount .rightSection, #discount .leftSection {
+        width: 100%;
+    }
     #discount .leftSection {
         align-items: center;
         margin-bottom: 7%;
@@ -1364,6 +1392,11 @@ h2.hugeNumber{
     }
     #discount p{transform: none;}
     #discount .rightSection{transform: none;}
+}
+@media screen and (max-width: 500px) {
+    #discount .leftSection {
+        padding-bottom: 10%;
+    }
 }
 @media screen and (max-width: 990px) {#discount::before{left: -20%;}}
 @media screen and (max-width: 840px) {#discount::before{left: -14%;}}
@@ -1492,3 +1525,4 @@ footer .photos img{
 /* 1799 fixing some bug */
 /* 1761 with add some Comments and delete empty rows */
 /* 1486 with shorted some rules to one row*/
+/* 1481 with auto-fill grid classes */

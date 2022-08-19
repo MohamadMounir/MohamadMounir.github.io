@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icons -->
     <link rel="Icon" href="Source/Icons/sculpture_statue_texture_futuristic_art_geometry_organic_abstract_shape_explode_shae_icon_226539.png">
-
+    <!-- Normalize -->
+    <!-- <link rel="stylesheet" href="normalize.css"> -->
 </head>
 <body>
     <div class="Container column">
@@ -59,9 +60,9 @@
             <i id="mainArrow" class="fa-solid fa-angles-down"></i>
         </main>
 
-        <div id="articles" class="DisplayFlex section">
+        <div id="articles" class="DisplayFlex section spikeContain">
             <h2 class="sectionTitle" >articles</h2>
-            <div class="cards ">
+            <div class="cards DisplayGrid-4">
                 <div class="card">
                     <img src="Source/jpg.jpg" alt="">
                     <div class="textArea">
@@ -70,7 +71,7 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div class="card">
                     <img src="Source/Malos Xenoblade Chronicles 2.jpg" alt="">
@@ -80,7 +81,7 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div class="card">
                     <img src="Source/Scene Projected onto the Water’s Surface, Reflecting Waters.jpg" alt="">
@@ -90,7 +91,7 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div class="card">
                     <img src="Source/photo_6019176694755211406_y.jpg" alt="">
@@ -100,7 +101,7 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div class="card">
                     <img src="Source/HD wallpaper Xenoblade Chronicles - Monado, red elongated metal on green grass.jpg" alt="">
@@ -110,7 +111,7 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div class="card">
                     <img src="Source/cat-05.jpg" alt="">
@@ -120,7 +121,7 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div class="card">
                     <img src="Source/photo_6019176694755211407_y.jpg" alt="">
@@ -130,7 +131,7 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div class="card">
                     <img src="Source/Andrew Ryan.jpg" alt="">
@@ -140,14 +141,15 @@
                             consectetur, adipisicing elit. Eligendi!
                         </p>
                     </div>
-                    <a href="">read more</a>
+                    <div class="card-readMore DisplayFlex" ><a href="">read more</a><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
+            <div class="spikes"></div>
         </div>
 
         <div id="gallery" class="DisplayFlex section secondBackground">
             <h2 class="sectionTitle">gallery</h2>
-            <div class="galleryPhotos">
+            <div class="galleryPhotos DisplayGrid-3">
                 <div class="photo PosRelative"><img src="Source/Galleries/gallery-01.png" alt=""></div>
                 <div class="photo PosRelative"><img src="Source/Galleries/gallery-02.png" alt=""></div>
                 <div class="photo PosRelative"><img src="Source/Galleries/gallery-03.jpg" alt=""></div>
@@ -159,7 +161,7 @@
 
         <div id="features" class="DisplayFlex section">
             <h2 class="sectionTitle">features</h2>
-            <div class="allFeature">
+            <div class="allFeature DisplayGrid-3">
                 <div class="feature DisplayFlex column PosRelative" data-color="red">
                 <img src="Source/Andrew Ryan.jpg" alt="">
                 <div class="textArea DisplayFlex Centering column">
@@ -195,7 +197,7 @@
 
         <div id="testimonials" class="DisplayFlex section secondBackground">
             <h2 class="sectionTitle">testimonials</h2>
-            <div class="comments">
+            <div class="comments DisplayGrid-3">
                 <div class="comment DisplayFlex PosRelative column">
                     <img src="Source/Account/9MFhidJj_400x400.jpg" alt="">
                     <h3>Jaybo709</h3>
@@ -295,9 +297,9 @@
             </div>
         </div>
 
-        <div id="teamMembers" class="DisplayFlex section column">
+        <div id="teamMembers" class="DisplayFlex section column spikeContain">
             <h2 class="sectionTitle">team members</h2>
-            <div class="accounts PosRelative">
+            <div class="accounts PosRelative DisplayGrid-3">
                 <div class="account PosRelative">
                     <img src="Source/teamMembers/index.jpg" alt="">
                     <ul class="socialMeida DisplayFlex column">
@@ -387,11 +389,12 @@
                     <h3>Painter</h3>
                 </div>
             </div>
+            <div class="spikes"></div>
         </div>
 
         <div id="services" class="DisplayFlex section secondBackground">
             <h2 class="sectionTitle">services</h2>
-            <div class="services">
+            <div class="services DisplayGrid-3">
                 <div class="service DisplayFlex column">
                     <div class="upper DisplayFlex Centering column">
                         <i class="fa-solid fa-user-shield"></i>
@@ -565,7 +568,7 @@
 
         <div id="plans" class="DisplayFlex section secondBackground">
             <h2 class="sectionTitle">pricing plans</h2>
-            <div class="plans ">
+            <div class="plans DisplayGrid-3">
                 <div class="plan DisplayFlex column PosRelative">
                     <h1>basic</h1>
                     <i class="fa-regular fa-building"></i> 
