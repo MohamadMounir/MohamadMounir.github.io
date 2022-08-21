@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="blocks_elementary_school_education_icon-icons.com_75493.png">
+    <!-- Normalize -->
+    <link rel="stylesheet" href="normalize.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awosom -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav id="nav">
+        <div class="Container DisplayFlex space-between">
+            <div class="firstPlace  ">
+                <h2>hello : <span class="userName"></span></h2>
+            </div>
+            <div class="secondPlace">
+                <h2> time : <span class="timer">00:00</span></h2>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="Container Centering">
+            <div class="box" id="box">
+                <div class="card"><span>1</span></div>
+                <div class="card"><span>2</span></div>
+                <div class="card"><span>3</span></div>
+                <div class="card"><span>4</span></div>
+                <div class="card"><span>5</span></div>
+                <div class="card"><span>6</span></div>
+                <div class="card"><span>7</span></div>
+                <div class="card"><span>8</span></div>
+                <div class="card"><span>9</span></div>
+                <div class="card"><span>10</span></div>
+                <div class="card"><span>11</span></div>
+                <div class="card"><span>12</span></div>
+                <div class="card"><span>13</span></div>
+                <div class="card"><span>14</span></div>
+                <div class="card"><span>15</span></div>
+                <div id="shadowCard" class="shadow"></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="menu" class="DisplayFlex column">
+        <i id="menuKeyOpen" class="fa-solid fa-bars menuKey"></i>
+        <i id="menuKeyClose" class="fa-solid fa-x menuKey hide"></i>
+        <!-- Mage Menu -->
+        <div id="megaMenu" class="megaMenu hide DisplayFlex column Centering screen">
+
+            <h1>Number Puzzle Game</h1>
+            <h2>by <span>M A/K</span></h2>
+
+            <div class="DisplayFlex Centering">
+                <label for="userName">your name</label>
+                <input type="text" name="userName" id="userName" maxlength="16">
+            </div>
+
+            <button id="startAgain">start again</button>
+
+            <button id="continue">continue</button>
+        </div>
+    </div>
+
+    <div id="winScreen" class="DisplayFlex column Centering screen hide">
+        <i class="fa-solid fa-x menuKey winScreenKeyClose"></i>
+        <h1>Congratulation!!!</h1>
+
+        <h2>Your Time : <span id="winingTime"></span></h2>
+
+        <button class="winScreenKeyClose">Close</button>
+
+    </div>
+
+
+    <audio id="clickedSound" src="X-2 Menu Browsing Sounds - Audio.mp4"></audio>
+    <audio src="succesSound" src="X-2 Menu Browsing Sounds - Victory.mp4"></audio>
+    <script src="main.js"></script>
+</body>
+</html>
