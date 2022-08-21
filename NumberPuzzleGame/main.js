@@ -34,9 +34,7 @@ menuKeyOpen.addEventListener("click", MenuKeys);
 menuKeyClose.addEventListener("click", MenuKeys);
 
 
-window.addEventListener("load", function (){
-    init();
-})
+window.addEventListener("load",init);
 
 gamebuttons.forEach(function (ele){/////if press Any button [User Name]
     ele.addEventListener("click", function (){
@@ -121,7 +119,11 @@ function check(){////if all cards in the right order
 
 function init(){
     makeOrder();
-    box.style.gridTemplateColumns = `repeat(${gridColumns}, ${cardAspect}px)`;
+    if(window.width > 580){
+        box.style.gridTemplateColumns = `repeat(${gridColumns}, ${cardAspect}px)`;
+    }else{
+        box.style.gridTemplateColumns =  `repeat(4, 80px)`;
+    }
     nav.style.width = `${cardAspect *5}px`;
     getName();
 }
