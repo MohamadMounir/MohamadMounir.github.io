@@ -34,7 +34,10 @@ menuKeyOpen.addEventListener("click", MenuKeys);
 menuKeyClose.addEventListener("click", MenuKeys);
 
 
-window.addEventListener("load",init);
+window.addEventListener("load",function (){
+    init();
+    MenuKeys()
+});
 
 gamebuttons.forEach(function (ele){/////if press Any button [User Name]
     ele.addEventListener("click", function (){
