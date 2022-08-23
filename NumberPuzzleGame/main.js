@@ -124,7 +124,6 @@ function init(){
     }else{
         box.style.gridTemplateColumns =  `repeat(4, 80px)`;
     }
-    nav.style.width = `${cardAspect *5}px`;
     getName();
 }
 function initPlusMenuKeys(){

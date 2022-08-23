@@ -141,6 +141,7 @@ nav{
 }
 
 nav .Container{
+    width: 60vw;
     background-color: var(--colorFont);
     color: var(--backgroundColor);
     padding: 7px 20px;
