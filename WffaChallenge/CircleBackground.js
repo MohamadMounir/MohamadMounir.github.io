@@ -12,6 +12,7 @@ window.addEventListener("load",function (){
     }else if(window.innerWidth < 700){
         setHWCanvas(2)
     }
+    setcircleNum();
 });
 window.addEventListener("resize", function () {
     if (canvas.width < this.window.innerWidth || canvas.height < this.window.innerHeight) {
@@ -21,7 +22,6 @@ window.addEventListener("resize", function () {
         init();
     }
 });
-// setcircleNum();
 class circle {
     constructor(X, Y, radius, dx, dy) {
         this.X = X;
@@ -88,7 +88,7 @@ function NegativeOrPositive() {
     return 1; /////For make sure this Fun will return a value in the end
 }
 function setcircleNum(){
-    circleCount = window.innerWidth/50; 
+    circleCount = Math.floor(window.innerWidth/50); 
 }
 function createCircle(Count) {
     for (let i = 0; i < Count; i++) {
