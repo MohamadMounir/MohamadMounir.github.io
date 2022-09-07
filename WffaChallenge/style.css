@@ -1,0 +1,275 @@
+:root{
+    /* --backgroundColor2: rgb(208, 203, 227); */
+    /* --backgroundColor3: rgba(155, 223, 230, 0.338); */
+    --backgroundColor2: rgb(155, 223, 230);
+    --padding: 16px;
+    --padding2: 7px;
+    --padding3: 10px;
+    --padding-sides: 30px;
+    --data-color-pink: #ffabdb;
+    --data-color-bilious: #fdcd65;
+    --data-color-violet: #b391fd;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Laila', sans-serif;
+    font-weight: 300;
+}
+
+body{
+    /* background: linear-gradient(left to right, white, rgb(191, 191, 255) ); */
+    background: linear-gradient(to right, #fff , var(--backgroundColor2) 200%);
+    /* position: relative;
+    z-index: 1; */
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+button{
+    border: none;
+    background-color: black;
+    color: white;
+    padding: var(--padding2);
+    cursor: pointer;
+    padding: var(--padding3);
+    text-transform: capitalize;
+    box-shadow: 4px 4px rgb(67, 147, 201);
+    border-radius: 3px;
+    transition: 0.25s;
+}
+button:hover{
+    box-shadow: 10px 4px rgb(67, 147, 201);
+}
+p::first-letter{
+    text-transform: capitalize;
+}
+
+/* HTML Classes */
+.container{
+    display: flex;
+    width: 90vw;
+    margin: 0px auto;
+}
+@media screen and (min-width: 770px) {.container{width: 720px;}}
+@media screen and (min-width: 990px) {.container{width: 940px;}}
+@media screen and (min-width: 1200px) {.container{width: 1140px;}}
+
+
+
+.DisplayGrid{
+    display: grid;
+}
+/* Flex classes to make use it inside HTML */
+.DisplayFlex{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.center{
+    justify-content: center;
+}
+.between{
+    justify-content: space-between;
+}
+.column{
+    flex-direction: column;
+}
+.none-selector{
+    user-select: none;
+}
+
+
+/* Website Sections Style */
+/* canvas */
+#canvas{
+    position: absolute;
+    z-index: -5;
+    top: 0;
+
+}
+
+
+/* NAV */
+nav{
+    font-weight: 500;
+    text-transform: capitalize;
+}
+nav ul{
+    font-size: 0.875rem;
+}
+nav .container{
+    row-gap: 0px;
+}
+@media screen and (max-width: 440px) {
+    nav{
+        margin-bottom: 40px;
+    }
+    nav .container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul{
+        width: 80%;
+        justify-content: space-between;
+    }
+}
+#logo{
+    cursor: pointer;
+}
+
+/* PlanSection */
+.PlanSection{
+    margin-top: 5%;
+}
+.PlanSection .container > h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    /* box-shadow: 0px 0px 50px -25px black; */
+
+}
+.PlanSection .container > h1::first-letter {
+    text-transform: capitalize;
+}
+
+.plans{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+}
+.plan {
+    border: solid 2px;
+    border-radius: 15px;
+    gap: unset;
+    font-weight: 400;
+    background-color: white;
+    transition: 0.2s;
+    box-shadow: 0px 0px 40px -25px black;
+}
+.plan:hover{
+    transform: translateY(-5px);
+}
+.title {
+    height: 60px;
+    width: 100%;
+    border-radius: 13px 13px 0px 0px;
+    padding: var(--padding);
+    padding-left: var(--padding-sides);
+    text-transform: capitalize;
+}
+
+.plan > ul h1 {
+    margin: 20px 0px 5px;
+}
+.plan > ul{
+    width: 100%;
+    gap: 7px;
+    align-items: baseline;
+    padding: 0px var(--padding-sides) var(--padding-sides);
+}
+
+.plan > ul li:first-child{
+    margin-bottom: 5%;
+}
+/* for data color attribute condition */
+[data-color="pink"]{
+    border-color:  var(--data-color-pink);
+}
+[data-color="bilious"]{
+    border-color:  var(--data-color-bilious);
+}
+[data-color="violet"]{
+    border-color:  var(--data-color-violet);
+}
+[data-color="pink"] .title{
+    background-color: var(--data-color-pink);
+}
+[data-color="bilious"] .title{
+    background-color: var(--data-color-bilious);
+}
+[data-color="violet"] .title{
+    background-color: var(--data-color-violet);
+}
+/* End for color attribute */
+
+.bigger{/* for Span Number Plan */
+    font-size: 50px;
+}
+
+.PlanSection .container > button{
+    margin: 30px 0px;
+}
+
+/* Last Sentence Style */
+.helping{
+    font-weight: 700;
+    margin-bottom: 5vh;
+}
+.helping a{
+    text-decoration: underline;
+}
+
+
+/* Popular Style */
+/* Disclaimer: Popular class Make Plan-Div diffrent by adding some feature like black border and shadow  */
+.Popular{
+    position: relative;
+    border: solid 2px black;
+    box-shadow: 12px 12px black;
+    max-width: 95%;
+}
+.Popular:hover{
+    box-shadow: 16px 16px black;
+}
+.Popular::before{
+    content: "\f5a2  most popular";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    height: 34px;
+    width: 150px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    right: 5%;
+    top: -5%;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 0px 5px;
+    letter-spacing: 2px;
+}
+/* The child has to spwan by JavaScript file */
+.popularChild{
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 10px 0px 3px;
+}
+.popularChild i{
+    font-size: 2.75rem;
+    position: relative;
+    top: 0.725rem;
+}
+
+.firstPrice{
+    color: rgba(0, 0, 0, 0.281);
+    text-decoration: line-through;
+    white-space: 50px;
+}

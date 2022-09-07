@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wffa Challenge</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <!-- Font Awosom -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Nav Section -->
+    <nav class="none-selector">
+        <!-- Container -->
+        <div class="container DisplayFlex between">
+            <!-- Logo -->
+            <div id="logo">
+                <h1>cocahbit</h1>
+            </div>
+            <!-- Nav-List -->
+            <ul class="DisplayFlex">
+                <li><a href="">reviews</a></li>
+                <li><a href="">pricing</a></li>
+                <li><button>get started</button></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- FirstSection/Plans -->
+    <div class="PlanSection">
+        <!-- Container -->
+        <div class="container DisplayFlex column">
+            <!-- First Sentence -->
+            <h1 class="none-selector">choose your membership plan</h1>
+            <!-- Plans-Div -->
+            <div class="plans DisplayGrid">
+                <!-- First Plan -->
+                <div class="plan DisplayFlex column"  data-color="pink" >
+                    <h2 class="title">1 month</h2>
+                    <ul class="DisplayFlex column">
+                        <li>
+                            <h1>$<span class="bigger">95</span></h1>
+                            <span>per month</span>
+                        </li>
+                        <li><p>billed every month</p></li>
+                        <li><p>14-day money-back guarantee</p></li>
+                    </ul>
+                </div>
+                <!-- Second Plan -->
+                <div class="plan DisplayFlex column Popular" data-color="bilious">
+                    <h2 class="title">12 months</h2>
+                    <ul class="DisplayFlex column">
+                        <li>
+                            <!-- <span class="firstPrice">$95</span></span> -->
+                            <h1>$<span class="bigger">64 &nbsp; &nbsp; </h1>
+                            <span>per month</span>
+                        </li>
+                        <li><p>billed every 12 months</p></li>
+                        <li><p>14-day money-back guarantee</p></li>
+                        <!-- <li class="popularChild DisplayFlex between">
+                            <h3>save 32%</h3>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </li> -->
+                    </ul>
+                </div>
+                <!-- Third Plan -->
+                <div class="plan DisplayFlex column"  data-color="violet">
+                    <h2 class="title">6 months</h2>
+                    <ul class="DisplayFlex column">
+                        <li>
+                            <h1>$<span class="bigger">74</span></h1>
+                            <span>per month</span>
+                        </li>
+                        <li><p>billed every 6 months</p></li>
+                        <li><p>14-day money-back guarantee</p></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Button -->
+            <button>proceed to payment</button>
+            <!-- Last Sentence -->
+            <p class="helping">need a payment plan for an annual package? <i class="fa-solid fa-phone"></i> <a href="">Schedule a call</a> </p>
+        </div>
+    </div>
+
+
+    
+    <!-- canvas -->
+    <canvas id="canvas"></canvas>
+<!--  -->
+
+    <!-- Main JavaScript File -->
+    <script src="main.js"></script>
+    <!-- Canvas JS File -->
+    <script src="CircleBackground.js"></script>
+</body>
+</html>
