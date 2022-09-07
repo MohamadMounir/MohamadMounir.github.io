@@ -5,10 +5,16 @@ let circleArray;
 // let colorArr = ["#B9FFF8", "#6FEDD6", "#FF9551", "#FF4A4A"];
 let colorArr = ["rgba(155, 223, 230, 0.138)"];
 const circleCount = 30;
-setHWCanvas();
+window.addEventListener("load",function (){
+    if(window.innerWidth > 700){
+        setHWCanvas(1);
+    }else if(window.innerWidth){
+        setHWCanvas(2)
+    }
+});
 window.addEventListener("resize", function () {
     if (canvas.width < this.window.innerWidth || canvas.height < this.window.innerHeight) {
-        setHWCanvas();
+        setHWCanvas(1);
     }
     else if (canvas.width > this.window.innerWidth || canvas.height > this.window.innerHeight) {
         init();
@@ -37,7 +43,7 @@ class circle {
             if (this.X + this.radius > window.innerWidth || this.X - this.radius < 0) {
                 this.dx = -this.dx;
             }
-            if (this.Y + this.radius > window.innerHeight || this.Y - this.radius < 0) {
+            if (this.Y + this.radius > canvas.height || this.Y - this.radius < 0) {
                 this.dy = -this.dy;
             }
             this.X += this.dx/5;
@@ -47,7 +53,7 @@ class circle {
 }
 function Animtion() {
     requestAnimationFrame(Animtion);
-    c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    c.clearRect(0, 0, window.innerWidth, canvas.height);
     circleArray.forEach((e) => e.update());
 }
 createCircle(circleCount);
@@ -57,9 +63,9 @@ function init() {
     circleArray = [];
     createCircle(circleCount);
 }
-function setHWCanvas() {
+function setHWCanvas(f) {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight * f;
 }
 function GenreateRandomNum(max, min, aboveZero = false) {
     if (aboveZero) {
