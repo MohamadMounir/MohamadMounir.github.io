@@ -4,11 +4,12 @@ let c = canvas.getContext("2d");
 let circleArray;
 // let colorArr = ["#B9FFF8", "#6FEDD6", "#FF9551", "#FF4A4A"];
 let colorArr = ["rgba(155, 223, 230, 0.138)"];
-const circleCount = 30;
+let circleCount = 30;
+
 window.addEventListener("load",function (){
     if(window.innerWidth > 700){
         setHWCanvas(1);
-    }else if(window.innerWidth){
+    }else if(window.innerWidth < 700){
         setHWCanvas(2)
     }
 });
@@ -20,6 +21,7 @@ window.addEventListener("resize", function () {
         init();
     }
 });
+// setcircleNum();
 class circle {
     constructor(X, Y, radius, dx, dy) {
         this.X = X;
@@ -84,6 +86,9 @@ function NegativeOrPositive() {
         return -1;
     }
     return 1; /////For make sure this Fun will return a value in the end
+}
+function setcircleNum(){
+    circleCount = window.innerWidth/50; 
 }
 function createCircle(Count) {
     for (let i = 0; i < Count; i++) {
