@@ -1,0 +1,194 @@
+:root{
+    --dark-color: #19283f;
+    --green-color: #33d1cc;
+    --red-color: #ff3150;
+    --yellow-color: #ffc400;
+    --white-color: #eff7fa;
+    --white: white;
+}
+
+body{ 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
+input:focus{
+    outline: none;
+}
+
+.navbar {
+    background-color: var(--dark-color);
+}
+
+.nav-link{
+    color: var(--white);
+}
+.navbar .nav-link.active{
+    color: var(--green-color) ;
+}
+.btn{
+    text-transform: uppercase;
+    color: var(--yellow-color);
+    background-color: var(--red-color);
+}
+.btn:hover{
+    color: var(--yellow-color)!important;
+    background-color: var(--red-color) !important;
+}
+
+.fa-magnifying-glass  {
+/* svg { */
+    border-left: 1px var(--green-color) solid;
+    color: var(--green-color);
+}
+
+.navbar-toggler{
+    color: white;
+    border: solid var(--green-color) 1px;
+}
+
+
+.landing{
+    background-color: var(--dark-color);
+    color: var(--white);
+}
+
+
+.title-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.title-section::after{
+    content: "";
+    width: 8vw;
+    height: 2px;
+    background-color: var(--green-color);
+}
+.title-section img{
+    width: max-content;
+    margin: 20px 0px;
+}
+.title-section h3{
+    font-size: 32px;
+}
+.title-section p{
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+
+.title-text{
+    margin: 0.5rem 0px;
+    text-transform: uppercase;
+    color: var(--yellow-color);
+    font-size: 24px;
+}
+
+.feature svg.f-icon{
+    color: var(--green-color);
+    position: absolute;
+    font-size: 60px;
+    top: 37%;
+}
+
+.feature > svg.f-number{
+    font-size: 200px;
+    color: var(--green-color);
+    position: relative;
+    z-index: -1;
+    opacity: 0.1;
+}
+.feature{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature p{
+    margin-top: 0.5rem;
+    text-align: center;
+    opacity: 0.75;
+}
+
+
+
+.our-work{
+    background-color: var(--white-color);
+}
+.our-work  .active{
+    color: var(--yellow-color);
+    background-color: var(--red-color);
+}
+
+.works-menu li{
+    padding: 0.6rem 0.9rem;
+}
+.works-menu li:hover{
+    color: var(--red-color);
+    cursor: pointer;
+}
+.works-menu h6{
+    margin: 0;
+}
+
+.stuff-left > p{
+    opacity: 0.7;
+}
+
+
+.teams{
+    background-color: var(--white-color);
+}
+
+.teams-upperText h1{
+    color: var(--yellow-color);
+}
+
+.bg-primary{
+    background-color: #33d1cc !important;
+    /*  */
+}
+
+
+.project{
+    background-color: var(--dark-color);
+}
+
+.subscribe{
+    background-color: var(--yellow-color);
+}
+.subscribe  button.btn{
+    background-color: var(--dark-color);
+}
+
+
+footer{
+    background-color: var(--dark-color);
+}
+footer h4{
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    color: var(--white-color);
+}
+footer h5{
+    font-size: 1rem;
+}
+.primaryColor{
+    color: var(--green-color);
+}
+.secondryColor{
+    color: var(--yellow-color);
+}
+
+
+.footer-contactUs button{
+    width: 100%;
+}
