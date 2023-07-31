@@ -5,12 +5,22 @@
     --yellow-color: #ffc400;
     --white-color: #eff7fa;
     --white: white;
+    --var-width: calc(100% - 1.8rem - 9.6px);
+    --var-height: calc(100% - 1.2rem - 9.6px);
+    --var-topPosition: calc(0.6rem + 4.8px);
+    --var-leftPosition : calc(0.9rem + 4.8px);
 }
 
 body{ 
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    /* font-size: 16px; */
+}
+@media screen and (max-width: 400px) {
+    body{
+        font-size: 13px;
+    }
 }
 ul{
     list-style: none;
@@ -19,7 +29,9 @@ ul{
 input:focus{
     outline: none;
 }
-
+.navbar-toggler:focus{
+    box-shadow: none;
+}
 .navbar {
     background-color: var(--dark-color);
 }
@@ -27,7 +39,7 @@ input:focus{
 .nav-link{
     color: var(--white);
 }
-.navbar .nav-link.active{
+.navbar .nav-link.active, .navbar .nav-link:hover{
     color: var(--green-color) ;
 }
 .btn{
@@ -54,6 +66,7 @@ input:focus{
 
 .landing{
     background-color: var(--dark-color);
+    min-height: calc(100vh - 70px);
     color: var(--white);
 }
 
@@ -70,6 +83,11 @@ input:focus{
     width: 8vw;
     height: 2px;
     background-color: var(--green-color);
+}
+@media screen and (max-width: 600px) {
+    .title-section::after{
+        width: 25vw;
+    }
 }
 .title-section img{
     width: max-content;
@@ -129,11 +147,56 @@ input:focus{
 }
 
 .works-menu li{
+    position: relative;
     padding: 0.6rem 0.9rem;
 }
-.works-menu li:hover{
+.works-menu .works-img li{
+    overflow: hidden;
+}
+.works-menu .works-img  li:hover{
     color: var(--red-color);
     cursor: pointer;
+}
+.works-menu .works-img  li::before{
+    content: "Appliction";
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    /* width calculate by = total width of parent holder - (padding left + padding right) - (total border for left and right) */
+    width: var(--var-width);
+    /* width: calc(100% - 1.8rem - 9.6px); */
+    /* width calculate by = total height of parent holder - (padding up + padding bottom) - (total border for top and bottom) */
+    height: var(--var-height);
+    /* needed to make the pesudo element out the parent holder */
+    left: calc( -1 * (var(--var-width)));
+    /* adjust in y-axis and make ensure the element inside the img */
+    top: var(--var-topPosition);
+    /* the opacity just happen in color and the text is normal */
+    background-color: rgba(51, 209, 204, 0.5);
+
+
+    animation-name: moveout;
+    animation-duration: 0.2s;
+}
+.works-menu .works-img  li:hover::before{
+    animation-name: move;
+    animation-duration: 0.6s;
+    left: var(--var-leftPosition);
+
+}
+
+@keyframes move {
+    from {left: calc( -1 * (var(--var-width)));}
+    to {left: var(--var-leftPosition);}
+}
+@keyframes moveout {
+    from {left: var(--var-leftPosition);}
+    to {left: calc( -1 * (var(--var-width)));}
 }
 .works-menu h6{
     margin: 0;
@@ -153,7 +216,7 @@ input:focus{
 }
 
 .bg-primary{
-    background-color: #33d1cc !important;
+    background-color: var(--green-color) !important;
     /*  */
 }
 

@@ -21,37 +21,37 @@
                 <a href="#" class="navbar-brand">
                     <img  src="imgs/logo.png" alt="">
                 </a>
-            <button class="navbar-toggler rounded fs-2 py-0 px-1" type="button ">
+            <button class="navbar-toggler rounded fs-2 py-0 px-1" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" type="button ">
                 <span class="navbar-toggler-icon  d-flex justify-content-center align-items-center " >
                     <i class="fa-solid fa-bars "></i>
                 </span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-end text-capitalize">
-                <ul class="navbar-nav gap-3  fw-bold mx-3">
+            <div class="collapse navbar-collapse justify-content-end text-capitalize" id="navbarSupportedContent">
+                <ul class="navbar-nav gap-lg-3  fw-bold mx-lg-3 mx-sm-1 my-sm-2">
                     <li class="nav-item">
-                        <a class="nav-link active" href="">Home</a>
+                        <a class="nav-link active" href="#landing">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="">services</a>
+                        <a class="nav-link " href="#features">services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="">portfolio</a>
+                        <a class="nav-link " href="#our-work">portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="">about</a>
+                        <a class="nav-link " href="#about">about</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="">contact</a>
+                        <a class="nav-link " href="#contact">contact</a>
                     </li>
                 </ul>
-                <i class="fa-solid fa-magnifying-glass fs-0 px-3 py-1  "></i>
+                <i class="fa-solid fa-magnifying-glass fs-0 px-3 py-1 d-none d-lg-block "></i>
                 <button class="btn fw-bold rounded-pill text-capitalize py-2 px-3">login</button>
             </div>
         </div>
         
     </nav>
-    <div class="landing text-center py-5 vh-100 ">
+    <div class="landing text-center py-5 " id="landing">
         <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
 
             <h1>Taste the Creativity</h1>
@@ -59,7 +59,7 @@
             <button class="btn text-capitalize rounded-pill mt-4"> get started</button>
         </div>
     </div>
-    <div class="features py-5 ">
+    <div class="features py-5 " id="features">
         <div class="container">
             <div class="title-section">
                 <img src="imgs/title.png" alt="">
@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="our-work  py-5 align-items-center">
+    <div class="our-work  py-5 align-items-center" id="our-work">
         <div class="container">
 
             <div class="title-section">
@@ -145,14 +145,14 @@
 
         </div>
     </div>
-    <div class="stuff pt-5">
+    <div class="stuff pt-5" id="stuff">
         <div class="container">
             <div class="title-section">
                 <img src="imgs/title.png" alt="">
                 <h3>Some Stuff About US</h3>
                 <p>The great team</p>
             </div>
-            <p class="stuff-upperText text-center  mx-5 px-5 text-black-50 mb-5" >Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
+            <p class="stuff-upperText text-center  mx-5 px-md-5 text-black-50 mb-5" >Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
             <div class="stuff-lowerSection row">
                 <div class="stuff-left col-lg-4 col-xs-12 mb-lg-0 mb-sm-4 mb-xs-5">
                     <h3 class="text-capitalize fs-4">retina design</h3>
@@ -299,7 +299,7 @@
             </form>
         </div>
     </div>
-    <footer class="text-white py-5 text-white-50">
+    <footer class="text-white py-5 text-white-50" id="footer">
         <div class="container">
             <div class="row text-center text-md-start gap-md-0 gap-4 ">
                 <div class="footer-info col-lg-4 col-md-6 fw-bold">
@@ -331,7 +331,7 @@
                             </li>
                         </ul>
                 </div>
-                <div class="footer-aboutUs col-lg-2 col-md-6 text-capitalize">
+                <div class="footer-aboutUs col-lg-2 col-md-6 text-capitalize" id="about">
                     <h4>about us</h1>
                         <ul>
                             <li>
@@ -352,7 +352,7 @@
                         </ul>
                 </div>
 
-                <div class="footer-contactUs col-lg-4 col-md-6">
+                <div class="footer-contactUs col-lg-4 col-md-6" id="contact">
                     <h4 class="text-capitalize">contact us</h4>
                     <p class="fw-bold">Get in touch with us via mail phone.We are waiting for your call or message</p>
                     <button class="btn rounded-pill text-lowercase my-4 ">graphberry@gmail.com</button>
